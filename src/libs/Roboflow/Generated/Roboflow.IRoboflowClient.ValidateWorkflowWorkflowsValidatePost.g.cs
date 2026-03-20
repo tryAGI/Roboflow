@@ -4,7 +4,6 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// [EXPERIMENTAL] Endpoint to validate<br/>
         /// Endpoint provides a way to check validity of JSON workflow definition.
@@ -12,7 +11,6 @@ namespace Roboflow
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -24,7 +22,6 @@ namespace Roboflow
             object request,
             string? apiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// [EXPERIMENTAL] Endpoint to validate<br/>
         /// Endpoint provides a way to check validity of JSON workflow definition.

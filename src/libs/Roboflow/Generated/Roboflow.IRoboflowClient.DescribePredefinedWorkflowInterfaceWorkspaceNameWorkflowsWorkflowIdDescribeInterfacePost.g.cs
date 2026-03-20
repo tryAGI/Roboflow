@@ -4,14 +4,12 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Endpoint to describe interface of predefined workflow<br/>
         /// Checks Roboflow API for workflow definition, once acquired - describes workflow inputs and outputs
         /// </summary>
         /// <param name="workspaceName"></param>
         /// <param name="workflowId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace Roboflow
 
             global::Roboflow.PredefinedWorkflowDescribeInterfaceRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Endpoint to describe interface of predefined workflow<br/>
         /// Checks Roboflow API for workflow definition, once acquired - describes workflow inputs and outputs

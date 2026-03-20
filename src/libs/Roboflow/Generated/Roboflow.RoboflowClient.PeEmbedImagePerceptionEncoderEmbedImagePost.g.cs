@@ -27,7 +27,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// PE Image Embeddings<br/>
         /// Run the Meta Perception Encoder model to embed image data.
@@ -37,7 +36,6 @@ namespace Roboflow
         /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -237,7 +235,6 @@ namespace Roboflow
                 }
             }
         }
-
         /// <summary>
         /// PE Image Embeddings<br/>
         /// Run the Meta Perception Encoder model to embed image data.

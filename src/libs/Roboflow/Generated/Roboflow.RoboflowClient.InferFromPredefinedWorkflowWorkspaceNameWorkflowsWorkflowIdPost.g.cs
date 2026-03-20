@@ -25,14 +25,12 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Endpoint to run predefined workflow<br/>
         /// Checks Roboflow API for workflow definition, once acquired - parses and executes injecting runtime parameters from request body
         /// </summary>
         /// <param name="workspaceName"></param>
         /// <param name="workflowId"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -224,7 +222,6 @@ namespace Roboflow
                 }
             }
         }
-
         /// <summary>
         /// Endpoint to run predefined workflow<br/>
         /// Checks Roboflow API for workflow definition, once acquired - parses and executes injecting runtime parameters from request body

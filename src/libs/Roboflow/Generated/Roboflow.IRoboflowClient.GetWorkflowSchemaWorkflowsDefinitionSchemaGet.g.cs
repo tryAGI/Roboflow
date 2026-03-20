@@ -4,7 +4,6 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Endpoint to fetch the workflows block schema<br/>
         /// Endpoint to fetch the schema of all available blocks. This information can be used to validate workflow definitions and suggest syntax in the JSON editor.

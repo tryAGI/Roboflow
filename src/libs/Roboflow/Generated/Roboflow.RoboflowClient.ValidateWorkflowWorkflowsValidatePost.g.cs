@@ -23,7 +23,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// [EXPERIMENTAL] Endpoint to validate<br/>
         /// Endpoint provides a way to check validity of JSON workflow definition.
@@ -31,7 +30,6 @@ namespace Roboflow
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -226,7 +224,6 @@ namespace Roboflow
                 }
             }
         }
-
         /// <summary>
         /// [EXPERIMENTAL] Endpoint to validate<br/>
         /// Endpoint provides a way to check validity of JSON workflow definition.

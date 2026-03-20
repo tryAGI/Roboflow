@@ -4,7 +4,6 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Model Add Legacy<br/>
         /// Starts a model inference session.<br/>

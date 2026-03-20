@@ -4,7 +4,6 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Legacy Infer From Request<br/>
         /// Legacy inference endpoint for object detection, instance segmentation, and classification.<br/>

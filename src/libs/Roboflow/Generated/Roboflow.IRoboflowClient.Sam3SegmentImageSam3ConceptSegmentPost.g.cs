@@ -4,7 +4,6 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// SAM3 PCS (promptable concept segmentation)<br/>
         /// Run the SAM3 PCS (promptable concept segmentation) to generate segmentations for image data.
@@ -14,7 +13,6 @@ namespace Roboflow
         /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -25,7 +23,6 @@ namespace Roboflow
             bool? countinference = default,
             string? serviceSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// SAM3 PCS (promptable concept segmentation)<br/>
         /// Run the SAM3 PCS (promptable concept segmentation) to generate segmentations for image data.

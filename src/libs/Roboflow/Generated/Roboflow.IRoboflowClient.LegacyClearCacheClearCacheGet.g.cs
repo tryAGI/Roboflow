@@ -4,7 +4,6 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Legacy Clear Cache<br/>
         /// Clears the model cache.<br/>

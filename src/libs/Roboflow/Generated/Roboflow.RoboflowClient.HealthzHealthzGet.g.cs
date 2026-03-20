@@ -19,7 +19,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Healthz<br/>
         /// Health endpoint for Kubernetes liveness probe.

@@ -4,7 +4,6 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Get Recent Logs<br/>
         /// Get recent application logs for debugging

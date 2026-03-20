@@ -21,12 +21,10 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function<br/>
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -215,7 +213,6 @@ namespace Roboflow
                 }
             }
         }
-
         /// <summary>
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function<br/>
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function

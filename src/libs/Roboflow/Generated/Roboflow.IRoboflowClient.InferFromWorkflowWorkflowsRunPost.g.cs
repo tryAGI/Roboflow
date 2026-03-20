@@ -4,12 +4,10 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Endpoint to run workflow specification provided in payload<br/>
         /// Parses and executes workflow specification, injecting runtime parameters from request body.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -17,7 +15,6 @@ namespace Roboflow
 
             global::Roboflow.WorkflowSpecificationInferenceRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Endpoint to run workflow specification provided in payload<br/>
         /// Parses and executes workflow specification, injecting runtime parameters from request body.

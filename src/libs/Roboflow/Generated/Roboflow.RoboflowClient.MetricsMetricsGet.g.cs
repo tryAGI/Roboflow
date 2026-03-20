@@ -19,7 +19,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Metrics<br/>
         /// Endpoint that serves Prometheus metrics.

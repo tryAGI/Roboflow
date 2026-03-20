@@ -21,12 +21,10 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Remove a model<br/>
         /// Remove the model with the given model ID
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -212,7 +210,6 @@ namespace Roboflow
                 }
             }
         }
-
         /// <summary>
         /// Remove a model<br/>
         /// Remove the model with the given model ID

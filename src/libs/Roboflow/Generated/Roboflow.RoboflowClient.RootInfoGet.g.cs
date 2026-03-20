@@ -19,7 +19,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Info<br/>
         /// Get the server name and version number

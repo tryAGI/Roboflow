@@ -4,14 +4,12 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Keypoints detection infer<br/>
         /// Run inference with the specified keypoints detection model
         /// </summary>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -21,7 +19,6 @@ namespace Roboflow
             bool? countinference = default,
             string? serviceSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// Keypoints detection infer<br/>
         /// Run inference with the specified keypoints detection model

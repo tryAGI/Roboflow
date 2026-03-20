@@ -19,7 +19,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Readiness<br/>
         /// Readiness endpoint for Kubernetes readiness probe.

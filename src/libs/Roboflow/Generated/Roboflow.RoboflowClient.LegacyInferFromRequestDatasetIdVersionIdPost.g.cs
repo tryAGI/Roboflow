@@ -63,7 +63,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Legacy Infer From Request<br/>
         /// Legacy inference endpoint for object detection, instance segmentation, and classification.<br/>

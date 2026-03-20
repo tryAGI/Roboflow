@@ -27,7 +27,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// SAM3 3D Object Generation<br/>
         /// Generate 3D meshes and Gaussian splatting from 2D images with mask prompts.
@@ -37,7 +36,6 @@ namespace Roboflow
         /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -233,7 +231,6 @@ namespace Roboflow
                 }
             }
         }
-
         /// <summary>
         /// SAM3 3D Object Generation<br/>
         /// Generate 3D meshes and Gaussian splatting from 2D images with mask prompts.

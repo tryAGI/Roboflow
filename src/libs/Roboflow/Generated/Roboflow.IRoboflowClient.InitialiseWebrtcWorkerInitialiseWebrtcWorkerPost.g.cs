@@ -4,12 +4,10 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function<br/>
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -20,7 +18,6 @@ namespace Roboflow
 
             global::Roboflow.WebRTCWorkerRequest request,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function<br/>
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function

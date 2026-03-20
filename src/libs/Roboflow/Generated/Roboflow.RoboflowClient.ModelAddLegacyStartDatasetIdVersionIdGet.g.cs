@@ -29,7 +29,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Model Add Legacy<br/>
         /// Starts a model inference session.<br/>

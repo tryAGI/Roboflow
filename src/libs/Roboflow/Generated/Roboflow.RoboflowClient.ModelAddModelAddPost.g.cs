@@ -25,14 +25,12 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Load a model<br/>
         /// Load the model with the given model ID
         /// </summary>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -228,7 +226,6 @@ namespace Roboflow
                 }
             }
         }
-
         /// <summary>
         /// Load a model<br/>
         /// Load the model with the given model ID

@@ -4,7 +4,6 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Dashboard Guard
         /// </summary>

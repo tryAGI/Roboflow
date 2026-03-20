@@ -21,12 +21,10 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Endpoint to run workflow specification provided in payload<br/>
         /// Parses and executes workflow specification, injecting runtime parameters from request body.
         /// </summary>
-
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -212,7 +210,6 @@ namespace Roboflow
                 }
             }
         }
-
         /// <summary>
         /// Endpoint to run workflow specification provided in payload<br/>
         /// Parses and executes workflow specification, injecting runtime parameters from request body.

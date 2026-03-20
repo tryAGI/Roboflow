@@ -4,7 +4,6 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Metrics<br/>
         /// Endpoint that serves Prometheus metrics.

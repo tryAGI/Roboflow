@@ -4,7 +4,6 @@ namespace Roboflow
 {
     public partial interface IRoboflowClient
     {
-
         /// <summary>
         /// Healthz<br/>
         /// Health endpoint for Kubernetes liveness probe.

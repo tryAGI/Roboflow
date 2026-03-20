@@ -19,7 +19,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get model keys<br/>
         /// Get the ID of each loaded model

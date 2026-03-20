@@ -25,7 +25,6 @@ namespace Roboflow
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
-
         /// <summary>
         /// Get Recent Logs<br/>
         /// Get recent application logs for debugging

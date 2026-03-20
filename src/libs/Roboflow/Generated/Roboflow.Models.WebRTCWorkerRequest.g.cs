@@ -113,6 +113,18 @@ namespace Roboflow
         public string? RequestedRegion { get; set; }
 
         /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
+        public string? WorkspaceId { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
+        public string? SessionId { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -146,6 +158,8 @@ namespace Roboflow
         /// </param>
         /// <param name="requestedGpu"></param>
         /// <param name="requestedRegion"></param>
+        /// <param name="workspaceId"></param>
+        /// <param name="sessionId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -166,7 +180,9 @@ namespace Roboflow
             global::System.DateTime? processingSessionStarted,
             string? requestedPlan,
             string? requestedGpu,
-            string? requestedRegion)
+            string? requestedRegion,
+            string? workspaceId,
+            string? sessionId)
         {
             this.WorkflowConfiguration = workflowConfiguration ?? throw new global::System.ArgumentNullException(nameof(workflowConfiguration));
             this.WebrtcOffer = webrtcOffer ?? throw new global::System.ArgumentNullException(nameof(webrtcOffer));
@@ -185,6 +201,8 @@ namespace Roboflow
             this.RequestedPlan = requestedPlan;
             this.RequestedGpu = requestedGpu;
             this.RequestedRegion = requestedRegion;
+            this.WorkspaceId = workspaceId;
+            this.SessionId = sessionId;
         }
 
         /// <summary>

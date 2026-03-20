@@ -3,7 +3,7 @@
   "info": {
     "title": "Roboflow Inference Server",
     "description": "Roboflow inference server",
-    "version": "1.1.1"
+    "version": "1.1.2"
   },
   "paths": {
     "/metrics": {
@@ -1415,6 +1415,88 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/InitializeWebRTCResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webrtc/session/heartbeat": {
+      "post": {
+        "summary": "WebRTC session heartbeat",
+        "description": "Receive heartbeat for an active WebRTC session.\n\nThis endpoint is called periodically to indicate\nthat their session is still active. The session will be removed from\nthe quota count if no heartbeat is received within the TTL period.\n\nRequires api_key for authentication.",
+        "operationId": "webrtc_session_heartbeat_webrtc_session_heartbeat_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebRTCSessionHeartbeatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Webrtc Session Heartbeat Webrtc Session Heartbeat Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/webrtc/session/heartbeat/end": {
+      "post": {
+        "summary": "End WebRTC session",
+        "description": "End a WebRTC session and immediately free the quota slot.\n\nRequires api_key for authentication.",
+        "operationId": "webrtc_session_end_webrtc_session_heartbeat_end_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebRTCSessionHeartbeatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Webrtc Session End Webrtc Session Heartbeat End Post"
                 }
               }
             }
@@ -6364,6 +6446,27 @@
               }
             ],
             "title": "Description"
+          },
+          "property_name_options": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Property Name Options",
+            "description": "List of possible property names.             Optional parameter for operations extracting property values from data. ",
+            "examples": [
+              "size",
+              "height",
+              "width",
+              "aspect_ratio"
+            ]
           }
         },
         "type": "object",
@@ -12592,6 +12695,25 @@
         ],
         "title": "WebRTCOffer"
       },
+      "WebRTCSessionHeartbeatRequest": {
+        "properties": {
+          "session_id": {
+            "type": "string",
+            "title": "Session Id"
+          },
+          "api_key": {
+            "type": "string",
+            "title": "Api Key"
+          }
+        },
+        "type": "object",
+        "required": [
+          "session_id",
+          "api_key"
+        ],
+        "title": "WebRTCSessionHeartbeatRequest",
+        "description": "Request body for WebRTC session heartbeat and end endpoints."
+      },
       "WebRTCTURNConfig": {
         "properties": {
           "urls": {
@@ -12782,6 +12904,28 @@
               }
             ],
             "title": "Requested Region"
+          },
+          "workspace_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Workspace Id"
+          },
+          "session_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Session Id"
           }
         },
         "type": "object",

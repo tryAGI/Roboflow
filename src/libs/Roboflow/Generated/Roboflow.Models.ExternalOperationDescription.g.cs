@@ -55,6 +55,12 @@ namespace Roboflow
         public string? Description { get; set; }
 
         /// <summary>
+        /// List of possible property names.             Optional parameter for operations extracting property values from data. 
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("property_name_options")]
+        public global::System.Collections.Generic.IList<string>? PropertyNameOptions { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -70,6 +76,9 @@ namespace Roboflow
         /// <param name="nestedOperationInputKind"></param>
         /// <param name="nestedOperationOutputKind"></param>
         /// <param name="description"></param>
+        /// <param name="propertyNameOptions">
+        /// List of possible property names.             Optional parameter for operations extracting property values from data. 
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -80,7 +89,8 @@ namespace Roboflow
             global::System.Collections.Generic.IList<string> outputKind,
             global::System.Collections.Generic.IList<string>? nestedOperationInputKind,
             global::System.Collections.Generic.IList<string>? nestedOperationOutputKind,
-            string? description)
+            string? description,
+            global::System.Collections.Generic.IList<string>? propertyNameOptions)
         {
             this.OperationType = operationType ?? throw new global::System.ArgumentNullException(nameof(operationType));
             this.Compound = compound;
@@ -89,6 +99,7 @@ namespace Roboflow
             this.NestedOperationInputKind = nestedOperationInputKind;
             this.NestedOperationOutputKind = nestedOperationOutputKind;
             this.Description = description;
+            this.PropertyNameOptions = propertyNameOptions;
         }
 
         /// <summary>

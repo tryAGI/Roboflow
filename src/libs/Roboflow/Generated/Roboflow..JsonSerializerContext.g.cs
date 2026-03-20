@@ -306,6 +306,7 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WebRTCConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.RTCIceServer>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WebRTCOffer))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WebRTCSessionHeartbeatRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WebRTCTURNConfig))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WebRTCWorkerRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowConfiguration))]

@@ -47,6 +47,8 @@ namespace Roboflow
         /// </param>
         /// <param name="requestedGpu"></param>
         /// <param name="requestedRegion"></param>
+        /// <param name="workspaceId"></param>
+        /// <param name="sessionId"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
 #if NET8_0_OR_GREATER
@@ -70,6 +72,8 @@ namespace Roboflow
             string? requestedPlan = default,
             string? requestedGpu = default,
             string? requestedRegion = default,
+            string? workspaceId = default,
+            string? sessionId = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

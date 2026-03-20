@@ -5,47 +5,48 @@ namespace Roboflow
 {
     public partial class RoboflowClient
     {
-        partial void PrepareInitialiseWebrtcWorkerInitialiseWebrtcWorkerPostArguments(
+        partial void PrepareWebrtcSessionHeartbeatWebrtcSessionHeartbeatPostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            global::Roboflow.WebRTCWorkerRequest request);
-        partial void PrepareInitialiseWebrtcWorkerInitialiseWebrtcWorkerPostRequest(
+            global::Roboflow.WebRTCSessionHeartbeatRequest request);
+        partial void PrepareWebrtcSessionHeartbeatWebrtcSessionHeartbeatPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            global::Roboflow.WebRTCWorkerRequest request);
-        partial void ProcessInitialiseWebrtcWorkerInitialiseWebrtcWorkerPostResponse(
+            global::Roboflow.WebRTCSessionHeartbeatRequest request);
+        partial void ProcessWebrtcSessionHeartbeatWebrtcSessionHeartbeatPostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessInitialiseWebrtcWorkerInitialiseWebrtcWorkerPostResponseContent(
+        partial void ProcessWebrtcSessionHeartbeatWebrtcSessionHeartbeatPostResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function<br/>
-        /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function
+        /// WebRTC session heartbeat<br/>
+        /// Receive heartbeat for an active WebRTC session.<br/>
+        /// This endpoint is called periodically to indicate<br/>
+        /// that their session is still active. The session will be removed from<br/>
+        /// the quota count if no heartbeat is received within the TTL period.<br/>
+        /// Requires api_key for authentication.
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "ROBOFLOW_EXPERIMENTAL_001")]
-#endif
-        public async global::System.Threading.Tasks.Task<global::Roboflow.InitializeWebRTCResponse> InitialiseWebrtcWorkerInitialiseWebrtcWorkerPostAsync(
+        public async global::System.Threading.Tasks.Task<string> WebrtcSessionHeartbeatWebrtcSessionHeartbeatPostAsync(
 
-            global::Roboflow.WebRTCWorkerRequest request,
+            global::Roboflow.WebRTCSessionHeartbeatRequest request,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareInitialiseWebrtcWorkerInitialiseWebrtcWorkerPostArguments(
+            PrepareWebrtcSessionHeartbeatWebrtcSessionHeartbeatPostArguments(
                 httpClient: HttpClient,
                 request: request);
 
             var __pathBuilder = new global::Roboflow.PathBuilder(
-                path: "/initialise_webrtc_worker",
+                path: "/webrtc/session/heartbeat",
                 baseUri: HttpClient.BaseAddress);
             foreach (var __authorization in Authorizations)
             {
@@ -73,7 +74,7 @@ namespace Roboflow
             PrepareRequest(
                 client: HttpClient,
                 request: __httpRequest);
-            PrepareInitialiseWebrtcWorkerInitialiseWebrtcWorkerPostRequest(
+            PrepareWebrtcSessionHeartbeatWebrtcSessionHeartbeatPostRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
                 request: request);
@@ -86,7 +87,7 @@ namespace Roboflow
             ProcessResponse(
                 client: HttpClient,
                 response: __response);
-            ProcessInitialiseWebrtcWorkerInitialiseWebrtcWorkerPostResponse(
+            ProcessWebrtcSessionHeartbeatWebrtcSessionHeartbeatPostResponse(
                 httpClient: HttpClient,
                 httpResponseMessage: __response);
             // Validation Error
@@ -140,7 +141,7 @@ namespace Roboflow
                     client: HttpClient,
                     response: __response,
                     content: ref __content);
-                ProcessInitialiseWebrtcWorkerInitialiseWebrtcWorkerPostResponseContent(
+                ProcessWebrtcSessionHeartbeatWebrtcSessionHeartbeatPostResponseContent(
                     httpClient: HttpClient,
                     httpResponseMessage: __response,
                     content: ref __content);
@@ -149,9 +150,7 @@ namespace Roboflow
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        global::Roboflow.InitializeWebRTCResponse.FromJson(__content, JsonSerializerContext) ??
-                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return __content;
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -174,15 +173,13 @@ namespace Roboflow
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    using var __content = await __response.Content.ReadAsStreamAsync(
+                    var __content = await __response.Content.ReadAsStringAsync(
 #if NET5_0_OR_GREATER
                         cancellationToken
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        await global::Roboflow.InitializeWebRTCResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return __content;
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -214,87 +211,29 @@ namespace Roboflow
             }
         }
         /// <summary>
-        /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function<br/>
-        /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function
+        /// WebRTC session heartbeat<br/>
+        /// Receive heartbeat for an active WebRTC session.<br/>
+        /// This endpoint is called periodically to indicate<br/>
+        /// that their session is still active. The session will be removed from<br/>
+        /// the quota count if no heartbeat is received within the TTL period.<br/>
+        /// Requires api_key for authentication.
         /// </summary>
-        /// <param name="apiKey"></param>
-        /// <param name="workflowConfiguration"></param>
-        /// <param name="isPreview">
-        /// Default Value: false
-        /// </param>
-        /// <param name="webrtcOffer"></param>
-        /// <param name="webrtcConfig"></param>
-        /// <param name="webrtcTurnConfig"></param>
-        /// <param name="webrtcRealtimeProcessing">
-        /// Default Value: true
-        /// </param>
-        /// <param name="streamOutput"></param>
-        /// <param name="dataOutput"></param>
-        /// <param name="declaredFps"></param>
-        /// <param name="rtspUrl"></param>
-        /// <param name="mjpegUrl"></param>
-        /// <param name="processingTimeout">
-        /// Default Value: 3600
-        /// </param>
-        /// <param name="processingSessionStarted"></param>
-        /// <param name="requestedPlan">
-        /// Default Value: webrtc-gpu-small
-        /// </param>
-        /// <param name="requestedGpu"></param>
-        /// <param name="requestedRegion"></param>
-        /// <param name="workspaceId"></param>
         /// <param name="sessionId"></param>
+        /// <param name="apiKey"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-#if NET8_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "ROBOFLOW_EXPERIMENTAL_001")]
-#endif
-        public async global::System.Threading.Tasks.Task<global::Roboflow.InitializeWebRTCResponse> InitialiseWebrtcWorkerInitialiseWebrtcWorkerPostAsync(
-            global::Roboflow.WorkflowConfiguration workflowConfiguration,
-            global::Roboflow.WebRTCOffer webrtcOffer,
-            string? apiKey = default,
-            bool? isPreview = default,
-            global::Roboflow.WebRTCConfig? webrtcConfig = default,
-            global::Roboflow.WebRTCTURNConfig? webrtcTurnConfig = default,
-            bool? webrtcRealtimeProcessing = default,
-            global::System.Collections.Generic.IList<string>? streamOutput = default,
-            global::System.Collections.Generic.IList<string>? dataOutput = default,
-            double? declaredFps = default,
-            string? rtspUrl = default,
-            string? mjpegUrl = default,
-            int? processingTimeout = default,
-            global::System.DateTime? processingSessionStarted = default,
-            string? requestedPlan = default,
-            string? requestedGpu = default,
-            string? requestedRegion = default,
-            string? workspaceId = default,
-            string? sessionId = default,
+        public async global::System.Threading.Tasks.Task<string> WebrtcSessionHeartbeatWebrtcSessionHeartbeatPostAsync(
+            string sessionId,
+            string apiKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Roboflow.WebRTCWorkerRequest
+            var __request = new global::Roboflow.WebRTCSessionHeartbeatRequest
             {
-                ApiKey = apiKey,
-                WorkflowConfiguration = workflowConfiguration,
-                IsPreview = isPreview,
-                WebrtcOffer = webrtcOffer,
-                WebrtcConfig = webrtcConfig,
-                WebrtcTurnConfig = webrtcTurnConfig,
-                WebrtcRealtimeProcessing = webrtcRealtimeProcessing,
-                StreamOutput = streamOutput,
-                DataOutput = dataOutput,
-                DeclaredFps = declaredFps,
-                RtspUrl = rtspUrl,
-                MjpegUrl = mjpegUrl,
-                ProcessingTimeout = processingTimeout,
-                ProcessingSessionStarted = processingSessionStarted,
-                RequestedPlan = requestedPlan,
-                RequestedGpu = requestedGpu,
-                RequestedRegion = requestedRegion,
-                WorkspaceId = workspaceId,
                 SessionId = sessionId,
+                ApiKey = apiKey,
             };
 
-            return await InitialiseWebrtcWorkerInitialiseWebrtcWorkerPostAsync(
+            return await WebrtcSessionHeartbeatWebrtcSessionHeartbeatPostAsync(
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

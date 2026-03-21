@@ -71,7 +71,7 @@ namespace Roboflow
             } 
             __pathBuilder
                 .AddOptionalParameter("api_key", apiKey)
-                .AddOptionalParameter("countinference", countinference?.ToString())
+                .AddOptionalParameter("countinference", countinference?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("service_secret", serviceSecret) 
                 ; 
             var __path = __pathBuilder.ToString();

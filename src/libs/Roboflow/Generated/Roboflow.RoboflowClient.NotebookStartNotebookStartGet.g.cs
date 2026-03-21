@@ -52,7 +52,7 @@ namespace Roboflow
                 }
             } 
             __pathBuilder
-                .AddOptionalParameter("browserless", browserless?.ToString()) 
+                .AddOptionalParameter("browserless", browserless?.ToString().ToLowerInvariant()) 
                 ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(

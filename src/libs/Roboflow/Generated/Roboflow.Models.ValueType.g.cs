@@ -15,7 +15,11 @@ namespace Roboflow
         /// <summary>
         /// 
         /// </summary>
-        Integer,
+        Boolean,
+        /// <summary>
+        /// 
+        /// </summary>
+        Dict,
         /// <summary>
         /// 
         /// </summary>
@@ -23,11 +27,7 @@ namespace Roboflow
         /// <summary>
         /// 
         /// </summary>
-        Boolean,
-        /// <summary>
-        /// 
-        /// </summary>
-        Dict,
+        Integer,
         /// <summary>
         /// 
         /// </summary>
@@ -51,10 +51,10 @@ namespace Roboflow
             return value switch
             {
                 ValueType.Any => "any",
-                ValueType.Integer => "integer",
-                ValueType.Float => "float",
                 ValueType.Boolean => "boolean",
                 ValueType.Dict => "dict",
+                ValueType.Float => "float",
+                ValueType.Integer => "integer",
                 ValueType.List => "list",
                 ValueType.String => "string",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
@@ -68,10 +68,10 @@ namespace Roboflow
             return value switch
             {
                 "any" => ValueType.Any,
-                "integer" => ValueType.Integer,
-                "float" => ValueType.Float,
                 "boolean" => ValueType.Boolean,
                 "dict" => ValueType.Dict,
+                "float" => ValueType.Float,
+                "integer" => ValueType.Integer,
                 "list" => ValueType.List,
                 "string" => ValueType.String,
                 _ => null,

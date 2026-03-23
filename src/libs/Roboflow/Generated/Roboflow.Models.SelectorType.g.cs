@@ -11,11 +11,11 @@ namespace Roboflow
         /// <summary>
         /// 
         /// </summary>
-        InputImage,
+        Generic,
         /// <summary>
         /// 
         /// </summary>
-        StepOutputImage,
+        InputImage,
         /// <summary>
         /// 
         /// </summary>
@@ -27,7 +27,7 @@ namespace Roboflow
         /// <summary>
         /// 
         /// </summary>
-        Generic,
+        StepOutputImage,
     }
 
     /// <summary>
@@ -42,11 +42,11 @@ namespace Roboflow
         {
             return value switch
             {
+                SelectorType.Generic => "generic",
                 SelectorType.InputImage => "input_image",
-                SelectorType.StepOutputImage => "step_output_image",
                 SelectorType.InputParameter => "input_parameter",
                 SelectorType.StepOutput => "step_output",
-                SelectorType.Generic => "generic",
+                SelectorType.StepOutputImage => "step_output_image",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -57,11 +57,11 @@ namespace Roboflow
         {
             return value switch
             {
+                "generic" => SelectorType.Generic,
                 "input_image" => SelectorType.InputImage,
-                "step_output_image" => SelectorType.StepOutputImage,
                 "input_parameter" => SelectorType.InputParameter,
                 "step_output" => SelectorType.StepOutput,
-                "generic" => SelectorType.Generic,
+                "step_output_image" => SelectorType.StepOutputImage,
                 _ => null,
             };
         }

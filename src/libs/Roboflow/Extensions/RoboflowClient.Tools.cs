@@ -17,6 +17,7 @@ public static class RoboflowToolExtensions
     /// <param name="confidence">The confidence threshold (0-1) for filtering predictions (default: 0.4).</param>
     /// <param name="maxDetections">Maximum number of detections to return (default: 300).</param>
     /// <returns>An AIFunction that can be passed to ChatOptions.Tools.</returns>
+    [CLSCompliant(false)]
     public static AIFunction AsObjectDetectionTool(
         this RoboflowClient client,
         double confidence = 0.4,
@@ -52,6 +53,7 @@ public static class RoboflowToolExtensions
     /// <param name="client">The Roboflow client to use for inference.</param>
     /// <param name="confidence">The confidence threshold (0-1) for filtering predictions (default: 0.4).</param>
     /// <returns>An AIFunction that can be passed to ChatOptions.Tools.</returns>
+    [CLSCompliant(false)]
     public static AIFunction AsClassificationTool(
         this RoboflowClient client,
         double confidence = 0.4)
@@ -84,6 +86,7 @@ public static class RoboflowToolExtensions
     /// </summary>
     /// <param name="client">The Roboflow client to use for inference.</param>
     /// <returns>An AIFunction that can be passed to ChatOptions.Tools.</returns>
+    [CLSCompliant(false)]
     public static AIFunction AsOcrTool(this RoboflowClient client)
     {
         ArgumentNullException.ThrowIfNull(client);
@@ -114,6 +117,7 @@ public static class RoboflowToolExtensions
     /// <param name="confidence">The confidence threshold (0-1) for filtering predictions (default: 0.4).</param>
     /// <param name="maxDetections">Maximum number of detections to return (default: 300).</param>
     /// <returns>An AIFunction that can be passed to ChatOptions.Tools.</returns>
+    [CLSCompliant(false)]
     public static AIFunction AsInstanceSegmentationTool(
         this RoboflowClient client,
         double confidence = 0.4,

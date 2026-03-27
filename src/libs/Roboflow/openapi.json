@@ -3,7 +3,7 @@
   "info": {
     "title": "Roboflow Inference Server",
     "description": "Roboflow inference server",
-    "version": "1.2.0rc5"
+    "version": "1.2.0"
   },
   "paths": {
     "/metrics": {

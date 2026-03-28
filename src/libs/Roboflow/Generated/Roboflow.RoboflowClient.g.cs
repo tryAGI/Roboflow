@@ -11,7 +11,7 @@ namespace Roboflow
     public sealed partial class RoboflowClient : global::Roboflow.IRoboflowClient, global::System.IDisposable
     {
         /// <summary>
-        /// Roboflow Inference Server
+        /// 
         /// </summary>
         public const string DefaultBaseUrl = "https://inference.roboflow.com";
 

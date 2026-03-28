@@ -3,10 +3,9 @@ set -euo pipefail
 
 # OpenAPI spec: https://inference.roboflow.com/openapi.json
 
-readonly openapi_url="https://inference.roboflow.com/openapi.json"
 dotnet tool install --global autosdk.cli --prerelease
 rm -rf Generated
-curl --fail --silent --show-error --location "$openapi_url" -o openapi.json
+curl --fail --silent --show-error --location https://inference.roboflow.com/openapi.json -o openapi.json
 
 # Roboflow spec has no servers section and no security schemes.
 # Add servers + apiKey auth in query parameter (api_key).

@@ -76,7 +76,6 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="DynamicInputDefinition" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="hasDefaultValue">
         /// Flag to decide if default value is provided for input<br/>
         /// Default Value: false
@@ -105,6 +104,7 @@ namespace Roboflow
         /// <param name="valueTypes">
         /// List of types representing union of types for static values (non selectors) that shall be accepted for input field. Empty list represents no value types allowed.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

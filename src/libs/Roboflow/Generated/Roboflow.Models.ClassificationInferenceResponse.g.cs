@@ -79,6 +79,8 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="ClassificationInferenceResponse" /> class.
         /// </summary>
+        /// <param name="image"></param>
+        /// <param name="predictions"></param>
         /// <param name="visualization">
         /// Base64 encoded string containing prediction visualization image data
         /// </param>
@@ -91,8 +93,6 @@ namespace Roboflow
         /// <param name="time">
         /// The time in seconds it took to produce the predictions including image preprocessing
         /// </param>
-        /// <param name="image"></param>
-        /// <param name="predictions"></param>
         /// <param name="top">
         /// The top predicted class label
         /// </param>
@@ -117,12 +117,12 @@ namespace Roboflow
             double? confidence,
             string? parentId)
         {
-            this.Image = image;
-            this.Predictions = predictions ?? throw new global::System.ArgumentNullException(nameof(predictions));
             this.Visualization = visualization;
             this.InferenceId = inferenceId;
             this.FrameId = frameId;
             this.Time = time;
+            this.Image = image;
+            this.Predictions = predictions ?? throw new global::System.ArgumentNullException(nameof(predictions));
             this.Top = top;
             this.Confidence = confidence;
             this.ParentId = parentId;

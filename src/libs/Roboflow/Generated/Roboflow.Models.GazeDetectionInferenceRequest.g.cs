@@ -95,6 +95,7 @@ namespace Roboflow
         /// Initializes a new instance of the <see cref="GazeDetectionInferenceRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="image"></param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
@@ -116,7 +117,6 @@ namespace Roboflow
         /// If true, face detection will be applied; if false, face detection will be ignored and the whole input image will be used for gaze detection<br/>
         /// Default Value: true
         /// </param>
-        /// <param name="image"></param>
         /// <param name="modelId"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -135,7 +135,6 @@ namespace Roboflow
             string? modelId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Image = image;
             this.ApiKey = apiKey;
             this.UsageBillable = usageBillable;
             this.Start = start;
@@ -144,6 +143,7 @@ namespace Roboflow
             this.DisableModelMonitoring = disableModelMonitoring;
             this.GazeVersionId = gazeVersionId;
             this.DoRunFaceDetection = doRunFaceDetection;
+            this.Image = image;
             this.ModelId = modelId;
         }
 

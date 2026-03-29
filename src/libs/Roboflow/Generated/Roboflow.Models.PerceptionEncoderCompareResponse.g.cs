@@ -52,6 +52,7 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="PerceptionEncoderCompareResponse" /> class.
         /// </summary>
+        /// <param name="similarity"></param>
         /// <param name="inferenceId">
         /// Unique identifier of inference
         /// </param>
@@ -61,7 +62,6 @@ namespace Roboflow
         /// <param name="time">
         /// The time in seconds it took to produce the similarity scores including preprocessing
         /// </param>
-        /// <param name="similarity"></param>
         /// <param name="parentId">
         /// Identifier of parent image region. Useful when stack of detection-models is in use to refer the RoI being the input to inference
         /// </param>
@@ -75,10 +75,10 @@ namespace Roboflow
             double? time,
             string? parentId)
         {
-            this.Similarity = similarity;
             this.InferenceId = inferenceId;
             this.FrameId = frameId;
             this.Time = time;
+            this.Similarity = similarity;
             this.ParentId = parentId;
         }
 

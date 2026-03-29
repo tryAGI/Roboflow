@@ -112,6 +112,9 @@ namespace Roboflow
         /// <param name="classId">
         /// The class id of the prediction
         /// </param>
+        /// <param name="points">
+        /// The list of points that make up the instance polygon
+        /// </param>
         /// <param name="detectionId">
         /// Unique identifier of detection
         /// </param>
@@ -120,9 +123,6 @@ namespace Roboflow
         /// </param>
         /// <param name="classConfidence">
         /// The class label confidence as a fraction between 0 and 1
-        /// </param>
-        /// <param name="points">
-        /// The list of points that make up the instance polygon
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -147,10 +147,10 @@ namespace Roboflow
             this.Confidence = confidence;
             this.Class = @class ?? throw new global::System.ArgumentNullException(nameof(@class));
             this.ClassId = classId;
-            this.Points = points ?? throw new global::System.ArgumentNullException(nameof(points));
             this.DetectionId = detectionId;
             this.ParentId = parentId;
             this.ClassConfidence = classConfidence;
+            this.Points = points ?? throw new global::System.ArgumentNullException(nameof(points));
         }
 
         /// <summary>

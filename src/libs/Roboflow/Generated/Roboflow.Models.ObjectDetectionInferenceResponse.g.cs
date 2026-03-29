@@ -58,6 +58,8 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="ObjectDetectionInferenceResponse" /> class.
         /// </summary>
+        /// <param name="image"></param>
+        /// <param name="predictions"></param>
         /// <param name="visualization">
         /// Base64 encoded string containing prediction visualization image data
         /// </param>
@@ -70,8 +72,6 @@ namespace Roboflow
         /// <param name="time">
         /// The time in seconds it took to produce the predictions including image preprocessing
         /// </param>
-        /// <param name="image"></param>
-        /// <param name="predictions"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -83,12 +83,12 @@ namespace Roboflow
             int? frameId,
             double? time)
         {
-            this.Image = image;
-            this.Predictions = predictions ?? throw new global::System.ArgumentNullException(nameof(predictions));
             this.Visualization = visualization;
             this.InferenceId = inferenceId;
             this.FrameId = frameId;
             this.Time = time;
+            this.Image = image;
+            this.Predictions = predictions ?? throw new global::System.ArgumentNullException(nameof(predictions));
         }
 
         /// <summary>

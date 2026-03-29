@@ -129,6 +129,9 @@ namespace Roboflow
         /// Initializes a new instance of the <see cref="Sam2SegmentationRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="image">
+        /// The image to be segmented.
+        /// </param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
@@ -150,9 +153,6 @@ namespace Roboflow
         /// <param name="format">
         /// The format of the response. Must be one of 'json', 'rle', or 'binary'. If binary, masks are returned as binary numpy arrays. If json, masks are converted to polygons. If rle, masks are converted to RLE format.<br/>
         /// Default Value: json
-        /// </param>
-        /// <param name="image">
-        /// The image to be segmented.
         /// </param>
         /// <param name="imageId">
         /// The ID of the image to be segmented used to retrieve cached embeddings. If an embedding is cached, it will be used instead of generating a new embedding. If no embedding is cached, a new embedding will be generated and cached.
@@ -195,7 +195,6 @@ namespace Roboflow
             bool? loadLogitsFromCache)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.ApiKey = apiKey;
             this.UsageBillable = usageBillable;
             this.Start = start;
@@ -205,6 +204,7 @@ namespace Roboflow
             this.Sam2VersionId = sam2VersionId;
             this.ModelId = modelId;
             this.Format = format;
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.ImageId = imageId;
             this.Prompts = prompts;
             this.MultimaskOutput = multimaskOutput;

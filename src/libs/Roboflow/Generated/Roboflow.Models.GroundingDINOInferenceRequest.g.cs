@@ -143,6 +143,10 @@ namespace Roboflow
         /// Initializes a new instance of the <see cref="GroundingDINOInferenceRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="image"></param>
+        /// <param name="text">
+        /// A list of strings
+        /// </param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
@@ -160,7 +164,6 @@ namespace Roboflow
         /// <param name="modelType">
         /// The type of the model, usually referring to what task the model performs
         /// </param>
-        /// <param name="image"></param>
         /// <param name="disablePreprocAutoOrient">
         /// If true, the auto orient preprocessing step is disabled for this call.<br/>
         /// Default Value: false
@@ -176,9 +179,6 @@ namespace Roboflow
         /// <param name="disablePreprocStaticCrop">
         /// If true, the static crop preprocessing step is disabled for this call.<br/>
         /// Default Value: false
-        /// </param>
-        /// <param name="text">
-        /// A list of strings
         /// </param>
         /// <param name="boxThreshold">
         /// Default Value: 0.5F
@@ -217,8 +217,6 @@ namespace Roboflow
             bool? classAgnosticNms)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Image = image;
-            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.ApiKey = apiKey;
             this.UsageBillable = usageBillable;
             this.Start = start;
@@ -227,10 +225,12 @@ namespace Roboflow
             this.DisableModelMonitoring = disableModelMonitoring;
             this.ModelId = modelId;
             this.ModelType = modelType;
+            this.Image = image;
             this.DisablePreprocAutoOrient = disablePreprocAutoOrient;
             this.DisablePreprocContrast = disablePreprocContrast;
             this.DisablePreprocGrayscale = disablePreprocGrayscale;
             this.DisablePreprocStaticCrop = disablePreprocStaticCrop;
+            this.Text = text ?? throw new global::System.ArgumentNullException(nameof(text));
             this.BoxThreshold = boxThreshold;
             this.GroundingDinoVersionId = groundingDinoVersionId;
             this.TextThreshold = textThreshold;

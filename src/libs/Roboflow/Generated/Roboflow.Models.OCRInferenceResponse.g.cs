@@ -56,14 +56,14 @@ namespace Roboflow
         /// <param name="result">
         /// The combined OCR recognition result.
         /// </param>
+        /// <param name="time">
+        /// The time in seconds it took to produce the inference including preprocessing.
+        /// </param>
         /// <param name="image">
         /// Metadata about input image dimensions
         /// </param>
         /// <param name="predictions">
         /// List of objects detected by OCR
-        /// </param>
-        /// <param name="time">
-        /// The time in seconds it took to produce the inference including preprocessing.
         /// </param>
         /// <param name="parentId">
         /// Identifier of parent image region. Useful when stack of detection-models is in use to refer the RoI being the input to inference
@@ -79,9 +79,9 @@ namespace Roboflow
             string? parentId)
         {
             this.Result = result ?? throw new global::System.ArgumentNullException(nameof(result));
-            this.Time = time;
             this.Image = image;
             this.Predictions = predictions;
+            this.Time = time;
             this.ParentId = parentId;
         }
 

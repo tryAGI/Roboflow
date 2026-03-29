@@ -133,12 +133,12 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="WebRTCWorkerRequest" /> class.
         /// </summary>
-        /// <param name="apiKey"></param>
         /// <param name="workflowConfiguration"></param>
+        /// <param name="webrtcOffer"></param>
+        /// <param name="apiKey"></param>
         /// <param name="isPreview">
         /// Default Value: false
         /// </param>
-        /// <param name="webrtcOffer"></param>
         /// <param name="webrtcConfig"></param>
         /// <param name="webrtcTurnConfig"></param>
         /// <param name="webrtcRealtimeProcessing">
@@ -184,10 +184,10 @@ namespace Roboflow
             string? workspaceId,
             string? sessionId)
         {
-            this.WorkflowConfiguration = workflowConfiguration ?? throw new global::System.ArgumentNullException(nameof(workflowConfiguration));
-            this.WebrtcOffer = webrtcOffer ?? throw new global::System.ArgumentNullException(nameof(webrtcOffer));
             this.ApiKey = apiKey;
+            this.WorkflowConfiguration = workflowConfiguration ?? throw new global::System.ArgumentNullException(nameof(workflowConfiguration));
             this.IsPreview = isPreview;
+            this.WebrtcOffer = webrtcOffer ?? throw new global::System.ArgumentNullException(nameof(webrtcOffer));
             this.WebrtcConfig = webrtcConfig;
             this.WebrtcTurnConfig = webrtcTurnConfig;
             this.WebrtcRealtimeProcessing = webrtcRealtimeProcessing;

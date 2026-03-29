@@ -72,6 +72,11 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="MultiLabelClassificationInferenceResponse" /> class.
         /// </summary>
+        /// <param name="image"></param>
+        /// <param name="predictions"></param>
+        /// <param name="predictedClasses">
+        /// The list of predicted classes
+        /// </param>
         /// <param name="visualization">
         /// Base64 encoded string containing prediction visualization image data
         /// </param>
@@ -83,11 +88,6 @@ namespace Roboflow
         /// </param>
         /// <param name="time">
         /// The time in seconds it took to produce the predictions including image preprocessing
-        /// </param>
-        /// <param name="image"></param>
-        /// <param name="predictions"></param>
-        /// <param name="predictedClasses">
-        /// The list of predicted classes
         /// </param>
         /// <param name="parentId">
         /// Identifier of parent image region. Useful when stack of detection-models is in use to refer the RoI being the input to inference
@@ -105,13 +105,13 @@ namespace Roboflow
             double? time,
             string? parentId)
         {
-            this.Image = image;
-            this.Predictions = predictions ?? throw new global::System.ArgumentNullException(nameof(predictions));
-            this.PredictedClasses = predictedClasses ?? throw new global::System.ArgumentNullException(nameof(predictedClasses));
             this.Visualization = visualization;
             this.InferenceId = inferenceId;
             this.FrameId = frameId;
             this.Time = time;
+            this.Image = image;
+            this.Predictions = predictions ?? throw new global::System.ArgumentNullException(nameof(predictions));
+            this.PredictedClasses = predictedClasses ?? throw new global::System.ArgumentNullException(nameof(predictedClasses));
             this.ParentId = parentId;
         }
 

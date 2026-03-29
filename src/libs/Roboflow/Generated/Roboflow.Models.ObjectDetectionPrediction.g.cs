@@ -117,11 +117,11 @@ namespace Roboflow
         /// <param name="class">
         /// The predicted class label
         /// </param>
-        /// <param name="classConfidence">
-        /// The class label confidence as a fraction between 0 and 1
-        /// </param>
         /// <param name="classId">
         /// The class id of the prediction
+        /// </param>
+        /// <param name="classConfidence">
+        /// The class label confidence as a fraction between 0 and 1
         /// </param>
         /// <param name="trackerId">
         /// The tracker id of the prediction if tracking is enabled
@@ -154,8 +154,8 @@ namespace Roboflow
             this.Height = height;
             this.Confidence = confidence;
             this.Class = @class ?? throw new global::System.ArgumentNullException(nameof(@class));
-            this.ClassId = classId;
             this.ClassConfidence = classConfidence;
+            this.ClassId = classId;
             this.TrackerId = trackerId;
             this.DetectionId = detectionId;
             this.ParentId = parentId;

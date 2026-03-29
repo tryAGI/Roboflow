@@ -84,6 +84,7 @@ namespace Roboflow
         /// Initializes a new instance of the <see cref="TrOCRInferenceRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="image"></param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
@@ -97,7 +98,6 @@ namespace Roboflow
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="image"></param>
         /// <param name="trocrVersionId">
         /// Default Value: trocr-base-printed
         /// </param>
@@ -118,13 +118,13 @@ namespace Roboflow
             string? modelId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Image = image;
             this.ApiKey = apiKey;
             this.UsageBillable = usageBillable;
             this.Start = start;
             this.Source = source;
             this.SourceInfo = sourceInfo;
             this.DisableModelMonitoring = disableModelMonitoring;
+            this.Image = image;
             this.TrocrVersionId = trocrVersionId;
             this.ModelId = modelId;
         }

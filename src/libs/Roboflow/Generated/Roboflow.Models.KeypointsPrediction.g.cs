@@ -115,11 +115,12 @@ namespace Roboflow
         /// <param name="class">
         /// The predicted class label
         /// </param>
-        /// <param name="classConfidence">
-        /// The class label confidence as a fraction between 0 and 1
-        /// </param>
         /// <param name="classId">
         /// The class id of the prediction
+        /// </param>
+        /// <param name="keypoints"></param>
+        /// <param name="classConfidence">
+        /// The class label confidence as a fraction between 0 and 1
         /// </param>
         /// <param name="trackerId">
         /// The tracker id of the prediction if tracking is enabled
@@ -130,7 +131,6 @@ namespace Roboflow
         /// <param name="parentId">
         /// Identifier of parent image region. Useful when stack of detection-models is in use to refer the RoI being the input to inference
         /// </param>
-        /// <param name="keypoints"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -154,12 +154,12 @@ namespace Roboflow
             this.Height = height;
             this.Confidence = confidence;
             this.Class = @class ?? throw new global::System.ArgumentNullException(nameof(@class));
-            this.ClassId = classId;
-            this.Keypoints = keypoints ?? throw new global::System.ArgumentNullException(nameof(keypoints));
             this.ClassConfidence = classConfidence;
+            this.ClassId = classId;
             this.TrackerId = trackerId;
             this.DetectionId = detectionId;
             this.ParentId = parentId;
+            this.Keypoints = keypoints ?? throw new global::System.ArgumentNullException(nameof(keypoints));
         }
 
         /// <summary>

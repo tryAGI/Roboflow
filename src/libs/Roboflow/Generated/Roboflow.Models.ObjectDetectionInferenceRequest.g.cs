@@ -205,6 +205,7 @@ namespace Roboflow
         /// Initializes a new instance of the <see cref="ObjectDetectionInferenceRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="image"></param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
@@ -225,7 +226,6 @@ namespace Roboflow
         /// <param name="modelType">
         /// The type of the model, usually referring to what task the model performs
         /// </param>
-        /// <param name="image"></param>
         /// <param name="disablePreprocAutoOrient">
         /// If true, the auto orient preprocessing step is disabled for this call.<br/>
         /// Default Value: false
@@ -320,7 +320,6 @@ namespace Roboflow
             string? activeLearningTargetDataset)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Image = image;
             this.ApiKey = apiKey;
             this.UsageBillable = usageBillable;
             this.Start = start;
@@ -329,6 +328,7 @@ namespace Roboflow
             this.DisableModelMonitoring = disableModelMonitoring;
             this.ModelId = modelId;
             this.ModelType = modelType;
+            this.Image = image;
             this.DisablePreprocAutoOrient = disablePreprocAutoOrient;
             this.DisablePreprocContrast = disablePreprocContrast;
             this.DisablePreprocGrayscale = disablePreprocGrayscale;

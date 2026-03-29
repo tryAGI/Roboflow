@@ -63,11 +63,12 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowSpecificationInferenceRequest" /> class.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="inputs">
         /// Dictionary that contains each parameter defined as an input for chosen workflow
+        /// </param>
+        /// <param name="specification"></param>
+        /// <param name="apiKey">
+        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
         /// <param name="excludedFields">
         /// List of field that shall be excluded from the response (among those defined in workflow specification)
@@ -79,7 +80,6 @@ namespace Roboflow
         /// <param name="workflowId">
         /// Optional identifier of workflow
         /// </param>
-        /// <param name="specification"></param>
         /// <param name="isPreview">
         /// Reserved, used internally by Roboflow to distinguish between preview and non-preview runs<br/>
         /// Default Value: false
@@ -96,12 +96,12 @@ namespace Roboflow
             string? workflowId,
             bool? isPreview)
         {
-            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
-            this.Specification = specification ?? throw new global::System.ArgumentNullException(nameof(specification));
             this.ApiKey = apiKey;
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.ExcludedFields = excludedFields;
             this.EnableProfiling = enableProfiling;
             this.WorkflowId = workflowId;
+            this.Specification = specification ?? throw new global::System.ArgumentNullException(nameof(specification));
             this.IsPreview = isPreview;
         }
 

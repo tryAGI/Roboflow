@@ -116,6 +116,7 @@ namespace Roboflow
         /// <param name="confidence">
         /// The detection confidence as a fraction between 0 and 1
         /// </param>
+        /// <param name="landmarks"></param>
         /// <param name="class">
         /// The predicted class label<br/>
         /// Default Value: face
@@ -136,7 +137,6 @@ namespace Roboflow
         /// <param name="parentId">
         /// Identifier of parent image region. Useful when stack of detection-models is in use to refer the RoI being the input to inference
         /// </param>
-        /// <param name="landmarks"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -159,13 +159,13 @@ namespace Roboflow
             this.Width = width;
             this.Height = height;
             this.Confidence = confidence;
-            this.Landmarks = landmarks;
             this.Class = @class;
             this.ClassConfidence = classConfidence;
             this.ClassId = classId;
             this.TrackerId = trackerId;
             this.DetectionId = detectionId;
             this.ParentId = parentId;
+            this.Landmarks = landmarks;
         }
 
         /// <summary>

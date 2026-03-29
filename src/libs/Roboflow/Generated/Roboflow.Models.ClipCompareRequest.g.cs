@@ -110,6 +110,10 @@ namespace Roboflow
         /// Initializes a new instance of the <see cref="ClipCompareRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="subject">
+        /// The type of image data provided, one of 'url' or 'base64'
+        /// </param>
+        /// <param name="prompt"></param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
@@ -128,14 +132,10 @@ namespace Roboflow
         /// Default Value: ViT-B-16
         /// </param>
         /// <param name="modelId"></param>
-        /// <param name="subject">
-        /// The type of image data provided, one of 'url' or 'base64'
-        /// </param>
         /// <param name="subjectType">
         /// The type of subject, one of 'image' or 'text'<br/>
         /// Default Value: image
         /// </param>
-        /// <param name="prompt"></param>
         /// <param name="promptType">
         /// The type of prompt, one of 'image' or 'text'<br/>
         /// Default Value: text
@@ -159,8 +159,6 @@ namespace Roboflow
             string? promptType)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Subject = subject;
-            this.Prompt = prompt;
             this.ApiKey = apiKey;
             this.UsageBillable = usageBillable;
             this.Start = start;
@@ -169,7 +167,9 @@ namespace Roboflow
             this.DisableModelMonitoring = disableModelMonitoring;
             this.ClipVersionId = clipVersionId;
             this.ModelId = modelId;
+            this.Subject = subject;
             this.SubjectType = subjectType;
+            this.Prompt = prompt;
             this.PromptType = promptType;
         }
 

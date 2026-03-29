@@ -109,20 +109,20 @@ namespace Roboflow
         /// <param name="manifestTypeIdentifier">
         /// Field holds value that is used to recognise block manifest while parsing `workflow` JSON definition.
         /// </param>
+        /// <param name="inputDimensionalityOffsets">
+        /// Dimensionality offsets for input parameters
+        /// </param>
+        /// <param name="outputDimensionalityOffset">
+        /// Dimensionality offset for block output.
+        /// </param>
         /// <param name="manifestTypeIdentifierAliases">
         /// Aliases of `manifest_type_identifier` that are in use.
         /// </param>
         /// <param name="executionEngineCompatibility">
         /// Execution Engine versions compatible with block.
         /// </param>
-        /// <param name="inputDimensionalityOffsets">
-        /// Dimensionality offsets for input parameters
-        /// </param>
         /// <param name="dimensionalityReferenceProperty">
         /// Selected dimensionality reference property provided if different dimensionality for different inputs are supported.
-        /// </param>
-        /// <param name="outputDimensionalityOffset">
-        /// Dimensionality offset for block output.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -146,11 +146,11 @@ namespace Roboflow
             this.FullyQualifiedBlockClassName = fullyQualifiedBlockClassName ?? throw new global::System.ArgumentNullException(nameof(fullyQualifiedBlockClassName));
             this.HumanFriendlyBlockName = humanFriendlyBlockName ?? throw new global::System.ArgumentNullException(nameof(humanFriendlyBlockName));
             this.ManifestTypeIdentifier = manifestTypeIdentifier ?? throw new global::System.ArgumentNullException(nameof(manifestTypeIdentifier));
-            this.InputDimensionalityOffsets = inputDimensionalityOffsets ?? throw new global::System.ArgumentNullException(nameof(inputDimensionalityOffsets));
-            this.OutputDimensionalityOffset = outputDimensionalityOffset;
             this.ManifestTypeIdentifierAliases = manifestTypeIdentifierAliases;
             this.ExecutionEngineCompatibility = executionEngineCompatibility;
+            this.InputDimensionalityOffsets = inputDimensionalityOffsets ?? throw new global::System.ArgumentNullException(nameof(inputDimensionalityOffsets));
             this.DimensionalityReferenceProperty = dimensionalityReferenceProperty;
+            this.OutputDimensionalityOffset = outputDimensionalityOffset;
         }
 
         /// <summary>

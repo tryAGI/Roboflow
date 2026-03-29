@@ -122,6 +122,12 @@ namespace Roboflow
         /// Initializes a new instance of the <see cref="Sam33dObjectsInferenceRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="image">
+        /// The input image to be used for 3D generation.
+        /// </param>
+        /// <param name="maskInput">
+        /// Mask input in any supported format: polygon [x1,y1,x2,y2,...], binary mask (base64), RLE dict, or list of these.
+        /// </param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
@@ -134,12 +140,6 @@ namespace Roboflow
         /// <param name="disableModelMonitoring">
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
-        /// </param>
-        /// <param name="image">
-        /// The input image to be used for 3D generation.
-        /// </param>
-        /// <param name="maskInput">
-        /// Mask input in any supported format: polygon [x1,y1,x2,y2,...], binary mask (base64), RLE dict, or list of these.
         /// </param>
         /// <param name="modelId">
         /// The model ID for SAM3_3D.<br/>
@@ -186,14 +186,14 @@ namespace Roboflow
             bool? useDistillations)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
-            this.MaskInput = maskInput ?? throw new global::System.ArgumentNullException(nameof(maskInput));
             this.ApiKey = apiKey;
             this.UsageBillable = usageBillable;
             this.Start = start;
             this.Source = source;
             this.SourceInfo = sourceInfo;
             this.DisableModelMonitoring = disableModelMonitoring;
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
+            this.MaskInput = maskInput ?? throw new global::System.ArgumentNullException(nameof(maskInput));
             this.ModelId = modelId;
             this.OutputMeshes = outputMeshes;
             this.OutputScene = outputScene;

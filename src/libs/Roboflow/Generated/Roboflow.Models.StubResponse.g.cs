@@ -62,6 +62,15 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="StubResponse" /> class.
         /// </summary>
+        /// <param name="isStub">
+        /// Field to mark prediction type as stub
+        /// </param>
+        /// <param name="modelId">
+        /// Identifier of a model stub that was called
+        /// </param>
+        /// <param name="taskType">
+        /// Task type of the project
+        /// </param>
         /// <param name="visualization">
         /// Base64 encoded string containing prediction visualization image data
         /// </param>
@@ -73,15 +82,6 @@ namespace Roboflow
         /// </param>
         /// <param name="time">
         /// The time in seconds it took to produce the predictions including image preprocessing
-        /// </param>
-        /// <param name="isStub">
-        /// Field to mark prediction type as stub
-        /// </param>
-        /// <param name="modelId">
-        /// Identifier of a model stub that was called
-        /// </param>
-        /// <param name="taskType">
-        /// Task type of the project
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -95,13 +95,13 @@ namespace Roboflow
             int? frameId,
             double? time)
         {
-            this.IsStub = isStub;
-            this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
-            this.TaskType = taskType ?? throw new global::System.ArgumentNullException(nameof(taskType));
             this.Visualization = visualization;
             this.InferenceId = inferenceId;
             this.FrameId = frameId;
             this.Time = time;
+            this.IsStub = isStub;
+            this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
+            this.TaskType = taskType ?? throw new global::System.ArgumentNullException(nameof(taskType));
         }
 
         /// <summary>

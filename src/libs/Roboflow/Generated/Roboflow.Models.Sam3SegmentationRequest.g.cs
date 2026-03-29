@@ -109,6 +109,12 @@ namespace Roboflow
         /// Initializes a new instance of the <see cref="Sam3SegmentationRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="image">
+        /// The image to be segmented.
+        /// </param>
+        /// <param name="prompts">
+        /// List of prompts (text and/or visual)
+        /// </param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
@@ -130,18 +136,12 @@ namespace Roboflow
         /// One of 'polygon', 'rle'<br/>
         /// Default Value: polygon
         /// </param>
-        /// <param name="image">
-        /// The image to be segmented.
-        /// </param>
         /// <param name="imageId">
         /// Optional ID for caching embeddings.
         /// </param>
         /// <param name="outputProbThresh">
         /// Score threshold for outputs.<br/>
         /// Default Value: 0.5F
-        /// </param>
-        /// <param name="prompts">
-        /// List of prompts (text and/or visual)
         /// </param>
         /// <param name="nmsIouThreshold">
         /// IoU threshold for cross-prompt NMS. If None, NMS is disabled. Must be in [0.0, 1.0] when set.
@@ -166,8 +166,6 @@ namespace Roboflow
             double? nmsIouThreshold)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
-            this.Prompts = prompts ?? throw new global::System.ArgumentNullException(nameof(prompts));
             this.ApiKey = apiKey;
             this.UsageBillable = usageBillable;
             this.Start = start;
@@ -176,8 +174,10 @@ namespace Roboflow
             this.DisableModelMonitoring = disableModelMonitoring;
             this.ModelId = modelId;
             this.Format = format;
+            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.ImageId = imageId;
             this.OutputProbThresh = outputProbThresh;
+            this.Prompts = prompts ?? throw new global::System.ArgumentNullException(nameof(prompts));
             this.NmsIouThreshold = nmsIouThreshold;
         }
 

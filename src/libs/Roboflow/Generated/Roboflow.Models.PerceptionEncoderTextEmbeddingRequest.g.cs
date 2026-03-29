@@ -85,6 +85,9 @@ namespace Roboflow
         /// Initializes a new instance of the <see cref="PerceptionEncoderTextEmbeddingRequest" /> class.
         /// </summary>
         /// <param name="id"></param>
+        /// <param name="text">
+        /// A string or list of strings
+        /// </param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
@@ -103,9 +106,6 @@ namespace Roboflow
         /// Default Value: PE-Core-L14-336
         /// </param>
         /// <param name="modelId"></param>
-        /// <param name="text">
-        /// A string or list of strings
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -122,7 +122,6 @@ namespace Roboflow
             string? modelId)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
-            this.Text = text;
             this.ApiKey = apiKey;
             this.UsageBillable = usageBillable;
             this.Start = start;
@@ -131,6 +130,7 @@ namespace Roboflow
             this.DisableModelMonitoring = disableModelMonitoring;
             this.PerceptionEncoderVersionId = perceptionEncoderVersionId;
             this.ModelId = modelId;
+            this.Text = text;
         }
 
         /// <summary>

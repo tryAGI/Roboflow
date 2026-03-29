@@ -38,13 +38,13 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="DynamicBlockDefinition" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="manifest">
         /// Definition of manifest for dynamic block to be created in runtime by workflows execution engine.
         /// </param>
         /// <param name="code">
         /// Code to be executed in run(...) method of block that will be dynamically created.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -53,9 +53,9 @@ namespace Roboflow
             global::Roboflow.PythonCode code,
             string type = "DynamicBlockDefinition")
         {
+            this.Type = type;
             this.Manifest = manifest ?? throw new global::System.ArgumentNullException(nameof(manifest));
             this.Code = code ?? throw new global::System.ArgumentNullException(nameof(code));
-            this.Type = type;
         }
 
         /// <summary>

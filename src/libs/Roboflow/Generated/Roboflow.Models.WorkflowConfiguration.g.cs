@@ -78,7 +78,6 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowConfiguration" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="workflowSpecification"></param>
         /// <param name="workspaceName"></param>
         /// <param name="workflowId"></param>
@@ -96,6 +95,7 @@ namespace Roboflow
         /// <param name="videoMetadataInputName">
         /// Default Value: video_metadata
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif

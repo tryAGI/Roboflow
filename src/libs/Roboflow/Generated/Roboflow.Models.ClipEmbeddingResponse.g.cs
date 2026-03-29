@@ -45,6 +45,9 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="ClipEmbeddingResponse" /> class.
         /// </summary>
+        /// <param name="embeddings">
+        /// A list of embeddings, each embedding is a list of floats
+        /// </param>
         /// <param name="inferenceId">
         /// Unique identifier of inference
         /// </param>
@@ -53,9 +56,6 @@ namespace Roboflow
         /// </param>
         /// <param name="time">
         /// The time in seconds it took to produce the embeddings including preprocessing
-        /// </param>
-        /// <param name="embeddings">
-        /// A list of embeddings, each embedding is a list of floats
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -66,10 +66,10 @@ namespace Roboflow
             int? frameId,
             double? time)
         {
-            this.Embeddings = embeddings ?? throw new global::System.ArgumentNullException(nameof(embeddings));
             this.InferenceId = inferenceId;
             this.FrameId = frameId;
             this.Time = time;
+            this.Embeddings = embeddings ?? throw new global::System.ArgumentNullException(nameof(embeddings));
         }
 
         /// <summary>

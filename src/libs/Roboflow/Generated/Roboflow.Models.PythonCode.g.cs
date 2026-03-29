@@ -57,7 +57,6 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="PythonCode" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="runFunctionCode">
         /// Code of python function. Content should be properly formatted including indentations. Workflows execution engine is to create dynamic module with provided function - ensuring imports of the following symbols: [Any, List, Dict, Set, sv, np, math, time, json, os, requests, cv2, shapely, Batch, WorkflowImageData, BlockResult]. Expected signature is: def run(self, ... # parameters of manifest apart from name and type). Through self, one may access self._init_results which is dict returned by `init_code` if given.
         /// </param>
@@ -75,6 +74,7 @@ namespace Roboflow
         /// <param name="imports">
         /// List of additional imports required to run the code
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -86,8 +86,8 @@ namespace Roboflow
             global::System.Collections.Generic.IList<string>? imports,
             string type = "PythonCode")
         {
-            this.RunFunctionCode = runFunctionCode ?? throw new global::System.ArgumentNullException(nameof(runFunctionCode));
             this.Type = type;
+            this.RunFunctionCode = runFunctionCode ?? throw new global::System.ArgumentNullException(nameof(runFunctionCode));
             this.RunFunctionName = runFunctionName;
             this.InitFunctionCode = initFunctionCode;
             this.InitFunctionName = initFunctionName;

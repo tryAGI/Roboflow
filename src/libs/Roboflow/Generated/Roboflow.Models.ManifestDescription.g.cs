@@ -95,15 +95,14 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="ManifestDescription" /> class.
         /// </summary>
-        /// <param name="type"></param>
         /// <param name="blockType">
         /// Field holds type of the bock to be dynamically created. Block can be initialised as step using the type declared in the field.
         /// </param>
-        /// <param name="description">
-        /// Description of the block to be used in manifest
-        /// </param>
         /// <param name="inputs">
         /// Mapping name -&gt; input definition for block inputs (parameters for run() function ofdynamic block)
+        /// </param>
+        /// <param name="description">
+        /// Description of the block to be used in manifest
         /// </param>
         /// <param name="outputs">
         /// Mapping name -&gt; output kind for block outputs.
@@ -132,6 +131,7 @@ namespace Roboflow
         /// <param name="getParametersEnforcingAutoBatchCasting">
         /// List of parameters, for which auto-batch casting should be enforced, making sure that the block run(...) method will always receive the parameters as batches, not scalars. This property is important for blocks decreasing output dimensionality which do not define neither `batch_oriented_parameters` nor `parameters_with_scalars_and_batches`.
         /// </param>
+        /// <param name="type"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -149,10 +149,10 @@ namespace Roboflow
             global::System.Collections.Generic.IList<string>? getParametersEnforcingAutoBatchCasting,
             string type = "ManifestDescription")
         {
-            this.BlockType = blockType ?? throw new global::System.ArgumentNullException(nameof(blockType));
-            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.Type = type;
+            this.BlockType = blockType ?? throw new global::System.ArgumentNullException(nameof(blockType));
             this.Description = description;
+            this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.Outputs = outputs;
             this.OutputDimensionalityOffset = outputDimensionalityOffset;
             this.UiManifest = uiManifest;

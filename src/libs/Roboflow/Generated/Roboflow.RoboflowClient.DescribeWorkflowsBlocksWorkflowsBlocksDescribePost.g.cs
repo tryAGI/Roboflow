@@ -7,10 +7,12 @@ namespace Roboflow
     {
         partial void PrepareDescribeWorkflowsBlocksWorkflowsBlocksDescribePostArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref bool? airGapped,
             global::Roboflow.DescribeBlocksRequest request);
         partial void PrepareDescribeWorkflowsBlocksWorkflowsBlocksDescribePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            bool? airGapped,
             global::Roboflow.DescribeBlocksRequest request);
         partial void ProcessDescribeWorkflowsBlocksWorkflowsBlocksDescribePostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -25,6 +27,9 @@ namespace Roboflow
         /// [EXPERIMENTAL] Endpoint to get definition of workflows blocks that are accessible<br/>
         /// Endpoint provides detailed information about workflows building blocks that are accessible in the inference server. This information could be used to programmatically build / display workflows. Additionally - in request body one can specify list of dynamic blocks definitions which will be transformed into blocks and used to generate schemas and definitions of connections
         /// </summary>
+        /// <param name="airGapped">
+        /// Default Value: false
+        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -34,6 +39,7 @@ namespace Roboflow
         public async global::System.Threading.Tasks.Task<global::Roboflow.WorkflowsBlocksDescription> DescribeWorkflowsBlocksWorkflowsBlocksDescribePostAsync(
 
             global::Roboflow.DescribeBlocksRequest request,
+            bool? airGapped = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -42,6 +48,7 @@ namespace Roboflow
                 client: HttpClient);
             PrepareDescribeWorkflowsBlocksWorkflowsBlocksDescribePostArguments(
                 httpClient: HttpClient,
+                airGapped: ref airGapped,
                 request: request);
 
             var __pathBuilder = new global::Roboflow.PathBuilder(
@@ -55,6 +62,9 @@ namespace Roboflow
                     __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                 }
             } 
+            __pathBuilder
+                .AddOptionalParameter("air_gapped", airGapped?.ToString().ToLowerInvariant()) 
+                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -76,6 +86,7 @@ namespace Roboflow
             PrepareDescribeWorkflowsBlocksWorkflowsBlocksDescribePostRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
+                airGapped: airGapped,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -217,12 +228,16 @@ namespace Roboflow
         /// [EXPERIMENTAL] Endpoint to get definition of workflows blocks that are accessible<br/>
         /// Endpoint provides detailed information about workflows building blocks that are accessible in the inference server. This information could be used to programmatically build / display workflows. Additionally - in request body one can specify list of dynamic blocks definitions which will be transformed into blocks and used to generate schemas and definitions of connections
         /// </summary>
+        /// <param name="airGapped">
+        /// Default Value: false
+        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "ROBOFLOW_EXPERIMENTAL_001")]
 #endif
         public async global::System.Threading.Tasks.Task<global::Roboflow.WorkflowsBlocksDescription> DescribeWorkflowsBlocksWorkflowsBlocksDescribePostAsync(
+            bool? airGapped = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new global::Roboflow.DescribeBlocksRequest
@@ -230,6 +245,7 @@ namespace Roboflow
             };
 
             return await DescribeWorkflowsBlocksWorkflowsBlocksDescribePostAsync(
+                airGapped: airGapped,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -307,6 +307,7 @@ namespace Roboflow
             bool? useDistillations = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Roboflow.Sam33dObjectsInferenceRequest
             {
                 Id = id,

@@ -296,6 +296,7 @@ namespace Roboflow
             string? promptType = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Roboflow.PerceptionEncoderCompareRequest
             {
                 Id = id,

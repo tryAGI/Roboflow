@@ -282,6 +282,7 @@ namespace Roboflow
             string? modelId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Roboflow.ClipImageEmbeddingRequest
             {
                 Id = id,

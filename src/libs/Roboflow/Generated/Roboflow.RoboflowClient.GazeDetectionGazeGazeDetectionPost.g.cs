@@ -287,7 +287,6 @@ namespace Roboflow
             string? modelId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Roboflow.GazeDetectionInferenceRequest
             {
                 Id = id,

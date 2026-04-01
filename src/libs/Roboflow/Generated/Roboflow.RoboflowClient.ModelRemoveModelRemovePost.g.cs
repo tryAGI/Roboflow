@@ -224,7 +224,6 @@ namespace Roboflow
             string modelId,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Roboflow.ClearModelRequest
             {
                 ModelId = modelId,

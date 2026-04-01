@@ -247,7 +247,6 @@ namespace Roboflow
             bool? isPreview = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Roboflow.WorkflowSpecificationInferenceRequest
             {
                 ApiKey = apiKey,

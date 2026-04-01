@@ -304,7 +304,6 @@ namespace Roboflow
             double? nmsIouThreshold = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Roboflow.Sam3SegmentationRequest
             {
                 Id = id,

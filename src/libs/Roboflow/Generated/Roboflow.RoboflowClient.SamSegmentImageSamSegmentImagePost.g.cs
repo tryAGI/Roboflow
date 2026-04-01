@@ -335,6 +335,7 @@ namespace Roboflow
             bool? useMaskInputCache = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Roboflow.SamSegmentationRequest
             {
                 Id = id,

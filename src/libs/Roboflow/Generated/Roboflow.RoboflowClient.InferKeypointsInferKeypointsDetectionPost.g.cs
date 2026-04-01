@@ -354,6 +354,7 @@ namespace Roboflow
             double? keypointConfidence = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Roboflow.KeypointsDetectionInferenceRequest
             {
                 Id = id,

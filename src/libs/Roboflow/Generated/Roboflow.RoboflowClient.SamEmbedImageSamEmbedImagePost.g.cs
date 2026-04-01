@@ -293,6 +293,7 @@ namespace Roboflow
             string? format = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Roboflow.SamEmbeddingRequest
             {
                 Id = id,

@@ -285,6 +285,7 @@ namespace Roboflow
             bool? generateBoundingBoxes = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+
             var __request = new global::Roboflow.DoctrOCRInferenceRequest
             {
                 Id = id,

@@ -313,7 +313,6 @@ namespace Roboflow
             double? confidence = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Roboflow.YOLOWorldInferenceRequest
             {
                 Id = id,

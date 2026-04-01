@@ -221,7 +221,6 @@ namespace Roboflow
             string apiKey,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Roboflow.WebRTCSessionHeartbeatRequest
             {
                 SessionId = sessionId,

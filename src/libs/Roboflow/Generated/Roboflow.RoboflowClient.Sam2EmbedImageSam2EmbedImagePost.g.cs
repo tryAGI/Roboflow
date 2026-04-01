@@ -288,7 +288,6 @@ namespace Roboflow
             string? imageId = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Roboflow.Sam2EmbeddingRequest
             {
                 Id = id,

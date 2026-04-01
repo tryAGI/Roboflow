@@ -313,7 +313,6 @@ namespace Roboflow
             bool? loadLogitsFromCache = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::Roboflow.Sam2SegmentationRequest
             {
                 Id = id,

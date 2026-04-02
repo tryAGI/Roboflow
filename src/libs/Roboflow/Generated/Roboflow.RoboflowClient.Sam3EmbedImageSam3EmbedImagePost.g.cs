@@ -7,14 +7,12 @@ namespace Roboflow
     {
         partial void PrepareSam3EmbedImageSam3EmbedImagePostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? apiKey,
             bool? countinference,
             ref string? serviceSecret,
             global::Roboflow.Sam2EmbeddingRequest request);
         partial void PrepareSam3EmbedImageSam3EmbedImagePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? apiKey,
             bool? countinference,
             string? serviceSecret,
             global::Roboflow.Sam2EmbeddingRequest request);
@@ -31,9 +29,6 @@ namespace Roboflow
         /// Seg preview Image Embeddings<br/>
         /// Run the  Model to embed image data.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
@@ -42,7 +37,6 @@ namespace Roboflow
         public async global::System.Threading.Tasks.Task<global::Roboflow.Sam3EmbeddingResponse> Sam3EmbedImageSam3EmbedImagePostAsync(
 
             global::Roboflow.Sam2EmbeddingRequest request,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -53,7 +47,6 @@ namespace Roboflow
                 client: HttpClient);
             PrepareSam3EmbedImageSam3EmbedImagePostArguments(
                 httpClient: HttpClient,
-                apiKey: ref apiKey,
                 countinference: countinference,
                 serviceSecret: ref serviceSecret,
                 request: request);
@@ -70,7 +63,6 @@ namespace Roboflow
                 }
             } 
             __pathBuilder
-                .AddOptionalParameter("api_key", apiKey)
                 .AddOptionalParameter("countinference", countinference?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("service_secret", serviceSecret) 
                 ; 
@@ -95,7 +87,6 @@ namespace Roboflow
             PrepareSam3EmbedImageSam3EmbedImagePostRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                apiKey: apiKey,
                 countinference: countinference,
                 serviceSecret: serviceSecret,
                 request: request);
@@ -239,13 +230,10 @@ namespace Roboflow
         /// Seg preview Image Embeddings<br/>
         /// Run the  Model to embed image data.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
-        /// <param name="requestApiKey">
+        /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
         /// <param name="usageBillable">
@@ -273,10 +261,9 @@ namespace Roboflow
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::Roboflow.Sam3EmbeddingResponse> Sam3EmbedImageSam3EmbedImagePostAsync(
             string id,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
-            string? requestApiKey = default,
+            string? apiKey = default,
             bool? usageBillable = default,
             double? start = default,
             string? source = default,
@@ -291,7 +278,7 @@ namespace Roboflow
             var __request = new global::Roboflow.Sam2EmbeddingRequest
             {
                 Id = id,
-                ApiKey = requestApiKey,
+                ApiKey = apiKey,
                 UsageBillable = usageBillable,
                 Start = start,
                 Source = source,
@@ -304,7 +291,6 @@ namespace Roboflow
             };
 
             return await Sam3EmbedImageSam3EmbedImagePostAsync(
-                apiKey: apiKey,
                 countinference: countinference,
                 serviceSecret: serviceSecret,
                 request: __request,

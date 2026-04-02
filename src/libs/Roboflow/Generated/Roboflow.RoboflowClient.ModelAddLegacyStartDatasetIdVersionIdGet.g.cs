@@ -9,7 +9,6 @@ namespace Roboflow
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
             ref string versionId,
-            ref string? apiKey,
             bool? countinference,
             ref string? serviceSecret);
         partial void PrepareModelAddLegacyStartDatasetIdVersionIdGetRequest(
@@ -17,7 +16,6 @@ namespace Roboflow
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
             string versionId,
-            string? apiKey,
             bool? countinference,
             string? serviceSecret);
         partial void ProcessModelAddLegacyStartDatasetIdVersionIdGetResponse(
@@ -44,7 +42,6 @@ namespace Roboflow
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="versionId"></param>
-        /// <param name="apiKey"></param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -52,7 +49,6 @@ namespace Roboflow
         public async global::System.Threading.Tasks.Task<string> ModelAddLegacyStartDatasetIdVersionIdGetAsync(
             string datasetId,
             string versionId,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -63,7 +59,6 @@ namespace Roboflow
                 httpClient: HttpClient,
                 datasetId: ref datasetId,
                 versionId: ref versionId,
-                apiKey: ref apiKey,
                 countinference: countinference,
                 serviceSecret: ref serviceSecret);
 
@@ -79,7 +74,6 @@ namespace Roboflow
                 }
             } 
             __pathBuilder
-                .AddOptionalParameter("api_key", apiKey)
                 .AddOptionalParameter("countinference", countinference?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("service_secret", serviceSecret) 
                 ; 
@@ -100,7 +94,6 @@ namespace Roboflow
                 httpRequestMessage: __httpRequest,
                 datasetId: datasetId,
                 versionId: versionId,
-                apiKey: apiKey,
                 countinference: countinference,
                 serviceSecret: serviceSecret);
 

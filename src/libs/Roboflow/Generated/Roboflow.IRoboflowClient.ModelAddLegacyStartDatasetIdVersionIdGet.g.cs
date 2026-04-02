@@ -19,7 +19,6 @@ namespace Roboflow
         /// </summary>
         /// <param name="datasetId"></param>
         /// <param name="versionId"></param>
-        /// <param name="apiKey"></param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -27,7 +26,6 @@ namespace Roboflow
         global::System.Threading.Tasks.Task<string> ModelAddLegacyStartDatasetIdVersionIdGetAsync(
             string datasetId,
             string versionId,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default);

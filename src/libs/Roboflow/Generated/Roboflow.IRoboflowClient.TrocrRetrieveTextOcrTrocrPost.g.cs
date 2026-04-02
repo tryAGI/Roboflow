@@ -8,9 +8,6 @@ namespace Roboflow
         /// TrOCR OCR response<br/>
         /// Run the TrOCR model to retrieve text in an image.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
@@ -19,7 +16,6 @@ namespace Roboflow
         global::System.Threading.Tasks.Task<global::Roboflow.OCRInferenceResponse> TrocrRetrieveTextOcrTrocrPostAsync(
 
             global::Roboflow.TrOCRInferenceRequest request,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -27,13 +23,10 @@ namespace Roboflow
         /// TrOCR OCR response<br/>
         /// Run the TrOCR model to retrieve text in an image.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
-        /// <param name="requestApiKey">
+        /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
         /// <param name="usageBillable">
@@ -56,10 +49,9 @@ namespace Roboflow
         global::System.Threading.Tasks.Task<global::Roboflow.OCRInferenceResponse> TrocrRetrieveTextOcrTrocrPostAsync(
             string id,
             global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage> image,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
-            string? requestApiKey = default,
+            string? apiKey = default,
             bool? usageBillable = default,
             double? start = default,
             string? source = default,

@@ -8,9 +8,6 @@ namespace Roboflow
         /// SAM3 PCS (promptable concept segmentation)<br/>
         /// Run the SAM3 PCS (promptable concept segmentation) to generate segmentations for image data.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
@@ -19,7 +16,6 @@ namespace Roboflow
         global::System.Threading.Tasks.Task<global::Roboflow.Sam3SegmentationResponse> Sam3SegmentImageSam3ConceptSegmentPostAsync(
 
             global::Roboflow.Sam3SegmentationRequest request,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -27,13 +23,10 @@ namespace Roboflow
         /// SAM3 PCS (promptable concept segmentation)<br/>
         /// Run the SAM3 PCS (promptable concept segmentation) to generate segmentations for image data.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
-        /// <param name="requestApiKey">
+        /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
         /// <param name="usageBillable">
@@ -76,10 +69,9 @@ namespace Roboflow
             string id,
             global::Roboflow.InferenceRequestImage image,
             global::System.Collections.Generic.IList<global::Roboflow.Sam3Prompt> prompts,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
-            string? requestApiKey = default,
+            string? apiKey = default,
             bool? usageBillable = default,
             double? start = default,
             string? source = default,

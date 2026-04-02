@@ -7,12 +7,10 @@ namespace Roboflow
     {
         partial void PrepareValidateWorkflowWorkflowsValidatePostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? apiKey,
             object request);
         partial void PrepareValidateWorkflowWorkflowsValidatePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? apiKey,
             object request);
         partial void ProcessValidateWorkflowWorkflowsValidatePostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -27,9 +25,6 @@ namespace Roboflow
         /// [EXPERIMENTAL] Endpoint to validate<br/>
         /// Endpoint provides a way to check validity of JSON workflow definition.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -39,7 +34,6 @@ namespace Roboflow
         public async global::System.Threading.Tasks.Task<global::Roboflow.WorkflowValidationStatus> ValidateWorkflowWorkflowsValidatePostAsync(
 
             object request,
-            string? apiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
@@ -48,7 +42,6 @@ namespace Roboflow
                 client: HttpClient);
             PrepareValidateWorkflowWorkflowsValidatePostArguments(
                 httpClient: HttpClient,
-                apiKey: ref apiKey,
                 request: request);
 
             var __pathBuilder = new global::Roboflow.PathBuilder(
@@ -62,9 +55,6 @@ namespace Roboflow
                     __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                 }
             } 
-            __pathBuilder
-                .AddOptionalParameter("api_key", apiKey) 
-                ; 
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -86,7 +76,6 @@ namespace Roboflow
             PrepareValidateWorkflowWorkflowsValidatePostRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                apiKey: apiKey,
                 request: request);
 
             using var __response = await HttpClient.SendAsync(
@@ -228,16 +217,12 @@ namespace Roboflow
         /// [EXPERIMENTAL] Endpoint to validate<br/>
         /// Endpoint provides a way to check validity of JSON workflow definition.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
 #if NET8_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.Experimental(diagnosticId: "ROBOFLOW_EXPERIMENTAL_001")]
 #endif
         public async global::System.Threading.Tasks.Task<global::Roboflow.WorkflowValidationStatus> ValidateWorkflowWorkflowsValidatePostAsync(
-            string? apiKey = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __request = new object
@@ -245,7 +230,6 @@ namespace Roboflow
             };
 
             return await ValidateWorkflowWorkflowsValidatePostAsync(
-                apiKey: apiKey,
                 request: __request,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
         }

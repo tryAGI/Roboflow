@@ -7,14 +7,12 @@ namespace Roboflow
     {
         partial void PrepareClipCompareClipComparePostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? apiKey,
             bool? countinference,
             ref string? serviceSecret,
             global::Roboflow.ClipCompareRequest request);
         partial void PrepareClipCompareClipComparePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? apiKey,
             bool? countinference,
             string? serviceSecret,
             global::Roboflow.ClipCompareRequest request);
@@ -31,9 +29,6 @@ namespace Roboflow
         /// CLIP Compare<br/>
         /// Run the Open AI CLIP model to compute similarity scores.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
@@ -42,7 +37,6 @@ namespace Roboflow
         public async global::System.Threading.Tasks.Task<global::Roboflow.ClipCompareResponse> ClipCompareClipComparePostAsync(
 
             global::Roboflow.ClipCompareRequest request,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -53,7 +47,6 @@ namespace Roboflow
                 client: HttpClient);
             PrepareClipCompareClipComparePostArguments(
                 httpClient: HttpClient,
-                apiKey: ref apiKey,
                 countinference: countinference,
                 serviceSecret: ref serviceSecret,
                 request: request);
@@ -70,7 +63,6 @@ namespace Roboflow
                 }
             } 
             __pathBuilder
-                .AddOptionalParameter("api_key", apiKey)
                 .AddOptionalParameter("countinference", countinference?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("service_secret", serviceSecret) 
                 ; 
@@ -95,7 +87,6 @@ namespace Roboflow
             PrepareClipCompareClipComparePostRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                apiKey: apiKey,
                 countinference: countinference,
                 serviceSecret: serviceSecret,
                 request: request);
@@ -239,13 +230,10 @@ namespace Roboflow
         /// CLIP Compare<br/>
         /// Run the Open AI CLIP model to compute similarity scores.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
-        /// <param name="requestApiKey">
+        /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
         /// <param name="usageBillable">
@@ -281,10 +269,9 @@ namespace Roboflow
             string id,
             global::Roboflow.AnyOf<global::Roboflow.InferenceRequestImage, string> subject,
             global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage, string, global::System.Collections.Generic.IList<string>, object> prompt,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
-            string? requestApiKey = default,
+            string? apiKey = default,
             bool? usageBillable = default,
             double? start = default,
             string? source = default,
@@ -299,7 +286,7 @@ namespace Roboflow
             var __request = new global::Roboflow.ClipCompareRequest
             {
                 Id = id,
-                ApiKey = requestApiKey,
+                ApiKey = apiKey,
                 UsageBillable = usageBillable,
                 Start = start,
                 Source = source,
@@ -314,7 +301,6 @@ namespace Roboflow
             };
 
             return await ClipCompareClipComparePostAsync(
-                apiKey: apiKey,
                 countinference: countinference,
                 serviceSecret: serviceSecret,
                 request: __request,

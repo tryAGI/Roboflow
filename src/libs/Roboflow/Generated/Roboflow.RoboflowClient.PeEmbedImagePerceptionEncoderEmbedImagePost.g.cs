@@ -7,14 +7,12 @@ namespace Roboflow
     {
         partial void PreparePeEmbedImagePerceptionEncoderEmbedImagePostArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string? apiKey,
             bool? countinference,
             ref string? serviceSecret,
             global::Roboflow.PerceptionEncoderImageEmbeddingRequest request);
         partial void PreparePeEmbedImagePerceptionEncoderEmbedImagePostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string? apiKey,
             bool? countinference,
             string? serviceSecret,
             global::Roboflow.PerceptionEncoderImageEmbeddingRequest request);
@@ -31,9 +29,6 @@ namespace Roboflow
         /// PE Image Embeddings<br/>
         /// Run the Meta Perception Encoder model to embed image data.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
@@ -42,7 +37,6 @@ namespace Roboflow
         public async global::System.Threading.Tasks.Task<global::Roboflow.PerceptionEncoderEmbeddingResponse> PeEmbedImagePerceptionEncoderEmbedImagePostAsync(
 
             global::Roboflow.PerceptionEncoderImageEmbeddingRequest request,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -53,7 +47,6 @@ namespace Roboflow
                 client: HttpClient);
             PreparePeEmbedImagePerceptionEncoderEmbedImagePostArguments(
                 httpClient: HttpClient,
-                apiKey: ref apiKey,
                 countinference: countinference,
                 serviceSecret: ref serviceSecret,
                 request: request);
@@ -70,7 +63,6 @@ namespace Roboflow
                 }
             } 
             __pathBuilder
-                .AddOptionalParameter("api_key", apiKey)
                 .AddOptionalParameter("countinference", countinference?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("service_secret", serviceSecret) 
                 ; 
@@ -95,7 +87,6 @@ namespace Roboflow
             PreparePeEmbedImagePerceptionEncoderEmbedImagePostRequest(
                 httpClient: HttpClient,
                 httpRequestMessage: __httpRequest,
-                apiKey: apiKey,
                 countinference: countinference,
                 serviceSecret: serviceSecret,
                 request: request);
@@ -239,13 +230,10 @@ namespace Roboflow
         /// PE Image Embeddings<br/>
         /// Run the Meta Perception Encoder model to embed image data.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
-        /// <param name="requestApiKey">
+        /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
         /// <param name="usageBillable">
@@ -269,10 +257,9 @@ namespace Roboflow
         public async global::System.Threading.Tasks.Task<global::Roboflow.PerceptionEncoderEmbeddingResponse> PeEmbedImagePerceptionEncoderEmbedImagePostAsync(
             string id,
             global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage> image,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
-            string? requestApiKey = default,
+            string? apiKey = default,
             bool? usageBillable = default,
             double? start = default,
             string? source = default,
@@ -285,7 +272,7 @@ namespace Roboflow
             var __request = new global::Roboflow.PerceptionEncoderImageEmbeddingRequest
             {
                 Id = id,
-                ApiKey = requestApiKey,
+                ApiKey = apiKey,
                 UsageBillable = usageBillable,
                 Start = start,
                 Source = source,
@@ -297,7 +284,6 @@ namespace Roboflow
             };
 
             return await PeEmbedImagePerceptionEncoderEmbedImagePostAsync(
-                apiKey: apiKey,
                 countinference: countinference,
                 serviceSecret: serviceSecret,
                 request: __request,

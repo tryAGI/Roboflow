@@ -8,9 +8,6 @@ namespace Roboflow
         /// SAM2 Image Embeddings<br/>
         /// Run the Meta AI Segment Anything 2 Model to embed image data.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
@@ -19,7 +16,6 @@ namespace Roboflow
         global::System.Threading.Tasks.Task<global::Roboflow.Sam2EmbeddingResponse> Sam2EmbedImageSam2EmbedImagePostAsync(
 
             global::Roboflow.Sam2EmbeddingRequest request,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -27,13 +23,10 @@ namespace Roboflow
         /// SAM2 Image Embeddings<br/>
         /// Run the Meta AI Segment Anything 2 Model to embed image data.
         /// </summary>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
-        /// <param name="requestApiKey">
+        /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
         /// <param name="usageBillable">
@@ -61,10 +54,9 @@ namespace Roboflow
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.Sam2EmbeddingResponse> Sam2EmbedImageSam2EmbedImagePostAsync(
             string id,
-            string? apiKey = default,
             bool? countinference = default,
             string? serviceSecret = default,
-            string? requestApiKey = default,
+            string? apiKey = default,
             bool? usageBillable = default,
             double? start = default,
             string? source = default,

@@ -22,9 +22,6 @@ namespace Roboflow
         /// <param name="versionId">
         /// ID of a Roboflow dataset version corresponding to the model to use for inference OR model ID
         /// </param>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
-        /// </param>
         /// <param name="confidence">
         /// The confidence threshold used to filter out predictions<br/>
         /// Default Value: 0.4F
@@ -104,7 +101,6 @@ namespace Roboflow
         global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>> LegacyInferFromRequestDatasetIdVersionIdGetAsync(
             string datasetId,
             string versionId,
-            string? apiKey = default,
             double? confidence = default,
             double? keypointConfidence = default,
             string? format = default,

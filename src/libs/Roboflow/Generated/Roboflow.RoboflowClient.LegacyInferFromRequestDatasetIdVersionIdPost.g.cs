@@ -9,7 +9,6 @@ namespace Roboflow
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
             ref string versionId,
-            ref string? apiKey,
             ref double? confidence,
             ref double? keypointConfidence,
             ref string? format,
@@ -34,7 +33,6 @@ namespace Roboflow
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
             string versionId,
-            string? apiKey,
             double? confidence,
             double? keypointConfidence,
             string? format,
@@ -80,9 +78,6 @@ namespace Roboflow
         /// </param>
         /// <param name="versionId">
         /// ID of a Roboflow dataset version corresponding to the model to use for inference OR model ID
-        /// </param>
-        /// <param name="apiKey">
-        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
         /// </param>
         /// <param name="confidence">
         /// The confidence threshold used to filter out predictions<br/>
@@ -163,7 +158,6 @@ namespace Roboflow
         public async global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>> LegacyInferFromRequestDatasetIdVersionIdPostAsync(
             string datasetId,
             string versionId,
-            string? apiKey = default,
             double? confidence = default,
             double? keypointConfidence = default,
             string? format = default,
@@ -191,7 +185,6 @@ namespace Roboflow
                 httpClient: HttpClient,
                 datasetId: ref datasetId,
                 versionId: ref versionId,
-                apiKey: ref apiKey,
                 confidence: ref confidence,
                 keypointConfidence: ref keypointConfidence,
                 format: ref format,
@@ -224,7 +217,6 @@ namespace Roboflow
                 }
             } 
             __pathBuilder
-                .AddOptionalParameter("api_key", apiKey)
                 .AddOptionalParameter("confidence", confidence?.ToString())
                 .AddOptionalParameter("keypoint_confidence", keypointConfidence?.ToString())
                 .AddOptionalParameter("format", format)
@@ -262,7 +254,6 @@ namespace Roboflow
                 httpRequestMessage: __httpRequest,
                 datasetId: datasetId,
                 versionId: versionId,
-                apiKey: apiKey,
                 confidence: confidence,
                 keypointConfidence: keypointConfidence,
                 format: format,

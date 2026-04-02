@@ -94,7 +94,7 @@ namespace Roboflow
                     __response.EnsureSuccessStatusCode();
 
                     return
-                        global::Roboflow.ModelsDescriptions.FromJson(__content, JsonSerializerContext) ??
+                        global::Roboflow.ModelsDescriptions.FromJson(__content, JsonSerializerOptions) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
                 }
                 catch (global::System.Exception __ex)
@@ -125,7 +125,7 @@ namespace Roboflow
                     ).ConfigureAwait(false);
 
                     return
-                        await global::Roboflow.ModelsDescriptions.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                        await global::Roboflow.ModelsDescriptions.FromJsonStreamAsync(__content, JsonSerializerOptions).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
                 }
                 catch (global::System.Exception __ex)

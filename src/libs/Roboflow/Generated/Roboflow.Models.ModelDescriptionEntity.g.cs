@@ -41,6 +41,24 @@ namespace Roboflow
         public int? InputWidth { get; set; }
 
         /// <summary>
+        /// Estimated GPU VRAM consumed by this model in bytes (measured during load).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("vram_bytes")]
+        public long? VramBytes { get; set; }
+
+        /// <summary>
+        /// Other model IDs that resolved to this model.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("request_aliases")]
+        public global::System.Collections.Generic.IList<string>? RequestAliases { get; set; }
+
+        /// <summary>
+        /// HTTP request paths that triggered inference on this model (e.g. /door-glyph-locator/10, /infer/object_detection).
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("request_paths")]
+        public global::System.Collections.Generic.IList<string>? RequestPaths { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -64,6 +82,15 @@ namespace Roboflow
         /// <param name="inputWidth">
         /// Image input width accepted by the model (if registered).
         /// </param>
+        /// <param name="vramBytes">
+        /// Estimated GPU VRAM consumed by this model in bytes (measured during load).
+        /// </param>
+        /// <param name="requestAliases">
+        /// Other model IDs that resolved to this model.
+        /// </param>
+        /// <param name="requestPaths">
+        /// HTTP request paths that triggered inference on this model (e.g. /door-glyph-locator/10, /infer/object_detection).
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -72,13 +99,19 @@ namespace Roboflow
             string taskType,
             int? batchSize,
             int? inputHeight,
-            int? inputWidth)
+            int? inputWidth,
+            long? vramBytes,
+            global::System.Collections.Generic.IList<string>? requestAliases,
+            global::System.Collections.Generic.IList<string>? requestPaths)
         {
             this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
             this.TaskType = taskType ?? throw new global::System.ArgumentNullException(nameof(taskType));
             this.BatchSize = batchSize;
             this.InputHeight = inputHeight;
             this.InputWidth = inputWidth;
+            this.VramBytes = vramBytes;
+            this.RequestAliases = requestAliases;
+            this.RequestPaths = requestPaths;
         }
 
         /// <summary>

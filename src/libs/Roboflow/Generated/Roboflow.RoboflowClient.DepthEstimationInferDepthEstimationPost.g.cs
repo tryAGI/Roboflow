@@ -5,6 +5,25 @@ namespace Roboflow
 {
     public partial class RoboflowClient
     {
+
+
+        private static readonly global::Roboflow.EndPointSecurityRequirement s_DepthEstimationInferDepthEstimationPostSecurityRequirement0 =
+            new global::Roboflow.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Roboflow.EndPointAuthorizationRequirement[]
+                {                    new global::Roboflow.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "api_key",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_DepthEstimationInferDepthEstimationPostSecurityRequirements =
+            new global::Roboflow.EndPointSecurityRequirement[]
+            {                s_DepthEstimationInferDepthEstimationPostSecurityRequirement0,
+            };
         partial void PrepareDepthEstimationInferDepthEstimationPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             bool? countinference,
@@ -51,10 +70,16 @@ namespace Roboflow
                 serviceSecret: ref serviceSecret,
                 request: request);
 
+
+            var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DepthEstimationInferDepthEstimationPostSecurityRequirements,
+                operationName: "DepthEstimationInferDepthEstimationPostAsync");
+
             var __pathBuilder = new global::Roboflow.PathBuilder(
                 path: "/infer/depth-estimation",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
@@ -65,7 +90,7 @@ namespace Roboflow
             __pathBuilder
                 .AddOptionalParameter("countinference", countinference?.ToString().ToLowerInvariant())
                 .AddOptionalParameter("service_secret", serviceSecret) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

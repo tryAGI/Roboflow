@@ -5,6 +5,25 @@ namespace Roboflow
 {
     public partial class RoboflowClient
     {
+
+
+        private static readonly global::Roboflow.EndPointSecurityRequirement s_RegistryModelRegistryGetSecurityRequirement0 =
+            new global::Roboflow.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Roboflow.EndPointAuthorizationRequirement[]
+                {                    new global::Roboflow.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "api_key",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_RegistryModelRegistryGetSecurityRequirements =
+            new global::Roboflow.EndPointSecurityRequirement[]
+            {                s_RegistryModelRegistryGetSecurityRequirement0,
+            };
         partial void PrepareRegistryModelRegistryGetArguments(
             global::System.Net.Http.HttpClient httpClient);
         partial void PrepareRegistryModelRegistryGetRequest(
@@ -33,17 +52,23 @@ namespace Roboflow
             PrepareRegistryModelRegistryGetArguments(
                 httpClient: HttpClient);
 
+
+            var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_RegistryModelRegistryGetSecurityRequirements,
+                operationName: "RegistryModelRegistryGetAsync");
+
             var __pathBuilder = new global::Roboflow.PathBuilder(
                 path: "/model/registry",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
                 {
                     __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                 }
-            } 
+            }
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

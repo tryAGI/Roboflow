@@ -5,6 +5,25 @@ namespace Roboflow
 {
     public partial class RoboflowClient
     {
+
+
+        private static readonly global::Roboflow.EndPointSecurityRequirement s_LegacyInferFromRequestDatasetIdVersionIdPostSecurityRequirement0 =
+            new global::Roboflow.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Roboflow.EndPointAuthorizationRequirement[]
+                {                    new global::Roboflow.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "api_key",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_LegacyInferFromRequestDatasetIdVersionIdPostSecurityRequirements =
+            new global::Roboflow.EndPointSecurityRequirement[]
+            {                s_LegacyInferFromRequestDatasetIdVersionIdPostSecurityRequirement0,
+            };
         partial void PrepareLegacyInferFromRequestDatasetIdVersionIdPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
@@ -205,10 +224,16 @@ namespace Roboflow
                 source: ref source,
                 sourceInfo: ref sourceInfo);
 
+
+            var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_LegacyInferFromRequestDatasetIdVersionIdPostSecurityRequirements,
+                operationName: "LegacyInferFromRequestDatasetIdVersionIdPostAsync");
+
             var __pathBuilder = new global::Roboflow.PathBuilder(
                 path: $"/{datasetId}/{versionId}",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
@@ -236,7 +261,7 @@ namespace Roboflow
                 .AddOptionalParameter("active_learning_target_dataset", activeLearningTargetDataset)
                 .AddOptionalParameter("source", source)
                 .AddOptionalParameter("source_info", sourceInfo) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

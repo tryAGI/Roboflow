@@ -5,6 +5,25 @@ namespace Roboflow
 {
     public partial class RoboflowClient
     {
+
+
+        private static readonly global::Roboflow.EndPointSecurityRequirement s_NotebookStartNotebookStartGetSecurityRequirement0 =
+            new global::Roboflow.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Roboflow.EndPointAuthorizationRequirement[]
+                {                    new global::Roboflow.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "api_key",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_NotebookStartNotebookStartGetSecurityRequirements =
+            new global::Roboflow.EndPointSecurityRequirement[]
+            {                s_NotebookStartNotebookStartGetSecurityRequirement0,
+            };
         partial void PrepareNotebookStartNotebookStartGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? browserless);
@@ -40,10 +59,16 @@ namespace Roboflow
                 httpClient: HttpClient,
                 browserless: ref browserless);
 
+
+            var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_NotebookStartNotebookStartGetSecurityRequirements,
+                operationName: "NotebookStartNotebookStartGetAsync");
+
             var __pathBuilder = new global::Roboflow.PathBuilder(
                 path: "/notebook/start",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
@@ -53,7 +78,7 @@ namespace Roboflow
             } 
             __pathBuilder
                 .AddOptionalParameter("browserless", browserless?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

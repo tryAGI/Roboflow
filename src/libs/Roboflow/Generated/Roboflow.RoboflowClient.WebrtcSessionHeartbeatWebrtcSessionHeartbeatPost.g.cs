@@ -5,6 +5,25 @@ namespace Roboflow
 {
     public partial class RoboflowClient
     {
+
+
+        private static readonly global::Roboflow.EndPointSecurityRequirement s_WebrtcSessionHeartbeatWebrtcSessionHeartbeatPostSecurityRequirement0 =
+            new global::Roboflow.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Roboflow.EndPointAuthorizationRequirement[]
+                {                    new global::Roboflow.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "api_key",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_WebrtcSessionHeartbeatWebrtcSessionHeartbeatPostSecurityRequirements =
+            new global::Roboflow.EndPointSecurityRequirement[]
+            {                s_WebrtcSessionHeartbeatWebrtcSessionHeartbeatPostSecurityRequirement0,
+            };
         partial void PrepareWebrtcSessionHeartbeatWebrtcSessionHeartbeatPostArguments(
             global::System.Net.Http.HttpClient httpClient,
             global::Roboflow.WebRTCSessionHeartbeatRequest request);
@@ -45,17 +64,23 @@ namespace Roboflow
                 httpClient: HttpClient,
                 request: request);
 
+
+            var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_WebrtcSessionHeartbeatWebrtcSessionHeartbeatPostSecurityRequirements,
+                operationName: "WebrtcSessionHeartbeatWebrtcSessionHeartbeatPostAsync");
+
             var __pathBuilder = new global::Roboflow.PathBuilder(
                 path: "/webrtc/session/heartbeat",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
                 {
                     __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                 }
-            } 
+            }
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

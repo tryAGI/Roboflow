@@ -13,7 +13,7 @@ namespace Roboflow
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://inference.roboflow.com";
+        public const string DefaultBaseUrl = "https://inference.roboflow.com/";
 
         private bool _disposeHttpClient = true;
 

@@ -5,6 +5,25 @@ namespace Roboflow
 {
     public partial class RoboflowClient
     {
+
+
+        private static readonly global::Roboflow.EndPointSecurityRequirement s_DescribeWorkflowsBlocksWorkflowsBlocksDescribePostSecurityRequirement0 =
+            new global::Roboflow.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Roboflow.EndPointAuthorizationRequirement[]
+                {                    new global::Roboflow.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "api_key",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_DescribeWorkflowsBlocksWorkflowsBlocksDescribePostSecurityRequirements =
+            new global::Roboflow.EndPointSecurityRequirement[]
+            {                s_DescribeWorkflowsBlocksWorkflowsBlocksDescribePostSecurityRequirement0,
+            };
         partial void PrepareDescribeWorkflowsBlocksWorkflowsBlocksDescribePostArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref bool? airGapped,
@@ -51,10 +70,16 @@ namespace Roboflow
                 airGapped: ref airGapped,
                 request: request);
 
+
+            var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_DescribeWorkflowsBlocksWorkflowsBlocksDescribePostSecurityRequirements,
+                operationName: "DescribeWorkflowsBlocksWorkflowsBlocksDescribePostAsync");
+
             var __pathBuilder = new global::Roboflow.PathBuilder(
                 path: "/workflows/blocks/describe",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
@@ -64,7 +89,7 @@ namespace Roboflow
             } 
             __pathBuilder
                 .AddOptionalParameter("air_gapped", airGapped?.ToString().ToLowerInvariant()) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,

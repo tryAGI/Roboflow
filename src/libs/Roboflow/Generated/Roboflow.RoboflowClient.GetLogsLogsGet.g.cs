@@ -5,6 +5,25 @@ namespace Roboflow
 {
     public partial class RoboflowClient
     {
+
+
+        private static readonly global::Roboflow.EndPointSecurityRequirement s_GetLogsLogsGetSecurityRequirement0 =
+            new global::Roboflow.EndPointSecurityRequirement
+            {
+                Authorizations = new global::Roboflow.EndPointAuthorizationRequirement[]
+                {                    new global::Roboflow.EndPointAuthorizationRequirement
+                    {
+                        Type = "ApiKey",
+                        Location = "Query",
+                        Name = "api_key",
+                        FriendlyName = "ApiKeyInQuery",
+                    },
+                },
+            };
+        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_GetLogsLogsGetSecurityRequirements =
+            new global::Roboflow.EndPointSecurityRequirement[]
+            {                s_GetLogsLogsGetSecurityRequirement0,
+            };
         partial void PrepareGetLogsLogsGetArguments(
             global::System.Net.Http.HttpClient httpClient,
             int? limit,
@@ -55,10 +74,16 @@ namespace Roboflow
                 level: ref level,
                 since: ref since);
 
+
+            var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_GetLogsLogsGetSecurityRequirements,
+                operationName: "GetLogsLogsGetAsync");
+
             var __pathBuilder = new global::Roboflow.PathBuilder(
                 path: "/logs",
                 baseUri: HttpClient.BaseAddress);
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "ApiKey" &&
                     __authorization.Location == "Query")
@@ -70,7 +95,7 @@ namespace Roboflow
                 .AddOptionalParameter("limit", limit?.ToString())
                 .AddOptionalParameter("level", level)
                 .AddOptionalParameter("since", since) 
-                ; 
+                ;
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,

@@ -96,6 +96,7 @@ namespace Roboflow
         /// The detailed source information of the inference request<br/>
         /// Default Value: external
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>> LegacyInferFromRequestDatasetIdVersionIdGetAsync(
@@ -120,6 +121,7 @@ namespace Roboflow
             string? activeLearningTargetDataset = default,
             string? source = default,
             string? sourceInfo = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

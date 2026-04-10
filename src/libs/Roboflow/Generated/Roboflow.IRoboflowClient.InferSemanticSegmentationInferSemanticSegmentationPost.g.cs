@@ -11,6 +11,7 @@ namespace Roboflow
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>> InferSemanticSegmentationInferSemanticSegmentationPostAsync(
@@ -18,6 +19,7 @@ namespace Roboflow
             global::Roboflow.SemanticSegmentationInferenceRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Semantic segmentation infer<br/>
@@ -63,6 +65,7 @@ namespace Roboflow
         /// If true, the static crop preprocessing step is disabled for this call.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>> InferSemanticSegmentationInferSemanticSegmentationPostAsync(
@@ -82,6 +85,7 @@ namespace Roboflow
             bool? disablePreprocContrast = default,
             bool? disablePreprocGrayscale = default,
             bool? disablePreprocStaticCrop = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

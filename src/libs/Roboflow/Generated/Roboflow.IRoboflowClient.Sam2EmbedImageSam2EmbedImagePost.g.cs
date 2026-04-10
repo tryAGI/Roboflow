@@ -11,6 +11,7 @@ namespace Roboflow
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.Sam2EmbeddingResponse> Sam2EmbedImageSam2EmbedImagePostAsync(
@@ -18,6 +19,7 @@ namespace Roboflow
             global::Roboflow.Sam2EmbeddingRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// SAM2 Image Embeddings<br/>
@@ -50,6 +52,7 @@ namespace Roboflow
         /// <param name="imageId">
         /// The ID of the image to be embedded used to cache the embedding.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.Sam2EmbeddingResponse> Sam2EmbedImageSam2EmbedImagePostAsync(
@@ -66,6 +69,7 @@ namespace Roboflow
             string? modelId = default,
             global::Roboflow.InferenceRequestImage? image = default,
             string? imageId = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

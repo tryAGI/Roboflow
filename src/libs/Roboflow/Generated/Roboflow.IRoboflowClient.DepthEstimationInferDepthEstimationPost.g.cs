@@ -11,6 +11,7 @@ namespace Roboflow
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.DepthEstimationResponse> DepthEstimationInferDepthEstimationPostAsync(
@@ -18,6 +19,7 @@ namespace Roboflow
             global::Roboflow.DepthEstimationRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Depth Estimation<br/>
@@ -48,6 +50,7 @@ namespace Roboflow
         /// The version ID of the depth estimation model<br/>
         /// Default Value: small
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.DepthEstimationResponse> DepthEstimationInferDepthEstimationPostAsync(
@@ -64,6 +67,7 @@ namespace Roboflow
             string? modelId = default,
             string? modelType = default,
             string? depthVersionId = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

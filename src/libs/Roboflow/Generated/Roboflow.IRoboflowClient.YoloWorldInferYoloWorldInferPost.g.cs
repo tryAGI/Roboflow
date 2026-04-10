@@ -11,6 +11,7 @@ namespace Roboflow
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.ObjectDetectionInferenceResponse> YoloWorldInferYoloWorldInferPostAsync(
@@ -18,6 +19,7 @@ namespace Roboflow
             global::Roboflow.YOLOWorldInferenceRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// YOLO-World inference.<br/>
@@ -69,6 +71,7 @@ namespace Roboflow
         /// <param name="confidence">
         /// Default Value: 0.4F
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.ObjectDetectionInferenceResponse> YoloWorldInferYoloWorldInferPostAsync(
@@ -91,6 +94,7 @@ namespace Roboflow
             bool? disablePreprocStaticCrop = default,
             string? yoloWorldVersionId = default,
             double? confidence = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

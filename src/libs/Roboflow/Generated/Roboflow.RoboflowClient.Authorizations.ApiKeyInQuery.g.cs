@@ -26,6 +26,7 @@ namespace Roboflow
             Authorizations.Add(new global::Roboflow.EndPointAuthorization
             {
                 Type = "ApiKey",
+                SchemeId = "ApikeyApiKey",
                 Location = "Query",
                 Name = "api_key",
                 Value = apiKey,

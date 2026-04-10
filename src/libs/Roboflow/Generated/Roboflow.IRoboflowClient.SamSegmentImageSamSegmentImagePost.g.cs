@@ -11,6 +11,7 @@ namespace Roboflow
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.SamSegmentationResponse> SamSegmentImageSamSegmentImagePostAsync(
@@ -18,6 +19,7 @@ namespace Roboflow
             global::Roboflow.SamSegmentationRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// SAM Image Segmentation<br/>
@@ -87,6 +89,7 @@ namespace Roboflow
         /// Whether or not to use the mask input cache. If true, the mask input cache will be used if it exists. If false, the mask input cache will not be used.<br/>
         /// Default Value: true
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.SamSegmentationResponse> SamSegmentImageSamSegmentImagePostAsync(
@@ -113,6 +116,7 @@ namespace Roboflow
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? pointCoords = default,
             global::System.Collections.Generic.IList<double>? pointLabels = default,
             bool? useMaskInputCache = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

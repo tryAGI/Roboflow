@@ -11,6 +11,7 @@ namespace Roboflow
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.PerceptionEncoderEmbeddingResponse> PeEmbedImagePerceptionEncoderEmbedImagePostAsync(
@@ -18,6 +19,7 @@ namespace Roboflow
             global::Roboflow.PerceptionEncoderImageEmbeddingRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// PE Image Embeddings<br/>
@@ -45,6 +47,7 @@ namespace Roboflow
         /// </param>
         /// <param name="modelId"></param>
         /// <param name="image"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.PerceptionEncoderEmbeddingResponse> PeEmbedImagePerceptionEncoderEmbedImagePostAsync(
@@ -60,6 +63,7 @@ namespace Roboflow
             bool? disableModelMonitoring = default,
             string? perceptionEncoderVersionId = default,
             string? modelId = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

@@ -11,6 +11,7 @@ namespace Roboflow
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.Sam3SegmentationResponse> Sam3SegmentImageSam3ConceptSegmentPostAsync(
@@ -18,6 +19,7 @@ namespace Roboflow
             global::Roboflow.Sam3SegmentationRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// SAM3 PCS (promptable concept segmentation)<br/>
@@ -63,6 +65,7 @@ namespace Roboflow
         /// <param name="nmsIouThreshold">
         /// IoU threshold for cross-prompt NMS. If None, NMS is disabled. Must be in [0.0, 1.0] when set.
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.Sam3SegmentationResponse> Sam3SegmentImageSam3ConceptSegmentPostAsync(
@@ -82,6 +85,7 @@ namespace Roboflow
             string? imageId = default,
             double? outputProbThresh = default,
             double? nmsIouThreshold = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

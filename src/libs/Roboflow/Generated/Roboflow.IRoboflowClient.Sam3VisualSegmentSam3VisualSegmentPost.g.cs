@@ -11,6 +11,7 @@ namespace Roboflow
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.Sam2SegmentationResponse> Sam3VisualSegmentSam3VisualSegmentPostAsync(
@@ -18,6 +19,7 @@ namespace Roboflow
             global::Roboflow.Sam2SegmentationRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// SAM3 PVS (promptable visual segmentation)<br/>
@@ -70,6 +72,7 @@ namespace Roboflow
         /// If True, attempts to load previously cached low-resolution logits for the given image and prompt set. This can significantly speed up inference when making multiple similar requests on the same image. This feature is ignored if DISABLE_SAM2_LOGITS_CACHE env variable is set True<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::Roboflow.Sam2SegmentationResponse> Sam3VisualSegmentSam3VisualSegmentPostAsync(
@@ -91,6 +94,7 @@ namespace Roboflow
             bool? multimaskOutput = default,
             bool? saveLogitsToCache = default,
             bool? loadLogitsFromCache = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

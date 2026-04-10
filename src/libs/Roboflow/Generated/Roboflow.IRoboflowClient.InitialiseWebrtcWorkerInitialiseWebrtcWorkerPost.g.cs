@@ -9,6 +9,7 @@ namespace Roboflow
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function
         /// </summary>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
 #if NET8_0_OR_GREATER
@@ -17,6 +18,7 @@ namespace Roboflow
         global::System.Threading.Tasks.Task<global::Roboflow.InitializeWebRTCResponse> InitialiseWebrtcWorkerInitialiseWebrtcWorkerPostAsync(
 
             global::Roboflow.WebRTCWorkerRequest request,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// [EXPERIMENTAL] Establishes WebRTC peer connection and processes video stream in spawned process or modal function<br/>
@@ -49,6 +51,7 @@ namespace Roboflow
         /// <param name="requestedRegion"></param>
         /// <param name="workspaceId"></param>
         /// <param name="sessionId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
 #if NET8_0_OR_GREATER
@@ -74,6 +77,7 @@ namespace Roboflow
             string? requestedRegion = default,
             string? workspaceId = default,
             string? sessionId = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

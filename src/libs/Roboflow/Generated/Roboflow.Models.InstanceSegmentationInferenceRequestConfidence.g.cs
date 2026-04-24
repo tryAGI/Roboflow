@@ -4,16 +4,48 @@
 namespace Roboflow
 {
     /// <summary>
-    /// The confidence threshold used to filter out predictions<br/>
-    /// Default Value: 0.4F
+    /// 
     /// </summary>
-    public sealed partial class InstanceSegmentationInferenceRequestConfidence
+    public enum InstanceSegmentationInferenceRequestConfidence
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        /// 
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Best,
+        /// <summary>
+        /// 
+        /// </summary>
+        Default,
+    }
+
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class InstanceSegmentationInferenceRequestConfidenceExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this InstanceSegmentationInferenceRequestConfidence value)
+        {
+            return value switch
+            {
+                InstanceSegmentationInferenceRequestConfidence.Best => "best",
+                InstanceSegmentationInferenceRequestConfidence.Default => "default",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static InstanceSegmentationInferenceRequestConfidence? ToEnum(string value)
+        {
+            return value switch
+            {
+                "best" => InstanceSegmentationInferenceRequestConfidence.Best,
+                "default" => InstanceSegmentationInferenceRequestConfidence.Default,
+                _ => null,
+            };
+        }
     }
 }

@@ -107,11 +107,12 @@ namespace Roboflow
         public bool? DisablePreprocStaticCrop { get; set; }
 
         /// <summary>
-        /// The confidence threshold used to filter out predictions<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
-        public double? Confidence { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.ClassificationInferenceRequestConfidence?>))]
+        public global::Roboflow.AnyOf<double?, global::Roboflow.ClassificationInferenceRequestConfidence?>? Confidence { get; set; }
 
         /// <summary>
         /// The stroke width used when visualizing predictions<br/>
@@ -188,7 +189,7 @@ namespace Roboflow
         /// Default Value: false
         /// </param>
         /// <param name="confidence">
-        /// The confidence threshold used to filter out predictions<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </param>
         /// <param name="visualizationStrokeWidth">
@@ -224,7 +225,7 @@ namespace Roboflow
             bool? disablePreprocContrast,
             bool? disablePreprocGrayscale,
             bool? disablePreprocStaticCrop,
-            double? confidence,
+            global::Roboflow.AnyOf<double?, global::Roboflow.ClassificationInferenceRequestConfidence?>? confidence,
             int? visualizationStrokeWidth,
             bool? visualizePredictions,
             bool? disableActiveLearning,

@@ -6,7 +6,10 @@ namespace Roboflow
     /// <summary>
     /// Instance Segmentation inference response.<br/>
     /// Attributes:<br/>
-    ///     predictions (List[inference.core.entities.responses.inference.InstanceSegmentationPrediction]): List of instance segmentation predictions.
+    ///     predictions (List[Union[<br/>
+    ///         inference.core.entities.responses.inference.InstanceSegmentationPrediction,<br/>
+    ///         inference.core.entities.responses.inference.InstanceSegmentationRLEPrediction<br/>
+    ///     ]]): List of instance segmentation predictions.
     /// </summary>
     public sealed partial class InstanceSegmentationInferenceResponse
     {
@@ -47,7 +50,7 @@ namespace Roboflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("predictions")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Roboflow.InstanceSegmentationPrediction> Predictions { get; set; }
+        public required global::System.Collections.Generic.IList<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationPrediction, global::Roboflow.InstanceSegmentationRLEPrediction>> Predictions { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -77,7 +80,7 @@ namespace Roboflow
 #endif
         public InstanceSegmentationInferenceResponse(
             global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage> image,
-            global::System.Collections.Generic.IList<global::Roboflow.InstanceSegmentationPrediction> predictions,
+            global::System.Collections.Generic.IList<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationPrediction, global::Roboflow.InstanceSegmentationRLEPrediction>> predictions,
             string? visualization,
             string? inferenceId,
             int? frameId,

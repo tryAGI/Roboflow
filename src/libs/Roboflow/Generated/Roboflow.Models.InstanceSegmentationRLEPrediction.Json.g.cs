@@ -2,7 +2,7 @@
 
 namespace Roboflow
 {
-    public sealed partial class InstanceSegmentationInferenceRequestConfidence
+    public sealed partial class InstanceSegmentationRLEPrediction
     {
         /// <summary>
         /// Serializes the current instance to a JSON string using the provided JsonSerializerContext.
@@ -34,14 +34,14 @@ namespace Roboflow
         /// <summary>
         /// Deserializes a JSON string using the provided JsonSerializerContext.
         /// </summary>
-        public static global::Roboflow.InstanceSegmentationInferenceRequestConfidence? FromJson(
+        public static global::Roboflow.InstanceSegmentationRLEPrediction? FromJson(
             string json,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return global::System.Text.Json.JsonSerializer.Deserialize(
                 json,
-                typeof(global::Roboflow.InstanceSegmentationInferenceRequestConfidence),
-                jsonSerializerContext) as global::Roboflow.InstanceSegmentationInferenceRequestConfidence;
+                typeof(global::Roboflow.InstanceSegmentationRLEPrediction),
+                jsonSerializerContext) as global::Roboflow.InstanceSegmentationRLEPrediction;
         }
 
         /// <summary>
@@ -51,11 +51,11 @@ namespace Roboflow
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::Roboflow.InstanceSegmentationInferenceRequestConfidence? FromJson(
+        public static global::Roboflow.InstanceSegmentationRLEPrediction? FromJson(
             string json,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.Deserialize<global::Roboflow.InstanceSegmentationInferenceRequestConfidence>(
+            return global::System.Text.Json.JsonSerializer.Deserialize<global::Roboflow.InstanceSegmentationRLEPrediction>(
                 json,
                 jsonSerializerOptions);
         }
@@ -63,14 +63,14 @@ namespace Roboflow
         /// <summary>
         /// Deserializes a JSON stream using the provided JsonSerializerContext.
         /// </summary>
-        public static async global::System.Threading.Tasks.ValueTask<global::Roboflow.InstanceSegmentationInferenceRequestConfidence?> FromJsonStreamAsync(
+        public static async global::System.Threading.Tasks.ValueTask<global::Roboflow.InstanceSegmentationRLEPrediction?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.Serialization.JsonSerializerContext jsonSerializerContext)
         {
             return (await global::System.Text.Json.JsonSerializer.DeserializeAsync(
                 jsonStream,
-                typeof(global::Roboflow.InstanceSegmentationInferenceRequestConfidence),
-                jsonSerializerContext).ConfigureAwait(false)) as global::Roboflow.InstanceSegmentationInferenceRequestConfidence;
+                typeof(global::Roboflow.InstanceSegmentationRLEPrediction),
+                jsonSerializerContext).ConfigureAwait(false)) as global::Roboflow.InstanceSegmentationRLEPrediction;
         }
 
         /// <summary>
@@ -80,11 +80,11 @@ namespace Roboflow
         [global::System.Diagnostics.CodeAnalysis.RequiresUnreferencedCode("JSON serialization and deserialization might require types that cannot be statically analyzed. Use the overload that takes a JsonTypeInfo or JsonSerializerContext, or make sure all of the required types are preserved.")]
         [global::System.Diagnostics.CodeAnalysis.RequiresDynamicCode("JSON serialization and deserialization might require types that cannot be statically analyzed and might need runtime code generation. Use System.Text.Json source generation for native AOT applications.")]
 #endif
-        public static global::System.Threading.Tasks.ValueTask<global::Roboflow.InstanceSegmentationInferenceRequestConfidence?> FromJsonStreamAsync(
+        public static global::System.Threading.Tasks.ValueTask<global::Roboflow.InstanceSegmentationRLEPrediction?> FromJsonStreamAsync(
             global::System.IO.Stream jsonStream,
             global::System.Text.Json.JsonSerializerOptions? jsonSerializerOptions = null)
         {
-            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Roboflow.InstanceSegmentationInferenceRequestConfidence?>(
+            return global::System.Text.Json.JsonSerializer.DeserializeAsync<global::Roboflow.InstanceSegmentationRLEPrediction?>(
                 jsonStream,
                 jsonSerializerOptions);
         }

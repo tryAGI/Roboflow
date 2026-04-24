@@ -66,7 +66,7 @@ namespace Roboflow
         /// Default Value: false
         /// </param>
         /// <param name="confidence">
-        /// The confidence threshold used to filter out predictions<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </param>
         /// <param name="visualizationStrokeWidth">
@@ -104,7 +104,7 @@ namespace Roboflow
             bool? disablePreprocContrast = default,
             bool? disablePreprocGrayscale = default,
             bool? disablePreprocStaticCrop = default,
-            double? confidence = default,
+            global::Roboflow.AnyOf<double?, global::Roboflow.ClassificationInferenceRequestConfidence?>? confidence = default,
             int? visualizationStrokeWidth = default,
             bool? visualizePredictions = default,
             bool? disableActiveLearning = default,

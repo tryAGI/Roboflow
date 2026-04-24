@@ -47,7 +47,8 @@ namespace Roboflow
             bool? disableActiveLearning,
             ref string? activeLearningTargetDataset,
             ref string? source,
-            ref string? sourceInfo);
+            ref string? sourceInfo,
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? responseMaskFormat);
         partial void PrepareLegacyInferFromRequestDatasetIdVersionIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -71,7 +72,8 @@ namespace Roboflow
             bool? disableActiveLearning,
             string? activeLearningTargetDataset,
             string? source,
-            string? sourceInfo);
+            string? sourceInfo,
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? responseMaskFormat);
         partial void ProcessLegacyInferFromRequestDatasetIdVersionIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -173,6 +175,10 @@ namespace Roboflow
         /// The detailed source information of the inference request<br/>
         /// Default Value: external
         /// </param>
+        /// <param name="responseMaskFormat">
+        /// The format of the prediction mask - polygon (default) or rle - applicable for instance segmentation models.<br/>
+        /// Default Value: polygon
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -198,6 +204,7 @@ namespace Roboflow
             string? activeLearningTargetDataset = default,
             string? source = default,
             string? sourceInfo = default,
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? responseMaskFormat = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -225,7 +232,8 @@ namespace Roboflow
                 disableActiveLearning: disableActiveLearning,
                 activeLearningTargetDataset: ref activeLearningTargetDataset,
                 source: ref source,
-                sourceInfo: ref sourceInfo);
+                sourceInfo: ref sourceInfo,
+                responseMaskFormat: responseMaskFormat);
 
 
             var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(
@@ -279,7 +287,8 @@ namespace Roboflow
                                 .AddOptionalParameter("disable_active_learning", disableActiveLearning?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("active_learning_target_dataset", activeLearningTargetDataset)
                                 .AddOptionalParameter("source", source)
-                                .AddOptionalParameter("source_info", sourceInfo) 
+                                .AddOptionalParameter("source_info", sourceInfo)
+                                .AddOptionalParameter("response_mask_format", responseMaskFormat?.ToString()) 
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Roboflow.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -324,7 +333,8 @@ namespace Roboflow
                     disableActiveLearning: disableActiveLearning,
                     activeLearningTargetDataset: activeLearningTargetDataset,
                     source: source,
-                    sourceInfo: sourceInfo);
+                    sourceInfo: sourceInfo,
+                    responseMaskFormat: responseMaskFormat);
 
                 return __httpRequest;
             }

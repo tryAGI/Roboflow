@@ -103,6 +103,14 @@ namespace Roboflow
         public bool? DisablePreprocStaticCrop { get; set; }
 
         /// <summary>
+        /// "default" uses the model built-in threshold, or pass a float. "best" (model-eval threshold) is not supported for semantic segmentation yet.<br/>
+        /// Default Value: 0.4F
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.SemanticSegmentationInferenceRequestConfidence?>))]
+        public global::Roboflow.AnyOf<double?, global::Roboflow.SemanticSegmentationInferenceRequestConfidence?>? Confidence { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -149,6 +157,10 @@ namespace Roboflow
         /// If true, the static crop preprocessing step is disabled for this call.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="confidence">
+        /// "default" uses the model built-in threshold, or pass a float. "best" (model-eval threshold) is not supported for semantic segmentation yet.<br/>
+        /// Default Value: 0.4F
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -166,7 +178,8 @@ namespace Roboflow
             bool? disablePreprocAutoOrient,
             bool? disablePreprocContrast,
             bool? disablePreprocGrayscale,
-            bool? disablePreprocStaticCrop)
+            bool? disablePreprocStaticCrop,
+            global::Roboflow.AnyOf<double?, global::Roboflow.SemanticSegmentationInferenceRequestConfidence?>? confidence)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ApiKey = apiKey;
@@ -182,6 +195,7 @@ namespace Roboflow
             this.DisablePreprocContrast = disablePreprocContrast;
             this.DisablePreprocGrayscale = disablePreprocGrayscale;
             this.DisablePreprocStaticCrop = disablePreprocStaticCrop;
+            this.Confidence = confidence;
         }
 
         /// <summary>

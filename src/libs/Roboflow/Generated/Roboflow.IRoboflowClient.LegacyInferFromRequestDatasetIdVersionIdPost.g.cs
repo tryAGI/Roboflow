@@ -96,6 +96,10 @@ namespace Roboflow
         /// The detailed source information of the inference request<br/>
         /// Default Value: external
         /// </param>
+        /// <param name="responseMaskFormat">
+        /// The format of the prediction mask - polygon (default) or rle - applicable for instance segmentation models.<br/>
+        /// Default Value: polygon
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
@@ -121,6 +125,7 @@ namespace Roboflow
             string? activeLearningTargetDataset = default,
             string? source = default,
             string? sourceInfo = default,
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat2? responseMaskFormat = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -484,7 +484,7 @@ namespace Roboflow
         /// If provided, only predictions for the listed classes will be returned
         /// </param>
         /// <param name="confidence">
-        /// The confidence threshold used to filter out predictions<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </param>
         /// <param name="fixBatchSize">
@@ -530,6 +530,10 @@ namespace Roboflow
         /// The amount to tradeoff between 0='fast' and 1='accurate'<br/>
         /// Default Value: 0F
         /// </param>
+        /// <param name="responseMaskFormat">
+        /// Requested output mask format - `polygon` is the default Roboflow format, which however is not capable representing certain shapes - RLE is compact and more standard representation, yet require special decoding on the caller side - currently supported in `opt-in` mode when server is running with `USE_INFERENCE_MODELS=True` - otherwise it's ignored.<br/>
+        /// Default Value: polygon
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -552,7 +556,7 @@ namespace Roboflow
             bool? disablePreprocStaticCrop = default,
             bool? classAgnosticNms = default,
             global::System.Collections.Generic.IList<string>? classFilter = default,
-            double? confidence = default,
+            global::Roboflow.AnyOf<double?, global::Roboflow.InstanceSegmentationInferenceRequestConfidence?>? confidence = default,
             bool? fixBatchSize = default,
             double? iouThreshold = default,
             int? maxDetections = default,
@@ -564,6 +568,7 @@ namespace Roboflow
             string? activeLearningTargetDataset = default,
             string? maskDecodeMode = default,
             double? tradeoffFactor = default,
+            global::Roboflow.InstanceSegmentationInferenceRequestResponseMaskFormat? responseMaskFormat = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -597,6 +602,7 @@ namespace Roboflow
                 ActiveLearningTargetDataset = activeLearningTargetDataset,
                 MaskDecodeMode = maskDecodeMode,
                 TradeoffFactor = tradeoffFactor,
+                ResponseMaskFormat = responseMaskFormat,
             };
 
             return await InferInstanceSegmentationInferInstanceSegmentationPostAsync(

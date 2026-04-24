@@ -6,7 +6,7 @@ namespace Roboflow
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class InstanceSegmentationPrediction
+    public sealed partial class InstanceSegmentationRLEPrediction
     {
         /// <summary>
         /// The center x-axis pixel coordinate of the prediction
@@ -70,21 +70,15 @@ namespace Roboflow
         public string? ParentId { get; set; }
 
         /// <summary>
-        /// The class label confidence as a fraction between 0 and 1
+        /// RLE-encoded mask in COCO format: {'size': [H, W], 'counts': '...'}
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("class_confidence")]
-        public double? ClassConfidence { get; set; }
-
-        /// <summary>
-        /// The list of points that make up the instance polygon
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("points")]
+        [global::System.Text.Json.Serialization.JsonPropertyName("rle")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<global::Roboflow.PointOutput> Points { get; set; }
+        public required object Rle { get; set; }
 
         /// <summary>
         /// Type of mask format<br/>
-        /// Default Value: polygon
+        /// Default Value: rle
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mask_format")]
         public string? MaskFormat { get; set; }
@@ -96,7 +90,7 @@ namespace Roboflow
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InstanceSegmentationPrediction" /> class.
+        /// Initializes a new instance of the <see cref="InstanceSegmentationRLEPrediction" /> class.
         /// </summary>
         /// <param name="x">
         /// The center x-axis pixel coordinate of the prediction
@@ -119,8 +113,8 @@ namespace Roboflow
         /// <param name="classId">
         /// The class id of the prediction
         /// </param>
-        /// <param name="points">
-        /// The list of points that make up the instance polygon
+        /// <param name="rle">
+        /// RLE-encoded mask in COCO format: {'size': [H, W], 'counts': '...'}
         /// </param>
         /// <param name="detectionId">
         /// Unique identifier of detection
@@ -128,17 +122,14 @@ namespace Roboflow
         /// <param name="parentId">
         /// Identifier of parent image region
         /// </param>
-        /// <param name="classConfidence">
-        /// The class label confidence as a fraction between 0 and 1
-        /// </param>
         /// <param name="maskFormat">
         /// Type of mask format<br/>
-        /// Default Value: polygon
+        /// Default Value: rle
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
-        public InstanceSegmentationPrediction(
+        public InstanceSegmentationRLEPrediction(
             double x,
             double y,
             double width,
@@ -146,10 +137,9 @@ namespace Roboflow
             double confidence,
             string @class,
             int classId,
-            global::System.Collections.Generic.IList<global::Roboflow.PointOutput> points,
+            object rle,
             string? detectionId,
             string? parentId,
-            double? classConfidence,
             string? maskFormat)
         {
             this.X = x;
@@ -161,15 +151,14 @@ namespace Roboflow
             this.ClassId = classId;
             this.DetectionId = detectionId;
             this.ParentId = parentId;
-            this.ClassConfidence = classConfidence;
-            this.Points = points ?? throw new global::System.ArgumentNullException(nameof(points));
+            this.Rle = rle ?? throw new global::System.ArgumentNullException(nameof(rle));
             this.MaskFormat = maskFormat;
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InstanceSegmentationPrediction" /> class.
+        /// Initializes a new instance of the <see cref="InstanceSegmentationRLEPrediction" /> class.
         /// </summary>
-        public InstanceSegmentationPrediction()
+        public InstanceSegmentationRLEPrediction()
         {
         }
     }

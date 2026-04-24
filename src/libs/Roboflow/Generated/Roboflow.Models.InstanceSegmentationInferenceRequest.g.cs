@@ -119,11 +119,12 @@ namespace Roboflow
         public global::System.Collections.Generic.IList<string>? ClassFilter { get; set; }
 
         /// <summary>
-        /// The confidence threshold used to filter out predictions<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
-        public double? Confidence { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.InstanceSegmentationInferenceRequestConfidence?>))]
+        public global::Roboflow.AnyOf<double?, global::Roboflow.InstanceSegmentationInferenceRequestConfidence?>? Confidence { get; set; }
 
         /// <summary>
         /// If true, the batch size will be fixed to the maximum batch size configured for this server<br/>
@@ -202,6 +203,14 @@ namespace Roboflow
         public double? TradeoffFactor { get; set; }
 
         /// <summary>
+        /// Requested output mask format - `polygon` is the default Roboflow format, which however is not capable representing certain shapes - RLE is compact and more standard representation, yet require special decoding on the caller side - currently supported in `opt-in` mode when server is running with `USE_INFERENCE_MODELS=True` - otherwise it's ignored.<br/>
+        /// Default Value: polygon
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("response_mask_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.InstanceSegmentationInferenceRequestResponseMaskFormatJsonConverter))]
+        public global::Roboflow.InstanceSegmentationInferenceRequestResponseMaskFormat? ResponseMaskFormat { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -256,7 +265,7 @@ namespace Roboflow
         /// If provided, only predictions for the listed classes will be returned
         /// </param>
         /// <param name="confidence">
-        /// The confidence threshold used to filter out predictions<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </param>
         /// <param name="fixBatchSize">
@@ -302,6 +311,10 @@ namespace Roboflow
         /// The amount to tradeoff between 0='fast' and 1='accurate'<br/>
         /// Default Value: 0F
         /// </param>
+        /// <param name="responseMaskFormat">
+        /// Requested output mask format - `polygon` is the default Roboflow format, which however is not capable representing certain shapes - RLE is compact and more standard representation, yet require special decoding on the caller side - currently supported in `opt-in` mode when server is running with `USE_INFERENCE_MODELS=True` - otherwise it's ignored.<br/>
+        /// Default Value: polygon
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -322,7 +335,7 @@ namespace Roboflow
             bool? disablePreprocStaticCrop,
             bool? classAgnosticNms,
             global::System.Collections.Generic.IList<string>? classFilter,
-            double? confidence,
+            global::Roboflow.AnyOf<double?, global::Roboflow.InstanceSegmentationInferenceRequestConfidence?>? confidence,
             bool? fixBatchSize,
             double? iouThreshold,
             int? maxDetections,
@@ -333,7 +346,8 @@ namespace Roboflow
             bool? disableActiveLearning,
             string? activeLearningTargetDataset,
             string? maskDecodeMode,
-            double? tradeoffFactor)
+            double? tradeoffFactor,
+            global::Roboflow.InstanceSegmentationInferenceRequestResponseMaskFormat? responseMaskFormat)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ApiKey = apiKey;
@@ -363,6 +377,7 @@ namespace Roboflow
             this.ActiveLearningTargetDataset = activeLearningTargetDataset;
             this.MaskDecodeMode = maskDecodeMode;
             this.TradeoffFactor = tradeoffFactor;
+            this.ResponseMaskFormat = responseMaskFormat;
         }
 
         /// <summary>

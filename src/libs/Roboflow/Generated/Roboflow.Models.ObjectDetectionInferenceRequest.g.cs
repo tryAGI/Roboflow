@@ -127,11 +127,12 @@ namespace Roboflow
         public global::System.Collections.Generic.IList<string>? ClassFilter { get; set; }
 
         /// <summary>
-        /// The confidence threshold used to filter out predictions<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
-        public double? Confidence { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.ObjectDetectionInferenceRequestConfidence?>))]
+        public global::Roboflow.AnyOf<double?, global::Roboflow.ObjectDetectionInferenceRequestConfidence?>? Confidence { get; set; }
 
         /// <summary>
         /// If true, the batch size will be fixed to the maximum batch size configured for this server<br/>
@@ -250,7 +251,7 @@ namespace Roboflow
         /// If provided, only predictions for the listed classes will be returned
         /// </param>
         /// <param name="confidence">
-        /// The confidence threshold used to filter out predictions<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </param>
         /// <param name="fixBatchSize">
@@ -308,7 +309,7 @@ namespace Roboflow
             bool? disablePreprocStaticCrop,
             bool? classAgnosticNms,
             global::System.Collections.Generic.IList<string>? classFilter,
-            double? confidence,
+            global::Roboflow.AnyOf<double?, global::Roboflow.ObjectDetectionInferenceRequestConfidence?>? confidence,
             bool? fixBatchSize,
             double? iouThreshold,
             int? maxDetections,

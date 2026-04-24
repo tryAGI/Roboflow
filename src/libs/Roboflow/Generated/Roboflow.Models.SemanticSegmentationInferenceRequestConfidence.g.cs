@@ -6,7 +6,7 @@ namespace Roboflow
     /// <summary>
     /// 
     /// </summary>
-    public enum ClassificationInferenceRequestConfidence
+    public enum SemanticSegmentationInferenceRequestConfidence
     {
         /// <summary>
         /// 
@@ -21,29 +21,29 @@ namespace Roboflow
     /// <summary>
     /// Enum extensions to do fast conversions without the reflection.
     /// </summary>
-    public static class ClassificationInferenceRequestConfidenceExtensions
+    public static class SemanticSegmentationInferenceRequestConfidenceExtensions
     {
         /// <summary>
         /// Converts an enum to a string.
         /// </summary>
-        public static string ToValueString(this ClassificationInferenceRequestConfidence value)
+        public static string ToValueString(this SemanticSegmentationInferenceRequestConfidence value)
         {
             return value switch
             {
-                ClassificationInferenceRequestConfidence.Best => "best",
-                ClassificationInferenceRequestConfidence.Default => "default",
+                SemanticSegmentationInferenceRequestConfidence.Best => "best",
+                SemanticSegmentationInferenceRequestConfidence.Default => "default",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
         /// <summary>
         /// Converts an string to a enum.
         /// </summary>
-        public static ClassificationInferenceRequestConfidence? ToEnum(string value)
+        public static SemanticSegmentationInferenceRequestConfidence? ToEnum(string value)
         {
             return value switch
             {
-                "best" => ClassificationInferenceRequestConfidence.Best,
-                "default" => ClassificationInferenceRequestConfidence.Default,
+                "best" => SemanticSegmentationInferenceRequestConfidence.Best,
+                "default" => SemanticSegmentationInferenceRequestConfidence.Default,
                 _ => null,
             };
         }

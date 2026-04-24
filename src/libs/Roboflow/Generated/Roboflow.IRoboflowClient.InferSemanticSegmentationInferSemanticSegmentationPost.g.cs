@@ -65,6 +65,10 @@ namespace Roboflow
         /// If true, the static crop preprocessing step is disabled for this call.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="confidence">
+        /// "default" uses the model built-in threshold, or pass a float. "best" (model-eval threshold) is not supported for semantic segmentation yet.<br/>
+        /// Default Value: 0.4F
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -85,6 +89,7 @@ namespace Roboflow
             bool? disablePreprocContrast = default,
             bool? disablePreprocGrayscale = default,
             bool? disablePreprocStaticCrop = default,
+            global::Roboflow.AnyOf<double?, global::Roboflow.SemanticSegmentationInferenceRequestConfidence?>? confidence = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

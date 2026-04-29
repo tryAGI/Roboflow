@@ -135,8 +135,8 @@ namespace Roboflow
                 PrepareInferFromPredefinedWorkflowWorkspaceNameWorkflowsWorkflowIdPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    workspaceName: workspaceName,
-                    workflowId: workflowId,
+                    workspaceName: workspaceName!,
+                    workflowId: workflowId!,
                     request: request);
 
                 return __httpRequest;

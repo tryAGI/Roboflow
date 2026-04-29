@@ -313,8 +313,8 @@ namespace Roboflow
                 PrepareLegacyInferFromRequestDatasetIdVersionIdPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
-                    versionId: versionId,
+                    datasetId: datasetId!,
+                    versionId: versionId!,
                     confidence: confidence,
                     keypointConfidence: keypointConfidence,
                     format: format,

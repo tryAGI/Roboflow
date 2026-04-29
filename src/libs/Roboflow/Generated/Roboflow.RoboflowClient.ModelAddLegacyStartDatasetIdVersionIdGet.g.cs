@@ -144,8 +144,8 @@ namespace Roboflow
                 PrepareModelAddLegacyStartDatasetIdVersionIdGetRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    datasetId: datasetId,
-                    versionId: versionId,
+                    datasetId: datasetId!,
+                    versionId: versionId!,
                     countinference: countinference,
                     serviceSecret: serviceSecret);
 

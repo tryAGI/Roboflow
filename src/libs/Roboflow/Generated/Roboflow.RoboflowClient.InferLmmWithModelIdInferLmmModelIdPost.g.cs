@@ -144,7 +144,7 @@ namespace Roboflow
                 PrepareInferLmmWithModelIdInferLmmModelIdPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    modelId: modelId,
+                    modelId: modelId!,
                     countinference: countinference,
                     serviceSecret: serviceSecret,
                     request: request);

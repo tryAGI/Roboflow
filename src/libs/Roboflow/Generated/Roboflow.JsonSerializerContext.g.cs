@@ -45,17 +45,9 @@ namespace Roboflow
 
             typeof(global::Roboflow.JsonConverters.ValueTypeNullableJsonConverter),
 
-            typeof(global::Roboflow.JsonConverters.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2JsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2NullableJsonConverter),
-
             typeof(global::Roboflow.JsonConverters.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat2JsonConverter),
 
             typeof(global::Roboflow.JsonConverters.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat2NullableJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2JsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2NullableJsonConverter),
 
             typeof(global::Roboflow.JsonConverters.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2JsonConverter),
 
@@ -164,10 +156,6 @@ namespace Roboflow
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<string, int?>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2?>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2?>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.ObjectDetectionInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionInferenceResponse>, global::Roboflow.StubResponse>),
 
@@ -392,11 +380,7 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ExternalBlockPropertyPrimitiveDefinition>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowsBlocksSchemaDescription))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.YOLOWorldInferenceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2?>), TypeInfoPropertyName = "AnyOfDoubleLegacyInferFromRequestDatasetIdVersionIdPostConfidence22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2), TypeInfoPropertyName = "LegacyInferFromRequestDatasetIdVersionIdPostConfidence22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2?>), TypeInfoPropertyName = "AnyOfDoubleLegacyInferFromRequestDatasetIdVersionIdGetConfidence22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2), TypeInfoPropertyName = "LegacyInferFromRequestDatasetIdVersionIdGetConfidence22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.ObjectDetectionInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionInferenceResponse>, global::Roboflow.StubResponse>), TypeInfoPropertyName = "AnyOfObjectDetectionInferenceResponseIListObjectDetectionInferenceResponseStubResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionInferenceResponse>))]

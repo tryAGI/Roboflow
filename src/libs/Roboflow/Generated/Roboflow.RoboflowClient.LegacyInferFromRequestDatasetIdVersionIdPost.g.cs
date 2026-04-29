@@ -29,7 +29,7 @@ namespace Roboflow
             global::System.Net.Http.HttpClient httpClient,
             ref string datasetId,
             ref string versionId,
-            ref global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2?>? confidence,
+            ref double? confidence,
             ref double? keypointConfidence,
             ref string? format,
             ref string? image,
@@ -54,7 +54,7 @@ namespace Roboflow
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             string datasetId,
             string versionId,
-            global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2?>? confidence,
+            double? confidence,
             double? keypointConfidence,
             string? format,
             string? image,
@@ -102,7 +102,7 @@ namespace Roboflow
         /// ID of a Roboflow dataset version corresponding to the model to use for inference OR model ID
         /// </param>
         /// <param name="confidence">
-        /// The confidence threshold used to filter out predictions. Pass a float in [0, 1], or "best" to use F1-optimal thresholds from model evaluation, or "default" to use the model's built-in default.<br/>
+        /// The confidence threshold used to filter out predictions<br/>
         /// Default Value: 0.4F
         /// </param>
         /// <param name="keypointConfidence">
@@ -185,7 +185,7 @@ namespace Roboflow
         public async global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>> LegacyInferFromRequestDatasetIdVersionIdPostAsync(
             string datasetId,
             string versionId,
-            global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2?>? confidence = default,
+            double? confidence = default,
             double? keypointConfidence = default,
             string? format = default,
             string? image = default,

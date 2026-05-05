@@ -75,6 +75,45 @@ namespace Roboflow
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ModelAddLegacyStartDatasetIdVersionIdGetAsResponseAsync(
+                datasetId: datasetId,
+                versionId: versionId,
+                countinference: countinference,
+                serviceSecret: serviceSecret,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Model Add Legacy<br/>
+        /// Starts a model inference session.<br/>
+        /// This endpoint initializes and starts an inference session for the specified model version.<br/>
+        /// Args:<br/>
+        ///     dataset_id (str): ID of a Roboflow dataset corresponding to the model.<br/>
+        ///     version_id (str): ID of a Roboflow dataset version corresponding to the model.<br/>
+        ///     api_key (str, optional): Roboflow API Key for artifact retrieval.<br/>
+        ///     countinference (Optional[bool]): Whether to count inference or not.<br/>
+        ///     service_secret (Optional[str]): The service secret for the request.<br/>
+        /// Returns:<br/>
+        ///     JSONResponse: A response object containing the status and a success message.
+        /// </summary>
+        /// <param name="datasetId"></param>
+        /// <param name="versionId"></param>
+        /// <param name="countinference"></param>
+        /// <param name="serviceSecret"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Roboflow.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<string>> ModelAddLegacyStartDatasetIdVersionIdGetAsResponseAsync(
+            string datasetId,
+            string versionId,
+            bool? countinference = default,
+            string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareModelAddLegacyStartDatasetIdVersionIdGetArguments(
@@ -106,6 +145,7 @@ namespace Roboflow
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Roboflow.PathBuilder(
                                 path: $"/start/{datasetId}/{versionId}",
                                 baseUri: HttpClient.BaseAddress);
@@ -116,10 +156,10 @@ namespace Roboflow
                                 {
                                     __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                                 }
-                            } 
+                            }
                             __pathBuilder
                                 .AddOptionalParameter("countinference", countinference?.ToString().ToLowerInvariant())
-                                .AddOptionalParameter("service_secret", serviceSecret) 
+                                .AddOptionalParameter("service_secret", serviceSecret)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Roboflow.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -177,6 +217,8 @@ namespace Roboflow
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -187,6 +229,11 @@ namespace Roboflow
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Roboflow.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -204,6 +251,8 @@ namespace Roboflow
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -213,8 +262,7 @@ namespace Roboflow
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Roboflow.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -223,6 +271,11 @@ namespace Roboflow
                         __attempt < __maxAttempts &&
                         global::Roboflow.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Roboflow.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -239,14 +292,15 @@ namespace Roboflow
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Roboflow.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -286,6 +340,8 @@ namespace Roboflow
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -306,6 +362,8 @@ namespace Roboflow
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -368,7 +426,11 @@ namespace Roboflow
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return __content;
+                                    return new global::Roboflow.AutoSDKHttpResponse<string>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Roboflow.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -396,7 +458,11 @@ namespace Roboflow
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return __content;
+                                    return new global::Roboflow.AutoSDKHttpResponse<string>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Roboflow.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __content);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

@@ -27,6 +27,23 @@ namespace Roboflow
         /// </summary>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Roboflow.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.OCRInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.OCRInferenceResponse>>>> DoctrRetrieveTextDoctrOcrPostAsResponseAsync(
+
+            global::Roboflow.DoctrOCRInferenceRequest request,
+            bool? countinference = default,
+            string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// DocTR OCR response<br/>
+        /// Run the DocTR OCR model to retrieve text in an image.
+        /// </summary>
+        /// <param name="countinference"></param>
+        /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval

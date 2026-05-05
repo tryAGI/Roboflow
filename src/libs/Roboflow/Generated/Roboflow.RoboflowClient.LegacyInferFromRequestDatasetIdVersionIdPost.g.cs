@@ -208,6 +208,160 @@ namespace Roboflow
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await LegacyInferFromRequestDatasetIdVersionIdPostAsResponseAsync(
+                datasetId: datasetId,
+                versionId: versionId,
+                confidence: confidence,
+                keypointConfidence: keypointConfidence,
+                format: format,
+                image: image,
+                imageType: imageType,
+                labels: labels,
+                maskDecodeMode: maskDecodeMode,
+                tradeoffFactor: tradeoffFactor,
+                maxDetections: maxDetections,
+                overlap: overlap,
+                stroke: stroke,
+                disablePreprocAutoOrient: disablePreprocAutoOrient,
+                disablePreprocContrast: disablePreprocContrast,
+                disablePreprocGrayscale: disablePreprocGrayscale,
+                disablePreprocStaticCrop: disablePreprocStaticCrop,
+                disableActiveLearning: disableActiveLearning,
+                activeLearningTargetDataset: activeLearningTargetDataset,
+                source: source,
+                sourceInfo: sourceInfo,
+                responseMaskFormat: responseMaskFormat,
+                requestOptions: requestOptions,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// Legacy Infer From Request<br/>
+        /// Legacy inference endpoint for object detection, instance segmentation, and classification.<br/>
+        /// Args:<br/>
+        ///     background_tasks: (BackgroundTasks) pool of fastapi background tasks<br/>
+        ///     dataset_id (str): ID of a Roboflow dataset corresponding to the model to use for inference OR workspace ID<br/>
+        ///     version_id (str): ID of a Roboflow dataset version corresponding to the model to use for inference OR model ID<br/>
+        ///     api_key (Optional[str], default None): Roboflow API Key passed to the model during initialization for artifact retrieval.<br/>
+        ///     # Other parameters described in the function signature...<br/>
+        /// Returns:<br/>
+        ///     Union[InstanceSegmentationInferenceResponse, KeypointsDetectionInferenceRequest, ObjectDetectionInferenceResponse, ClassificationInferenceResponse, MultiLabelClassificationInferenceResponse, SemanticSegmentationInferenceResponse, Any]: The response containing the inference results.
+        /// </summary>
+        /// <param name="datasetId">
+        /// ID of a Roboflow dataset corresponding to the model to use for inference OR workspace ID
+        /// </param>
+        /// <param name="versionId">
+        /// ID of a Roboflow dataset version corresponding to the model to use for inference OR model ID
+        /// </param>
+        /// <param name="confidence">
+        /// The confidence threshold used to filter out predictions. Pass a float in [0, 1], or "best" to use F1-optimal thresholds from model evaluation, or "default" to use the model's built-in default.<br/>
+        /// Default Value: 0.4F
+        /// </param>
+        /// <param name="keypointConfidence">
+        /// The confidence threshold used to filter out keypoints that are not visible based on model confidence<br/>
+        /// Default Value: 0F
+        /// </param>
+        /// <param name="format">
+        /// One of 'json' or 'image'. If 'json' prediction data is return as a JSON string. If 'image' prediction data is visualized and overlayed on the original input image.<br/>
+        /// Default Value: json
+        /// </param>
+        /// <param name="image">
+        /// The publically accessible URL of an image to use for inference.
+        /// </param>
+        /// <param name="imageType">
+        /// One of base64 or numpy. Note, numpy input is not supported for Roboflow Hosted Inference.<br/>
+        /// Default Value: base64
+        /// </param>
+        /// <param name="labels">
+        /// If true, labels will be include in any inference visualization.<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="maskDecodeMode">
+        /// One of 'accurate' or 'fast'. If 'accurate' the mask will be decoded using the original image size. If 'fast' the mask will be decoded using the original mask size. 'accurate' is slower but more accurate.<br/>
+        /// Default Value: accurate
+        /// </param>
+        /// <param name="tradeoffFactor">
+        /// The amount to tradeoff between 0='fast' and 1='accurate'<br/>
+        /// Default Value: 0F
+        /// </param>
+        /// <param name="maxDetections">
+        /// The maximum number of detections to return. This is used to limit the number of predictions returned by the model. The model may return more predictions than this number, but only the top `max_detections` predictions will be returned.<br/>
+        /// Default Value: 300
+        /// </param>
+        /// <param name="overlap">
+        /// The IoU threhsold that must be met for a box pair to be considered duplicate during NMS<br/>
+        /// Default Value: 0.3F
+        /// </param>
+        /// <param name="stroke">
+        /// The stroke width used when visualizing predictions<br/>
+        /// Default Value: 1
+        /// </param>
+        /// <param name="disablePreprocAutoOrient">
+        /// If true, disables automatic image orientation<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="disablePreprocContrast">
+        /// If true, disables automatic contrast adjustment<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="disablePreprocGrayscale">
+        /// If true, disables automatic grayscale conversion<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="disablePreprocStaticCrop">
+        /// If true, disables automatic static crop<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="disableActiveLearning">
+        /// If true, the predictions will be prevented from registration by Active Learning (if the functionality is enabled)<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="activeLearningTargetDataset">
+        /// Parameter to be used when Active Learning data registration should happen against different dataset than the one pointed by model_id
+        /// </param>
+        /// <param name="source">
+        /// The source of the inference request<br/>
+        /// Default Value: external
+        /// </param>
+        /// <param name="sourceInfo">
+        /// The detailed source information of the inference request<br/>
+        /// Default Value: external
+        /// </param>
+        /// <param name="responseMaskFormat">
+        /// The format of the prediction mask - polygon (default) or rle - applicable for instance segmentation models.<br/>
+        /// Default Value: polygon
+        /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Roboflow.ApiException"></exception>
+        public async global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>> LegacyInferFromRequestDatasetIdVersionIdPostAsResponseAsync(
+            string datasetId,
+            string versionId,
+            global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2?>? confidence = default,
+            double? keypointConfidence = default,
+            string? format = default,
+            string? image = default,
+            string? imageType = default,
+            bool? labels = default,
+            string? maskDecodeMode = default,
+            double? tradeoffFactor = default,
+            int? maxDetections = default,
+            double? overlap = default,
+            int? stroke = default,
+            bool? disablePreprocAutoOrient = default,
+            bool? disablePreprocContrast = default,
+            bool? disablePreprocGrayscale = default,
+            bool? disablePreprocStaticCrop = default,
+            bool? disableActiveLearning = default,
+            string? activeLearningTargetDataset = default,
+            string? source = default,
+            string? sourceInfo = default,
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat2? responseMaskFormat = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             PrepareArguments(
                 client: HttpClient);
             PrepareLegacyInferFromRequestDatasetIdVersionIdPostArguments(
@@ -257,6 +411,7 @@ namespace Roboflow
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::Roboflow.PathBuilder(
                                 path: $"/{datasetId}/{versionId}",
                                 baseUri: HttpClient.BaseAddress);
@@ -267,7 +422,7 @@ namespace Roboflow
                                 {
                                     __pathBuilder = __pathBuilder.AddRequiredParameter(__authorization.Name, __authorization.Value);
                                 }
-                            } 
+                            }
                             __pathBuilder
                                 .AddOptionalParameter("confidence", confidence?.ToString())
                                 .AddOptionalParameter("keypoint_confidence", keypointConfidence?.ToString())
@@ -288,7 +443,7 @@ namespace Roboflow
                                 .AddOptionalParameter("active_learning_target_dataset", activeLearningTargetDataset)
                                 .AddOptionalParameter("source", source)
                                 .AddOptionalParameter("source_info", sourceInfo)
-                                .AddOptionalParameter("response_mask_format", responseMaskFormat?.ToString()) 
+                                .AddOptionalParameter("response_mask_format", responseMaskFormat?.ToString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Roboflow.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -364,6 +519,8 @@ namespace Roboflow
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -374,6 +531,11 @@ namespace Roboflow
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::Roboflow.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -391,6 +553,8 @@ namespace Roboflow
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -400,8 +564,7 @@ namespace Roboflow
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Roboflow.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -410,6 +573,11 @@ namespace Roboflow
                         __attempt < __maxAttempts &&
                         global::Roboflow.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::Roboflow.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -426,14 +594,15 @@ namespace Roboflow
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::Roboflow.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -473,6 +642,8 @@ namespace Roboflow
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -493,6 +664,8 @@ namespace Roboflow
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Validation Error
@@ -555,9 +728,13 @@ namespace Roboflow
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return
-                                        global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Roboflow.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -585,9 +762,13 @@ namespace Roboflow
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return
-                                        await global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>(
+                                        statusCode: __response.StatusCode,
+                                        headers: global::Roboflow.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {

@@ -27,6 +27,23 @@ namespace Roboflow
         /// </summary>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Roboflow.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.ObjectDetectionInferenceResponse>> GroundingDinoInferGroundingDinoInferPostAsResponseAsync(
+
+            global::Roboflow.GroundingDINOInferenceRequest request,
+            bool? countinference = default,
+            string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Grounding DINO inference.<br/>
+        /// Run the Grounding DINO zero-shot object detection model.
+        /// </summary>
+        /// <param name="countinference"></param>
+        /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval

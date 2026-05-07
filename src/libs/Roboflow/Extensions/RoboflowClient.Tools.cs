@@ -282,8 +282,14 @@ public static class RoboflowToolExtensions
 
         foreach (var pred in response.Predictions)
         {
+            var polygon = pred.Value1;
+            var rle = pred.Value2;
+            var pointSummary = polygon?.Points is { Count: var pointCount }
+                ? string.Create(CultureInfo.InvariantCulture, $"{pointCount} polygon points")
+                : "RLE mask";
+
             parts.Add(string.Create(CultureInfo.InvariantCulture,
-                $"- {pred.Class} (confidence: {pred.Confidence:P1}) at [{pred.X:F0}, {pred.Y:F0}] size {pred.Width:F0}x{pred.Height:F0}, {pred.Points.Count} polygon points"));
+                $"- {polygon?.Class ?? rle?.Class} (confidence: {polygon?.Confidence ?? rle?.Confidence ?? 0:P1}) at [{polygon?.X ?? rle?.X ?? 0:F0}, {polygon?.Y ?? rle?.Y ?? 0:F0}] size {polygon?.Width ?? rle?.Width ?? 0:F0}x{polygon?.Height ?? rle?.Height ?? 0:F0}, {pointSummary}"));
         }
 
         return string.Join("\n", parts);

@@ -97,5 +97,6 @@ namespace Roboflow
         public SemanticSegmentationInferenceResponse()
         {
         }
+
     }
 }

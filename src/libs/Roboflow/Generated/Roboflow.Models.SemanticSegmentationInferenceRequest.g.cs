@@ -204,5 +204,6 @@ namespace Roboflow
         public SemanticSegmentationInferenceRequest()
         {
         }
+
     }
 }

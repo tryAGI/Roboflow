@@ -208,5 +208,6 @@ namespace Roboflow
         public Sam33dObjectsInferenceRequest()
         {
         }
+
     }
 }

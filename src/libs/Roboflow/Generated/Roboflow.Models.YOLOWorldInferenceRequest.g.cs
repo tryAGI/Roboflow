@@ -221,5 +221,6 @@ namespace Roboflow
         public YOLOWorldInferenceRequest()
         {
         }
+
     }
 }

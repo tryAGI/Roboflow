@@ -52,5 +52,6 @@ namespace Roboflow
         public WorkflowSpecificationDescribeInterfaceRequest()
         {
         }
+
     }
 }

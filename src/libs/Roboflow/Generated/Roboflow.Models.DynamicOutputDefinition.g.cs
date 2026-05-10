@@ -51,5 +51,6 @@ namespace Roboflow
         public DynamicOutputDefinition()
         {
         }
+
     }
 }

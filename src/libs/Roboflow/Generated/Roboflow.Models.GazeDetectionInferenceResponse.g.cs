@@ -77,5 +77,6 @@ namespace Roboflow
         public GazeDetectionInferenceResponse()
         {
         }
+
     }
 }

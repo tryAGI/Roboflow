@@ -72,5 +72,6 @@ namespace Roboflow
         public SamSegmentationResponse()
         {
         }
+
     }
 }

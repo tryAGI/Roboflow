@@ -129,5 +129,6 @@ namespace Roboflow
         public WorkflowConfiguration()
         {
         }
+
     }
 }

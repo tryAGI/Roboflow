@@ -95,5 +95,6 @@ namespace Roboflow
         public KeypointsDetectionInferenceResponse()
         {
         }
+
     }
 }

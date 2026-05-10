@@ -56,5 +56,6 @@ namespace Roboflow
         public MultiLabelClassificationPrediction()
         {
         }
+
     }
 }

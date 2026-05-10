@@ -49,5 +49,6 @@ namespace Roboflow
         public OutputDefinition()
         {
         }
+
     }
 }

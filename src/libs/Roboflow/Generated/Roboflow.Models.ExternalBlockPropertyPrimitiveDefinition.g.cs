@@ -78,5 +78,6 @@ namespace Roboflow
         public ExternalBlockPropertyPrimitiveDefinition()
         {
         }
+
     }
 }

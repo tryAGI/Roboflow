@@ -48,5 +48,6 @@ namespace Roboflow
         public Sam2Prompt()
         {
         }
+
     }
 }

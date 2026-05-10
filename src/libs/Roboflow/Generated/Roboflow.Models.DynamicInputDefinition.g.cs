@@ -136,5 +136,6 @@ namespace Roboflow
         public DynamicInputDefinition()
         {
         }
+
     }
 }

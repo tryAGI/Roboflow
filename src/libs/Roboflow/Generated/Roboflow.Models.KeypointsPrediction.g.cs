@@ -168,5 +168,6 @@ namespace Roboflow
         public KeypointsPrediction()
         {
         }
+
     }
 }

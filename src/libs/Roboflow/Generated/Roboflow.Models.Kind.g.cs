@@ -80,5 +80,6 @@ namespace Roboflow
         public Kind()
         {
         }
+
     }
 }

@@ -169,5 +169,6 @@ namespace Roboflow
         public ManifestDescription()
         {
         }
+
     }
 }

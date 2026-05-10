@@ -54,5 +54,6 @@ namespace Roboflow
         public Sam3EmbeddingResponse()
         {
         }
+
     }
 }

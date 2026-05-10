@@ -134,5 +134,6 @@ namespace Roboflow
         public ClassificationInferenceResponse()
         {
         }
+
     }
 }

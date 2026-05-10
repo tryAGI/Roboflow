@@ -91,5 +91,6 @@ namespace Roboflow
         public OCRInferenceResponse()
         {
         }
+
     }
 }

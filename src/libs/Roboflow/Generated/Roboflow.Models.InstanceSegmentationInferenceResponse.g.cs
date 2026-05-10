@@ -100,5 +100,6 @@ namespace Roboflow
         public InstanceSegmentationInferenceResponse()
         {
         }
+
     }
 }

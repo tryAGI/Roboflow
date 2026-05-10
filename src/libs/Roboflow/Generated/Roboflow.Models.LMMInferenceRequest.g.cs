@@ -225,5 +225,6 @@ namespace Roboflow
         public LMMInferenceRequest()
         {
         }
+
     }
 }

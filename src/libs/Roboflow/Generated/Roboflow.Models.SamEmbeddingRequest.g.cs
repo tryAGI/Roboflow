@@ -163,5 +163,6 @@ namespace Roboflow
         public SamEmbeddingRequest()
         {
         }
+
     }
 }

@@ -111,5 +111,6 @@ namespace Roboflow
         public WorkflowSpecificationInferenceRequest()
         {
         }
+
     }
 }

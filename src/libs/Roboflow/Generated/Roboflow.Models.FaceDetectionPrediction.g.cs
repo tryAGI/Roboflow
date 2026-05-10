@@ -174,5 +174,6 @@ namespace Roboflow
         public FaceDetectionPrediction()
         {
         }
+
     }
 }

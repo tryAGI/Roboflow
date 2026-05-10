@@ -60,5 +60,6 @@ namespace Roboflow
         public Sam3PromptResult()
         {
         }
+
     }
 }

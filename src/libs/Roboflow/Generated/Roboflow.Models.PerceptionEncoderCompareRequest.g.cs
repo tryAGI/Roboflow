@@ -179,5 +179,6 @@ namespace Roboflow
         public PerceptionEncoderCompareRequest()
         {
         }
+
     }
 }

@@ -167,5 +167,6 @@ namespace Roboflow
         public ObjectDetectionPrediction()
         {
         }
+
     }
 }

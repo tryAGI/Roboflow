@@ -4,9 +4,9 @@
 namespace Roboflow
 {
     /// <summary>
-    /// The class label confidence as a fraction between 0 and 1
+    /// 
     /// </summary>
-    public sealed partial class FaceDetectionPredictionClassConfidence
+    public sealed partial class GazeDetectionDeprecatedGazeGazeDetectionPostResponse
     {
 
         /// <summary>

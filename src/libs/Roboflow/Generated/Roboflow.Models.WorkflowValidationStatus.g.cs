@@ -42,5 +42,6 @@ namespace Roboflow
         public WorkflowValidationStatus()
         {
         }
+
     }
 }

@@ -150,5 +150,6 @@ namespace Roboflow
         public DepthEstimationRequest()
         {
         }
+
     }
 }

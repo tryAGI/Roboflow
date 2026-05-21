@@ -53,5 +53,6 @@ namespace Roboflow
         public WorkflowInferenceResponse()
         {
         }
+
     }
 }

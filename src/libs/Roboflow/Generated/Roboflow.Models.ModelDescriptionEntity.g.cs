@@ -120,5 +120,6 @@ namespace Roboflow
         public ModelDescriptionEntity()
         {
         }
+
     }
 }

@@ -172,5 +172,6 @@ namespace Roboflow
         public InstanceSegmentationPrediction()
         {
         }
+
     }
 }

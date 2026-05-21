@@ -258,5 +258,6 @@ namespace Roboflow
         public ClassificationInferenceRequest()
         {
         }
+
     }
 }

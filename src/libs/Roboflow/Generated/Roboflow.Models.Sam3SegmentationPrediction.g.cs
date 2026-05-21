@@ -68,5 +68,6 @@ namespace Roboflow
         public Sam3SegmentationPrediction()
         {
         }
+
     }
 }

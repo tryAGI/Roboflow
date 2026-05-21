@@ -137,5 +137,6 @@ namespace Roboflow
         public ClipImageEmbeddingRequest()
         {
         }
+
     }
 }

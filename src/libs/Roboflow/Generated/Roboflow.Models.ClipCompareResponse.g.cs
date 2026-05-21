@@ -88,5 +88,6 @@ namespace Roboflow
         public ClipCompareResponse()
         {
         }
+
     }
 }

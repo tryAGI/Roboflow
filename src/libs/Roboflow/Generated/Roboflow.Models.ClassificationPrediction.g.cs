@@ -70,5 +70,6 @@ namespace Roboflow
         public ClassificationPrediction()
         {
         }
+
     }
 }

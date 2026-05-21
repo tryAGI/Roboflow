@@ -146,5 +146,6 @@ namespace Roboflow
         public DoctrOCRInferenceRequest()
         {
         }
+
     }
 }

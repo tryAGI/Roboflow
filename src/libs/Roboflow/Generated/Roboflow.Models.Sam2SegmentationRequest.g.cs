@@ -218,5 +218,6 @@ namespace Roboflow
         public Sam2SegmentationRequest()
         {
         }
+
     }
 }

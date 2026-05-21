@@ -243,5 +243,6 @@ namespace Roboflow
         public GroundingDINOInferenceRequest()
         {
         }
+
     }
 }

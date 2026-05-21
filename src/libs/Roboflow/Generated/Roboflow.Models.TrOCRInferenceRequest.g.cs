@@ -135,5 +135,6 @@ namespace Roboflow
         public TrOCRInferenceRequest()
         {
         }
+
     }
 }

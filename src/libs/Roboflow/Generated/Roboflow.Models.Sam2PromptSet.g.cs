@@ -41,5 +41,6 @@ namespace Roboflow
         public Sam2PromptSet()
         {
         }
+
     }
 }

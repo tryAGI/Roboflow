@@ -354,5 +354,6 @@ namespace Roboflow
         public ObjectDetectionInferenceRequest()
         {
         }
+
     }
 }

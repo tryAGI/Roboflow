@@ -109,7 +109,7 @@ namespace Roboflow
         public string? Prompt { get; set; }
 
         /// <summary>
-        /// If true, enables thinking/reasoning mode for models that support it (e.g. Qwen3.5-VL). The model's reasoning will be included in the response.<br/>
+        /// If true, enables thinking/reasoning mode for models that support it (e.g. Qwen3.5). The model's reasoning will be included in the response.<br/>
         /// Default Value: false
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("enable_thinking")]
@@ -172,7 +172,7 @@ namespace Roboflow
         /// If set, use this prompt to guide the LMM
         /// </param>
         /// <param name="enableThinking">
-        /// If true, enables thinking/reasoning mode for models that support it (e.g. Qwen3.5-VL). The model's reasoning will be included in the response.<br/>
+        /// If true, enables thinking/reasoning mode for models that support it (e.g. Qwen3.5). The model's reasoning will be included in the response.<br/>
         /// Default Value: false
         /// </param>
         /// <param name="maxNewTokens">
@@ -225,5 +225,6 @@ namespace Roboflow
         public LMMInferenceRequest()
         {
         }
+
     }
 }

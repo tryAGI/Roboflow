@@ -585,6 +585,10 @@ namespace Roboflow
         /// Requested output mask format - `polygon` is the default Roboflow format, which however is not capable representing certain shapes - RLE is compact and more standard representation, yet require special decoding on the caller side - currently supported in `opt-in` mode when server is running with `USE_INFERENCE_MODELS=True` - otherwise it's ignored.<br/>
         /// Default Value: polygon
         /// </param>
+        /// <param name="enforceDenseMasksInInferenceModels">
+        /// Flag to enforce dense masks in inference models. Such masks are faster than RLE but consume more memory which may be unstable in some cases. This flag cannot be tweaked when used on Roboflow serverless platform.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -620,6 +624,7 @@ namespace Roboflow
             string? maskDecodeMode = default,
             double? tradeoffFactor = default,
             global::Roboflow.InstanceSegmentationInferenceRequestResponseMaskFormat? responseMaskFormat = default,
+            bool? enforceDenseMasksInInferenceModels = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -654,6 +659,7 @@ namespace Roboflow
                 MaskDecodeMode = maskDecodeMode,
                 TradeoffFactor = tradeoffFactor,
                 ResponseMaskFormat = responseMaskFormat,
+                EnforceDenseMasksInInferenceModels = enforceDenseMasksInInferenceModels,
             };
 
             return await InferInstanceSegmentationInferInstanceSegmentationPostAsync(

@@ -63,6 +63,12 @@ namespace Roboflow
         public string? ExecutionEngineCompatibility { get; set; }
 
         /// <summary>
+        /// Caveats for block execution and usefulness.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("restrictions")]
+        public global::System.Collections.Generic.IList<object>? Restrictions { get; set; }
+
+        /// <summary>
         /// Dimensionality offsets for input parameters
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("input_dimensionality_offsets")]
@@ -121,6 +127,9 @@ namespace Roboflow
         /// <param name="executionEngineCompatibility">
         /// Execution Engine versions compatible with block.
         /// </param>
+        /// <param name="restrictions">
+        /// Caveats for block execution and usefulness.
+        /// </param>
         /// <param name="dimensionalityReferenceProperty">
         /// Selected dimensionality reference property provided if different dimensionality for different inputs are supported.
         /// </param>
@@ -138,6 +147,7 @@ namespace Roboflow
             int outputDimensionalityOffset,
             global::System.Collections.Generic.IList<string>? manifestTypeIdentifierAliases,
             string? executionEngineCompatibility,
+            global::System.Collections.Generic.IList<object>? restrictions,
             string? dimensionalityReferenceProperty)
         {
             this.BlockSchema = blockSchema ?? throw new global::System.ArgumentNullException(nameof(blockSchema));
@@ -148,6 +158,7 @@ namespace Roboflow
             this.ManifestTypeIdentifier = manifestTypeIdentifier ?? throw new global::System.ArgumentNullException(nameof(manifestTypeIdentifier));
             this.ManifestTypeIdentifierAliases = manifestTypeIdentifierAliases;
             this.ExecutionEngineCompatibility = executionEngineCompatibility;
+            this.Restrictions = restrictions;
             this.InputDimensionalityOffsets = inputDimensionalityOffsets ?? throw new global::System.ArgumentNullException(nameof(inputDimensionalityOffsets));
             this.DimensionalityReferenceProperty = dimensionalityReferenceProperty;
             this.OutputDimensionalityOffset = outputDimensionalityOffset;

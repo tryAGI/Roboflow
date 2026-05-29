@@ -60,175 +60,175 @@ namespace Roboflow
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, int>? Type8 { get; set; }
+        public global::System.Collections.Generic.IList<object>? Type8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public int? Type9 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, int>? Type9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Box? Type10 { get; set; }
+        public int? Type10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public double? Type11 { get; set; }
+        public global::Roboflow.Box? Type11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.BoxXYXY? Type12 { get; set; }
+        public double? Type12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ClassificationInferenceRequest? Type13 { get; set; }
+        public global::Roboflow.BoxXYXY? Type13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type14 { get; set; }
+        public global::Roboflow.ClassificationInferenceRequest? Type14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>? Type15 { get; set; }
+        public bool? Type15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>? Type16 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>? Type16 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.InferenceRequestImage? Type17 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>? Type17 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<double?, global::Roboflow.ClassificationInferenceRequestConfidence?>? Type18 { get; set; }
+        public global::Roboflow.InferenceRequestImage? Type18 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ClassificationInferenceRequestConfidence? Type19 { get; set; }
+        public global::Roboflow.AnyOf<double?, global::Roboflow.ClassificationInferenceRequestConfidence?>? Type19 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ClassificationInferenceResponse? Type20 { get; set; }
+        public global::Roboflow.ClassificationInferenceRequestConfidence? Type20 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>? Type21 { get; set; }
+        public global::Roboflow.ClassificationInferenceResponse? Type21 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>? Type22 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>? Type22 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.InferenceResponseImage? Type23 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>? Type23 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.ClassificationPrediction>? Type24 { get; set; }
+        public global::Roboflow.InferenceResponseImage? Type24 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ClassificationPrediction? Type25 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.ClassificationPrediction>? Type25 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ClearModelRequest? Type26 { get; set; }
+        public global::Roboflow.ClassificationPrediction? Type26 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ClipCompareRequest? Type27 { get; set; }
+        public global::Roboflow.ClearModelRequest? Type27 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::Roboflow.InferenceRequestImage, string>? Type28 { get; set; }
+        public global::Roboflow.ClipCompareRequest? Type28 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage, string, global::System.Collections.Generic.IList<string>, object>? Type29 { get; set; }
+        public global::Roboflow.AnyOf<global::Roboflow.InferenceRequestImage, string>? Type29 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ClipCompareResponse? Type30 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage, string, global::System.Collections.Generic.IList<string>, object>? Type30 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.Dictionary<string, double>>? Type31 { get; set; }
+        public global::Roboflow.ClipCompareResponse? Type31 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<double>? Type32 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.Dictionary<string, double>>? Type32 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, double>? Type33 { get; set; }
+        public global::System.Collections.Generic.IList<double>? Type33 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ClipEmbeddingResponse? Type34 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, double>? Type34 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type35 { get; set; }
+        public global::Roboflow.ClipEmbeddingResponse? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ClipImageEmbeddingRequest? Type36 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ClipTextEmbeddingRequest? Type37 { get; set; }
+        public global::Roboflow.ClipImageEmbeddingRequest? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<string>, string>? Type38 { get; set; }
+        public global::Roboflow.ClipTextEmbeddingRequest? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.CommandContext? Type39 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<string>, string>? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.DepthEstimationRequest? Type40 { get; set; }
+        public global::Roboflow.CommandContext? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.DepthEstimationResponse? Type41 { get; set; }
+        public global::Roboflow.DepthEstimationRequest? Type41 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.DescribeBlocksRequest? Type42 { get; set; }
+        public global::Roboflow.DepthEstimationResponse? Type42 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.DynamicBlockDefinition>? Type43 { get; set; }
+        public global::Roboflow.DescribeBlocksRequest? Type43 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.DynamicBlockDefinition? Type44 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.DynamicBlockDefinition>? Type44 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.DescribeInterfaceResponse? Type45 { get; set; }
+        public global::Roboflow.DynamicBlockDefinition? Type45 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Type46 { get; set; }
+        public global::Roboflow.DescribeInterfaceResponse? Type46 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>>? Type47 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>? Type47 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, string>? Type48 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>>? Type48 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<object, global::System.Collections.Generic.IList<object>>? Type49 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, string>? Type49 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<object>? Type50 { get; set; }
+        public global::Roboflow.AnyOf<object, global::System.Collections.Generic.IList<object>>? Type50 { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -869,63 +869,63 @@ namespace Roboflow
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>? ListType2 { get; set; }
+        public global::System.Collections.Generic.List<object>? ListType2 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>? ListType3 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>? ListType3 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>? ListType4 { get; set; }
+        public global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>? ListType4 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Roboflow.InferenceResponseImage>? ListType5 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>? ListType5 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Roboflow.ClassificationPrediction>? ListType6 { get; set; }
+        public global::System.Collections.Generic.List<global::Roboflow.InferenceResponseImage>? ListType6 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage, string, global::System.Collections.Generic.List<string>, object>? ListType7 { get; set; }
+        public global::System.Collections.Generic.List<global::Roboflow.ClassificationPrediction>? ListType7 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<double>, global::System.Collections.Generic.Dictionary<string, double>>? ListType8 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage, string, global::System.Collections.Generic.List<string>, object>? ListType8 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<double>? ListType9 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<double>, global::System.Collections.Generic.Dictionary<string, double>>? ListType9 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>? ListType10 { get; set; }
+        public global::System.Collections.Generic.List<double>? ListType10 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<string>, string>? ListType11 { get; set; }
+        public global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>? ListType11 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<global::Roboflow.DynamicBlockDefinition>? ListType12 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<string>, string>? ListType12 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>? ListType13 { get; set; }
+        public global::System.Collections.Generic.List<global::Roboflow.DynamicBlockDefinition>? ListType13 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<string>, global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>>? ListType14 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>? ListType14 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<object, global::System.Collections.Generic.List<object>>? ListType15 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.List<string>, global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>>? ListType15 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.List<object>? ListType16 { get; set; }
+        public global::Roboflow.AnyOf<object, global::System.Collections.Generic.List<object>>? ListType16 { get; set; }
         /// <summary>
         /// 
         /// </summary>

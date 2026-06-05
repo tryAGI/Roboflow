@@ -30,18 +30,6 @@ namespace Roboflow
         public required string Type { get; set; }
 
         /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("input")]
-        public object? Input { get; set; }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("ctx")]
-        public object? Ctx { get; set; }
-
-        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -53,23 +41,17 @@ namespace Roboflow
         /// <param name="loc"></param>
         /// <param name="msg"></param>
         /// <param name="type"></param>
-        /// <param name="input"></param>
-        /// <param name="ctx"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public ValidationError(
             global::System.Collections.Generic.IList<global::Roboflow.AnyOf<string, int?>> loc,
             string msg,
-            string type,
-            object? input,
-            object? ctx)
+            string type)
         {
             this.Loc = loc ?? throw new global::System.ArgumentNullException(nameof(loc));
             this.Msg = msg ?? throw new global::System.ArgumentNullException(nameof(msg));
             this.Type = type ?? throw new global::System.ArgumentNullException(nameof(type));
-            this.Input = input;
-            this.Ctx = ctx;
         }
 
         /// <summary>

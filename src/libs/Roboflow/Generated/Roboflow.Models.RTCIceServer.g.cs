@@ -12,8 +12,9 @@ namespace Roboflow
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("urls")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::System.Collections.Generic.IList<string> Urls { get; set; }
+        public required global::Roboflow.AnyOf<string, global::System.Collections.Generic.IList<string>> Urls { get; set; }
 
         /// <summary>
         /// 
@@ -43,11 +44,11 @@ namespace Roboflow
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public RTCIceServer(
-            global::System.Collections.Generic.IList<string> urls,
+            global::Roboflow.AnyOf<string, global::System.Collections.Generic.IList<string>> urls,
             string? username,
             string? credential)
         {
-            this.Urls = urls ?? throw new global::System.ArgumentNullException(nameof(urls));
+            this.Urls = urls;
             this.Username = username;
             this.Credential = credential;
         }

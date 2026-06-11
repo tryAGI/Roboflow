@@ -4,7 +4,7 @@
 namespace Roboflow
 {
     /// <summary>
-    /// Optional hint: 'text' or 'visual'
+    /// Optional hint: 'text' or 'visual'. 'visual' requires at least one box.
     /// </summary>
     public sealed partial class Sam3PromptType
     {

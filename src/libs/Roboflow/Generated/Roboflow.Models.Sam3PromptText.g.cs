@@ -4,7 +4,7 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    /// Concept to segment as a short noun phrase (e.g. 'person'). All matching instances are returned. Can be combined with exemplar boxes in the same prompt.
     /// </summary>
     public sealed partial class Sam3PromptText
     {

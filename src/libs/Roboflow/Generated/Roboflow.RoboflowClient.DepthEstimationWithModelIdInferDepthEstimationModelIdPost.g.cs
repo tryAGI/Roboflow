@@ -7,7 +7,7 @@ namespace Roboflow
     {
 
 
-        private static readonly global::Roboflow.EndPointSecurityRequirement s_InferSemanticSegmentationInferSemanticSegmentationPostSecurityRequirement0 =
+        private static readonly global::Roboflow.EndPointSecurityRequirement s_DepthEstimationWithModelIdInferDepthEstimationModelIdPostSecurityRequirement0 =
             new global::Roboflow.EndPointSecurityRequirement
             {
                 Authorizations = new global::Roboflow.EndPointAuthorizationRequirement[]
@@ -21,49 +21,54 @@ namespace Roboflow
                     },
                 },
             };
-        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_InferSemanticSegmentationInferSemanticSegmentationPostSecurityRequirements =
+        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_DepthEstimationWithModelIdInferDepthEstimationModelIdPostSecurityRequirements =
             new global::Roboflow.EndPointSecurityRequirement[]
-            {                s_InferSemanticSegmentationInferSemanticSegmentationPostSecurityRequirement0,
+            {                s_DepthEstimationWithModelIdInferDepthEstimationModelIdPostSecurityRequirement0,
             };
-        partial void PrepareInferSemanticSegmentationInferSemanticSegmentationPostArguments(
+        partial void PrepareDepthEstimationWithModelIdInferDepthEstimationModelIdPostArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string modelId,
             bool? countinference,
             ref string? serviceSecret,
-            global::Roboflow.SemanticSegmentationInferenceRequest request);
-        partial void PrepareInferSemanticSegmentationInferSemanticSegmentationPostRequest(
+            global::Roboflow.DepthEstimationRequest request);
+        partial void PrepareDepthEstimationWithModelIdInferDepthEstimationModelIdPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string modelId,
             bool? countinference,
             string? serviceSecret,
-            global::Roboflow.SemanticSegmentationInferenceRequest request);
-        partial void ProcessInferSemanticSegmentationInferSemanticSegmentationPostResponse(
+            global::Roboflow.DepthEstimationRequest request);
+        partial void ProcessDepthEstimationWithModelIdInferDepthEstimationModelIdPostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessInferSemanticSegmentationInferSemanticSegmentationPostResponseContent(
+        partial void ProcessDepthEstimationWithModelIdInferDepthEstimationModelIdPostResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// Semantic segmentation infer<br/>
-        /// Run inference with the specified semantic segmentation model
+        /// Depth Estimation with model ID in path<br/>
+        /// Run depth estimation. Model ID is specified in the URL path and can contain slashes.
         /// </summary>
+        /// <param name="modelId"></param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>> InferSemanticSegmentationInferSemanticSegmentationPostAsync(
+        public async global::System.Threading.Tasks.Task<global::Roboflow.DepthEstimationResponse> DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync(
+            string modelId,
 
-            global::Roboflow.SemanticSegmentationInferenceRequest request,
+            global::Roboflow.DepthEstimationRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await InferSemanticSegmentationInferSemanticSegmentationPostAsResponseAsync(
+            var __response = await DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsResponseAsync(
+                modelId: modelId,
 
                 request: request,
                 countinference: countinference,
@@ -75,18 +80,20 @@ namespace Roboflow
             return __response.Body;
         }
         /// <summary>
-        /// Semantic segmentation infer<br/>
-        /// Run inference with the specified semantic segmentation model
+        /// Depth Estimation with model ID in path<br/>
+        /// Run depth estimation. Model ID is specified in the URL path and can contain slashes.
         /// </summary>
+        /// <param name="modelId"></param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>>> InferSemanticSegmentationInferSemanticSegmentationPostAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.DepthEstimationResponse>> DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsResponseAsync(
+            string modelId,
 
-            global::Roboflow.SemanticSegmentationInferenceRequest request,
+            global::Roboflow.DepthEstimationRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
@@ -96,8 +103,9 @@ namespace Roboflow
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareInferSemanticSegmentationInferSemanticSegmentationPostArguments(
+            PrepareDepthEstimationWithModelIdInferDepthEstimationModelIdPostArguments(
                 httpClient: HttpClient,
+                modelId: ref modelId,
                 countinference: countinference,
                 serviceSecret: ref serviceSecret,
                 request: request);
@@ -105,8 +113,8 @@ namespace Roboflow
 
             var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_InferSemanticSegmentationInferSemanticSegmentationPostSecurityRequirements,
-                operationName: "InferSemanticSegmentationInferSemanticSegmentationPostAsync");
+                securityRequirements: s_DepthEstimationWithModelIdInferDepthEstimationModelIdPostSecurityRequirements,
+                operationName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync");
 
             using var __timeoutCancellationTokenSource = global::Roboflow.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -126,7 +134,7 @@ namespace Roboflow
             {
 
                             var __pathBuilder = new global::Roboflow.PathBuilder(
-                                path: "/infer/semantic_segmentation",
+                                path: $"/infer/depth-estimation/{modelId}",
                                 baseUri: HttpClient.BaseAddress);
                             foreach (var __authorization in __authorizations)
                             {
@@ -166,9 +174,10 @@ namespace Roboflow
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareInferSemanticSegmentationInferSemanticSegmentationPostRequest(
+                PrepareDepthEstimationWithModelIdInferDepthEstimationModelIdPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    modelId: modelId!,
                     countinference: countinference,
                     serviceSecret: serviceSecret,
                     request: request);
@@ -188,9 +197,9 @@ namespace Roboflow
                     await global::Roboflow.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "InferSemanticSegmentationInferSemanticSegmentationPost",
-                                methodName: "InferSemanticSegmentationInferSemanticSegmentationPostAsync",
-                                pathTemplate: "\"/infer/semantic_segmentation\"",
+                                operationId: "DepthEstimationWithModelIdInferDepthEstimationModelIdPost",
+                                methodName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync",
+                                pathTemplate: "$\"/infer/depth-estimation/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -222,9 +231,9 @@ namespace Roboflow
                         await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "InferSemanticSegmentationInferSemanticSegmentationPost",
-                                methodName: "InferSemanticSegmentationInferSemanticSegmentationPostAsync",
-                                pathTemplate: "\"/infer/semantic_segmentation\"",
+                                operationId: "DepthEstimationWithModelIdInferDepthEstimationModelIdPost",
+                                methodName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync",
+                                pathTemplate: "$\"/infer/depth-estimation/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -263,9 +272,9 @@ namespace Roboflow
                         await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "InferSemanticSegmentationInferSemanticSegmentationPost",
-                                methodName: "InferSemanticSegmentationInferSemanticSegmentationPostAsync",
-                                pathTemplate: "\"/infer/semantic_segmentation\"",
+                                operationId: "DepthEstimationWithModelIdInferDepthEstimationModelIdPost",
+                                methodName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync",
+                                pathTemplate: "$\"/infer/depth-estimation/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -303,7 +312,7 @@ namespace Roboflow
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessInferSemanticSegmentationInferSemanticSegmentationPostResponse(
+                ProcessDepthEstimationWithModelIdInferDepthEstimationModelIdPostResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -311,9 +320,9 @@ namespace Roboflow
                     await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "InferSemanticSegmentationInferSemanticSegmentationPost",
-                                methodName: "InferSemanticSegmentationInferSemanticSegmentationPostAsync",
-                                pathTemplate: "\"/infer/semantic_segmentation\"",
+                                operationId: "DepthEstimationWithModelIdInferDepthEstimationModelIdPost",
+                                methodName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync",
+                                pathTemplate: "$\"/infer/depth-estimation/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -333,9 +342,9 @@ namespace Roboflow
                     await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "InferSemanticSegmentationInferSemanticSegmentationPost",
-                                methodName: "InferSemanticSegmentationInferSemanticSegmentationPostAsync",
-                                pathTemplate: "\"/infer/semantic_segmentation\"",
+                                operationId: "DepthEstimationWithModelIdInferDepthEstimationModelIdPost",
+                                methodName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync",
+                                pathTemplate: "$\"/infer/depth-estimation/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -400,7 +409,7 @@ namespace Roboflow
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessInferSemanticSegmentationInferSemanticSegmentationPostResponseContent(
+                                ProcessDepthEstimationWithModelIdInferDepthEstimationModelIdPostResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -409,9 +418,9 @@ namespace Roboflow
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Roboflow.DepthEstimationResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>>(
+                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.DepthEstimationResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Roboflow.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -441,9 +450,9 @@ namespace Roboflow
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Roboflow.DepthEstimationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>>(
+                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.DepthEstimationResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Roboflow.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -484,9 +493,10 @@ namespace Roboflow
             }
         }
         /// <summary>
-        /// Semantic segmentation infer<br/>
-        /// Run inference with the specified semantic segmentation model
+        /// Depth Estimation with model ID in path<br/>
+        /// Run depth estimation. Model ID is specified in the URL path and can contain slashes.
         /// </summary>
+        /// <param name="modelId"></param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
@@ -503,38 +513,20 @@ namespace Roboflow
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="modelId">
-        /// A unique model identifier<br/>
-        /// Example: raccoon-detector-1
-        /// </param>
+        /// <param name="requestModelId"></param>
         /// <param name="modelType">
         /// The type of the model, usually referring to what task the model performs
         /// </param>
         /// <param name="image"></param>
-        /// <param name="disablePreprocAutoOrient">
-        /// If true, the auto orient preprocessing step is disabled for this call.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="disablePreprocContrast">
-        /// If true, the auto contrast preprocessing step is disabled for this call.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="disablePreprocGrayscale">
-        /// If true, the grayscale preprocessing step is disabled for this call.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="disablePreprocStaticCrop">
-        /// If true, the static crop preprocessing step is disabled for this call.<br/>
-        /// Default Value: false
-        /// </param>
-        /// <param name="confidence">
-        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
-        /// Default Value: 0.4F
+        /// <param name="depthVersionId">
+        /// The version ID of the depth estimation model<br/>
+        /// Default Value: small
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>> InferSemanticSegmentationInferSemanticSegmentationPostAsync(
+        public async global::System.Threading.Tasks.Task<global::Roboflow.DepthEstimationResponse> DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync(
+            string modelId,
             string id,
             global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage> image,
             bool? countinference = default,
@@ -545,17 +537,13 @@ namespace Roboflow
             string? source = default,
             string? sourceInfo = default,
             bool? disableModelMonitoring = default,
-            string? modelId = default,
+            string? requestModelId = default,
             string? modelType = default,
-            bool? disablePreprocAutoOrient = default,
-            bool? disablePreprocContrast = default,
-            bool? disablePreprocGrayscale = default,
-            bool? disablePreprocStaticCrop = default,
-            global::Roboflow.AnyOf<double?, global::Roboflow.SemanticSegmentationInferenceRequestConfidence?>? confidence = default,
+            string? depthVersionId = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Roboflow.SemanticSegmentationInferenceRequest
+            var __request = new global::Roboflow.DepthEstimationRequest
             {
                 Id = id,
                 ApiKey = apiKey,
@@ -564,17 +552,14 @@ namespace Roboflow
                 Source = source,
                 SourceInfo = sourceInfo,
                 DisableModelMonitoring = disableModelMonitoring,
-                ModelId = modelId,
+                ModelId = requestModelId,
                 ModelType = modelType,
                 Image = image,
-                DisablePreprocAutoOrient = disablePreprocAutoOrient,
-                DisablePreprocContrast = disablePreprocContrast,
-                DisablePreprocGrayscale = disablePreprocGrayscale,
-                DisablePreprocStaticCrop = disablePreprocStaticCrop,
-                Confidence = confidence,
+                DepthVersionId = depthVersionId,
             };
 
-            return await InferSemanticSegmentationInferSemanticSegmentationPostAsync(
+            return await DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync(
+                modelId: modelId,
                 countinference: countinference,
                 serviceSecret: serviceSecret,
                 request: __request,

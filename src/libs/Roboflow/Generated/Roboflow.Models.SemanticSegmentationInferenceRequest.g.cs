@@ -103,7 +103,7 @@ namespace Roboflow
         public bool? DisablePreprocStaticCrop { get; set; }
 
         /// <summary>
-        /// "default" uses the model built-in threshold, or pass a float. "best" (model-eval threshold) is not supported for semantic segmentation yet.<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
@@ -158,7 +158,7 @@ namespace Roboflow
         /// Default Value: false
         /// </param>
         /// <param name="confidence">
-        /// "default" uses the model built-in threshold, or pass a float. "best" (model-eval threshold) is not supported for semantic segmentation yet.<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </param>
 #if NET7_0_OR_GREATER

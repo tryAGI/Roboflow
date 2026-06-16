@@ -6,7 +6,7 @@ namespace Roboflow
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class BaseModel
+    public sealed partial class DepthEstimationWithModelIdInferDepthEstimationModelIdPostServiceSecret
     {
 
         /// <summary>

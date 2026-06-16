@@ -211,6 +211,13 @@ namespace Roboflow
         public global::Roboflow.InstanceSegmentationInferenceRequestResponseMaskFormat? ResponseMaskFormat { get; set; }
 
         /// <summary>
+        /// Flag to enforce dense masks in inference models. Such masks are faster than RLE but consume more memory which may be unstable in some cases. This flag cannot be tweaked when used on Roboflow serverless platform.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("enforce_dense_masks_in_inference_models")]
+        public bool? EnforceDenseMasksInInferenceModels { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -315,6 +322,10 @@ namespace Roboflow
         /// Requested output mask format - `polygon` is the default Roboflow format, which however is not capable representing certain shapes - RLE is compact and more standard representation, yet require special decoding on the caller side - currently supported in `opt-in` mode when server is running with `USE_INFERENCE_MODELS=True` - otherwise it's ignored.<br/>
         /// Default Value: polygon
         /// </param>
+        /// <param name="enforceDenseMasksInInferenceModels">
+        /// Flag to enforce dense masks in inference models. Such masks are faster than RLE but consume more memory which may be unstable in some cases. This flag cannot be tweaked when used on Roboflow serverless platform.<br/>
+        /// Default Value: false
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -347,7 +358,8 @@ namespace Roboflow
             string? activeLearningTargetDataset,
             string? maskDecodeMode,
             double? tradeoffFactor,
-            global::Roboflow.InstanceSegmentationInferenceRequestResponseMaskFormat? responseMaskFormat)
+            global::Roboflow.InstanceSegmentationInferenceRequestResponseMaskFormat? responseMaskFormat,
+            bool? enforceDenseMasksInInferenceModels)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ApiKey = apiKey;
@@ -378,6 +390,7 @@ namespace Roboflow
             this.MaskDecodeMode = maskDecodeMode;
             this.TradeoffFactor = tradeoffFactor;
             this.ResponseMaskFormat = responseMaskFormat;
+            this.EnforceDenseMasksInInferenceModels = enforceDenseMasksInInferenceModels;
         }
 
         /// <summary>

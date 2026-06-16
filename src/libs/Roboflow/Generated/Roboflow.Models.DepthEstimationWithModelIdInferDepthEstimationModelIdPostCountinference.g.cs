@@ -6,7 +6,7 @@ namespace Roboflow
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class ValidationErrorInput
+    public sealed partial class DepthEstimationWithModelIdInferDepthEstimationModelIdPostCountinference
     {
 
         /// <summary>

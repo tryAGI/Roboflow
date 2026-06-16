@@ -4,7 +4,7 @@
 namespace Roboflow
 {
     /// <summary>
-    /// List of 0/1 or booleans for boxes
+    /// Per-box exemplar labels, one per entry in boxes: 1/true marks a positive exemplar (segment objects like this), 0/false marks a negative exemplar (exclude objects like this). Required when boxes is set.
     /// </summary>
     public sealed partial class Sam3PromptBoxLabels
     {

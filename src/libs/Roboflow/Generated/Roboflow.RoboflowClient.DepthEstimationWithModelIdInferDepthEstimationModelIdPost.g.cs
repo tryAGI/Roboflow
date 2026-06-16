@@ -7,7 +7,7 @@ namespace Roboflow
     {
 
 
-        private static readonly global::Roboflow.EndPointSecurityRequirement s_Sam33dInferSam33dInferPostSecurityRequirement0 =
+        private static readonly global::Roboflow.EndPointSecurityRequirement s_DepthEstimationWithModelIdInferDepthEstimationModelIdPostSecurityRequirement0 =
             new global::Roboflow.EndPointSecurityRequirement
             {
                 Authorizations = new global::Roboflow.EndPointAuthorizationRequirement[]
@@ -21,49 +21,54 @@ namespace Roboflow
                     },
                 },
             };
-        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_Sam33dInferSam33dInferPostSecurityRequirements =
+        private static readonly global::Roboflow.EndPointSecurityRequirement[] s_DepthEstimationWithModelIdInferDepthEstimationModelIdPostSecurityRequirements =
             new global::Roboflow.EndPointSecurityRequirement[]
-            {                s_Sam33dInferSam33dInferPostSecurityRequirement0,
+            {                s_DepthEstimationWithModelIdInferDepthEstimationModelIdPostSecurityRequirement0,
             };
-        partial void PrepareSam33dInferSam33dInferPostArguments(
+        partial void PrepareDepthEstimationWithModelIdInferDepthEstimationModelIdPostArguments(
             global::System.Net.Http.HttpClient httpClient,
+            ref string modelId,
             bool? countinference,
             ref string? serviceSecret,
-            global::Roboflow.Sam33dObjectsInferenceRequest request);
-        partial void PrepareSam33dInferSam33dInferPostRequest(
+            global::Roboflow.DepthEstimationRequest request);
+        partial void PrepareDepthEstimationWithModelIdInferDepthEstimationModelIdPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
+            string modelId,
             bool? countinference,
             string? serviceSecret,
-            global::Roboflow.Sam33dObjectsInferenceRequest request);
-        partial void ProcessSam33dInferSam33dInferPostResponse(
+            global::Roboflow.DepthEstimationRequest request);
+        partial void ProcessDepthEstimationWithModelIdInferDepthEstimationModelIdPostResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
 
-        partial void ProcessSam33dInferSam33dInferPostResponseContent(
+        partial void ProcessDepthEstimationWithModelIdInferDepthEstimationModelIdPostResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
             ref string content);
 
         /// <summary>
-        /// SAM3 3D Object Generation<br/>
-        /// Generate 3D meshes and Gaussian splatting from 2D images with mask prompts.
+        /// Depth Estimation with model ID in path<br/>
+        /// Run depth estimation. Model ID is specified in the URL path and can contain slashes.
         /// </summary>
+        /// <param name="modelId"></param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<string> Sam33dInferSam33dInferPostAsync(
+        public async global::System.Threading.Tasks.Task<global::Roboflow.DepthEstimationResponse> DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync(
+            string modelId,
 
-            global::Roboflow.Sam33dObjectsInferenceRequest request,
+            global::Roboflow.DepthEstimationRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __response = await Sam33dInferSam33dInferPostAsResponseAsync(
+            var __response = await DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsResponseAsync(
+                modelId: modelId,
 
                 request: request,
                 countinference: countinference,
@@ -75,18 +80,20 @@ namespace Roboflow
             return __response.Body;
         }
         /// <summary>
-        /// SAM3 3D Object Generation<br/>
-        /// Generate 3D meshes and Gaussian splatting from 2D images with mask prompts.
+        /// Depth Estimation with model ID in path<br/>
+        /// Run depth estimation. Model ID is specified in the URL path and can contain slashes.
         /// </summary>
+        /// <param name="modelId"></param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<string>> Sam33dInferSam33dInferPostAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.DepthEstimationResponse>> DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsResponseAsync(
+            string modelId,
 
-            global::Roboflow.Sam33dObjectsInferenceRequest request,
+            global::Roboflow.DepthEstimationRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
@@ -96,8 +103,9 @@ namespace Roboflow
 
             PrepareArguments(
                 client: HttpClient);
-            PrepareSam33dInferSam33dInferPostArguments(
+            PrepareDepthEstimationWithModelIdInferDepthEstimationModelIdPostArguments(
                 httpClient: HttpClient,
+                modelId: ref modelId,
                 countinference: countinference,
                 serviceSecret: ref serviceSecret,
                 request: request);
@@ -105,8 +113,8 @@ namespace Roboflow
 
             var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(
                 availableAuthorizations: Authorizations,
-                securityRequirements: s_Sam33dInferSam33dInferPostSecurityRequirements,
-                operationName: "Sam33dInferSam33dInferPostAsync");
+                securityRequirements: s_DepthEstimationWithModelIdInferDepthEstimationModelIdPostSecurityRequirements,
+                operationName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync");
 
             using var __timeoutCancellationTokenSource = global::Roboflow.AutoSDKRequestOptionsSupport.CreateTimeoutCancellationTokenSource(
                 clientOptions: Options,
@@ -126,7 +134,7 @@ namespace Roboflow
             {
 
                             var __pathBuilder = new global::Roboflow.PathBuilder(
-                                path: "/sam3_3d/infer",
+                                path: $"/infer/depth-estimation/{modelId}",
                                 baseUri: HttpClient.BaseAddress);
                             foreach (var __authorization in __authorizations)
                             {
@@ -166,9 +174,10 @@ namespace Roboflow
                 PrepareRequest(
                     client: HttpClient,
                     request: __httpRequest);
-                PrepareSam33dInferSam33dInferPostRequest(
+                PrepareDepthEstimationWithModelIdInferDepthEstimationModelIdPostRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
+                    modelId: modelId!,
                     countinference: countinference,
                     serviceSecret: serviceSecret,
                     request: request);
@@ -188,9 +197,9 @@ namespace Roboflow
                     await global::Roboflow.AutoSDKRequestOptionsSupport.OnBeforeRequestAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "Sam33dInferSam33dInferPost",
-                                methodName: "Sam33dInferSam33dInferPostAsync",
-                                pathTemplate: "\"/sam3_3d/infer\"",
+                                operationId: "DepthEstimationWithModelIdInferDepthEstimationModelIdPost",
+                                methodName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync",
+                                pathTemplate: "$\"/infer/depth-estimation/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -222,9 +231,9 @@ namespace Roboflow
                         await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "Sam33dInferSam33dInferPost",
-                                methodName: "Sam33dInferSam33dInferPostAsync",
-                                pathTemplate: "\"/sam3_3d/infer\"",
+                                operationId: "DepthEstimationWithModelIdInferDepthEstimationModelIdPost",
+                                methodName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync",
+                                pathTemplate: "$\"/infer/depth-estimation/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -263,9 +272,9 @@ namespace Roboflow
                         await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "Sam33dInferSam33dInferPost",
-                                methodName: "Sam33dInferSam33dInferPostAsync",
-                                pathTemplate: "\"/sam3_3d/infer\"",
+                                operationId: "DepthEstimationWithModelIdInferDepthEstimationModelIdPost",
+                                methodName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync",
+                                pathTemplate: "$\"/infer/depth-estimation/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -303,7 +312,7 @@ namespace Roboflow
                 ProcessResponse(
                     client: HttpClient,
                     response: __response);
-                ProcessSam33dInferSam33dInferPostResponse(
+                ProcessDepthEstimationWithModelIdInferDepthEstimationModelIdPostResponse(
                     httpClient: HttpClient,
                     httpResponseMessage: __response);
                 if (__response.IsSuccessStatusCode)
@@ -311,9 +320,9 @@ namespace Roboflow
                     await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterSuccessAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "Sam33dInferSam33dInferPost",
-                                methodName: "Sam33dInferSam33dInferPostAsync",
-                                pathTemplate: "\"/sam3_3d/infer\"",
+                                operationId: "DepthEstimationWithModelIdInferDepthEstimationModelIdPost",
+                                methodName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync",
+                                pathTemplate: "$\"/infer/depth-estimation/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -333,9 +342,9 @@ namespace Roboflow
                     await global::Roboflow.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::Roboflow.AutoSDKRequestOptionsSupport.CreateHookContext(
-                                operationId: "Sam33dInferSam33dInferPost",
-                                methodName: "Sam33dInferSam33dInferPostAsync",
-                                pathTemplate: "\"/sam3_3d/infer\"",
+                                operationId: "DepthEstimationWithModelIdInferDepthEstimationModelIdPost",
+                                methodName: "DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync",
+                                pathTemplate: "$\"/infer/depth-estimation/{modelId}\"",
                                 httpMethod: "POST",
                                 baseUri: BaseUri,
                                 request: __httpRequest!,
@@ -400,7 +409,7 @@ namespace Roboflow
                                     client: HttpClient,
                                     response: __response,
                                     content: ref __content);
-                                ProcessSam33dInferSam33dInferPostResponseContent(
+                                ProcessDepthEstimationWithModelIdInferDepthEstimationModelIdPostResponseContent(
                                     httpClient: HttpClient,
                                     httpResponseMessage: __response,
                                     content: ref __content);
@@ -409,11 +418,13 @@ namespace Roboflow
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    return new global::Roboflow.AutoSDKHttpResponse<string>(
+                                    var __value = global::Roboflow.DepthEstimationResponse.FromJson(__content, JsonSerializerContext) ??
+                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.DepthEstimationResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Roboflow.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -433,17 +444,19 @@ namespace Roboflow
                                 try
                                 {
                                     __response.EnsureSuccessStatusCode();
-                                    var __content = await __response.Content.ReadAsStringAsync(
+                                    using var __content = await __response.Content.ReadAsStreamAsync(
                 #if NET5_0_OR_GREATER
                                         __effectiveCancellationToken
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    return new global::Roboflow.AutoSDKHttpResponse<string>(
+                                    var __value = await global::Roboflow.DepthEstimationResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.DepthEstimationResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Roboflow.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __content);
+                                        body: __value);
                                 }
                                 catch (global::System.Exception __ex)
                                 {
@@ -480,9 +493,10 @@ namespace Roboflow
             }
         }
         /// <summary>
-        /// SAM3 3D Object Generation<br/>
-        /// Generate 3D meshes and Gaussian splatting from 2D images with mask prompts.
+        /// Depth Estimation with model ID in path<br/>
+        /// Run depth estimation. Model ID is specified in the URL path and can contain slashes.
         /// </summary>
+        /// <param name="modelId"></param>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
         /// <param name="id"></param>
@@ -499,43 +513,22 @@ namespace Roboflow
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
         /// </param>
-        /// <param name="image">
-        /// The input image to be used for 3D generation.
+        /// <param name="requestModelId"></param>
+        /// <param name="modelType">
+        /// The type of the model, usually referring to what task the model performs
         /// </param>
-        /// <param name="maskInput">
-        /// Mask input in any supported format: polygon [x1,y1,x2,y2,...], binary mask (base64), RLE dict, or list of these.
-        /// </param>
-        /// <param name="modelId">
-        /// The model ID for SAM3_3D.<br/>
-        /// Default Value: sam3-3d-objects
-        /// </param>
-        /// <param name="outputMeshes">
-        /// SAM3 3D always outputs object gaussians, and can optionally output object meshes if output_meshes is True.<br/>
-        /// Default Value: true
-        /// </param>
-        /// <param name="outputScene">
-        /// Output the combined scene reconstruction in addition to individual object reconstructions.<br/>
-        /// Default Value: true
-        /// </param>
-        /// <param name="withMeshPostprocess">
-        /// Enable mesh postprocessing.<br/>
-        /// Default Value: true
-        /// </param>
-        /// <param name="withTextureBaking">
-        /// Enable texture baking for meshes.<br/>
-        /// Default Value: true
-        /// </param>
-        /// <param name="useDistillations">
-        /// Use the distilled versions of the model components.<br/>
-        /// Default Value: false
+        /// <param name="image"></param>
+        /// <param name="depthVersionId">
+        /// The version ID of the depth estimation model<br/>
+        /// Default Value: small
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<string> Sam33dInferSam33dInferPostAsync(
+        public async global::System.Threading.Tasks.Task<global::Roboflow.DepthEstimationResponse> DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync(
+            string modelId,
             string id,
-            global::Roboflow.InferenceRequestImage image,
-            object maskInput,
+            global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage> image,
             bool? countinference = default,
             string? serviceSecret = default,
             string? apiKey = default,
@@ -544,16 +537,13 @@ namespace Roboflow
             string? source = default,
             string? sourceInfo = default,
             bool? disableModelMonitoring = default,
-            string? modelId = default,
-            bool? outputMeshes = default,
-            bool? outputScene = default,
-            bool? withMeshPostprocess = default,
-            bool? withTextureBaking = default,
-            bool? useDistillations = default,
+            string? requestModelId = default,
+            string? modelType = default,
+            string? depthVersionId = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var __request = new global::Roboflow.Sam33dObjectsInferenceRequest
+            var __request = new global::Roboflow.DepthEstimationRequest
             {
                 Id = id,
                 ApiKey = apiKey,
@@ -562,17 +552,14 @@ namespace Roboflow
                 Source = source,
                 SourceInfo = sourceInfo,
                 DisableModelMonitoring = disableModelMonitoring,
+                ModelId = requestModelId,
+                ModelType = modelType,
                 Image = image,
-                MaskInput = maskInput,
-                ModelId = modelId,
-                OutputMeshes = outputMeshes,
-                OutputScene = outputScene,
-                WithMeshPostprocess = withMeshPostprocess,
-                WithTextureBaking = withTextureBaking,
-                UseDistillations = useDistillations,
+                DepthVersionId = depthVersionId,
             };
 
-            return await Sam33dInferSam33dInferPostAsync(
+            return await DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync(
+                modelId: modelId,
                 countinference: countinference,
                 serviceSecret: serviceSecret,
                 request: __request,

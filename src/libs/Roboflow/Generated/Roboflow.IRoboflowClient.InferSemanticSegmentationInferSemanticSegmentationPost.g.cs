@@ -83,7 +83,7 @@ namespace Roboflow
         /// Default Value: false
         /// </param>
         /// <param name="confidence">
-        /// "default" uses the model built-in threshold, or pass a float. "best" (model-eval threshold) is not supported for semantic segmentation yet.<br/>
+        /// Confidence threshold. "best" uses model-eval thresholds, "default" uses the model built-in, or pass a float.<br/>
         /// Default Value: 0.4F
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>

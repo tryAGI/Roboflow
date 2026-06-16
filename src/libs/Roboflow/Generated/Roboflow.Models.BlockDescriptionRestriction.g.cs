@@ -6,7 +6,7 @@ namespace Roboflow
     /// <summary>
     /// 
     /// </summary>
-    public sealed partial class Sam33dInferSam33dInferPostServiceSecret
+    public sealed partial class BlockDescriptionRestriction
     {
 
         /// <summary>

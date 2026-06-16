@@ -131,6 +131,8 @@ namespace Roboflow
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, string>),
 
+            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
+
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>, object>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.Box, global::Roboflow.BoxXYXY>),
@@ -158,6 +160,8 @@ namespace Roboflow
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<string, int?>),
+
+            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
 
@@ -193,11 +197,11 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AddModelRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.BaseModel))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.BlockDescription))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.OutputDefinition>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.OutputDefinition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, int>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Box))]
@@ -240,7 +244,6 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>>), TypeInfoPropertyName = "AnyOfIListStringDictionaryStringIListString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<object, global::System.Collections.Generic.IList<object>>), TypeInfoPropertyName = "AnyOfObjectIListObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DoctrOCRInferenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ManifestDescription))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PythonCode))]
@@ -311,6 +314,7 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PredefinedWorkflowDescribeInterfaceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PredefinedWorkflowInferenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.RTCIceServer))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<string, global::System.Collections.Generic.IList<string>>), TypeInfoPropertyName = "AnyOfStringIListString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Sam2EmbeddingRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Sam2EmbeddingResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Sam2Prompt))]
@@ -339,7 +343,6 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.Sam3Prompt>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Sam3SegmentationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.Sam3PromptResult>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Sam33dObjectsInferenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.SamEmbeddingRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.SamEmbeddingResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object>), TypeInfoPropertyName = "AnyOfIListIListIListIListDoubleObject2")]
@@ -370,7 +373,6 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WebRTCWorkerRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowConfiguration))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowBlockManifest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowInferenceResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowSpecificationDescribeInterfaceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowSpecificationInferenceRequest))]
@@ -402,6 +404,7 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>?), TypeInfoPropertyName = "StubResponse_object_c867376ea263bfbe")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.OutputDefinition>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>))]
@@ -416,7 +419,6 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<string>, global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<object, global::System.Collections.Generic.List<object>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.SelectorType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ValueType>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>))]
@@ -428,6 +430,7 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ModelDescriptionEntity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ObjectDetectionPrediction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.Kind>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<string, global::System.Collections.Generic.List<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.PointInput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.Sam2Prompt>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::System.Collections.Generic.List<int>>>, object>))]

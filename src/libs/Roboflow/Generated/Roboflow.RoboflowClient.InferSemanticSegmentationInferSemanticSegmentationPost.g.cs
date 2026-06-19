@@ -499,6 +499,9 @@ namespace Roboflow
         /// <param name="start"></param>
         /// <param name="source"></param>
         /// <param name="sourceInfo"></param>
+        /// <param name="streamPipelineContextId">
+        /// Internal stream-pipeline frame pairing id. Not part of the public API.
+        /// </param>
         /// <param name="disableModelMonitoring">
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
@@ -544,6 +547,7 @@ namespace Roboflow
             double? start = default,
             string? source = default,
             string? sourceInfo = default,
+            string? streamPipelineContextId = default,
             bool? disableModelMonitoring = default,
             string? modelId = default,
             string? modelType = default,
@@ -563,6 +567,7 @@ namespace Roboflow
                 Start = start,
                 Source = source,
                 SourceInfo = sourceInfo,
+                StreamPipelineContextId = streamPipelineContextId,
                 DisableModelMonitoring = disableModelMonitoring,
                 ModelId = modelId,
                 ModelType = modelType,

@@ -35,6 +35,13 @@ namespace Roboflow
         public bool? EnableProfiling { get; set; }
 
         /// <summary>
+        /// When True, captures stdout/stderr emitted by custom Python blocks executed locally and returns them in the response under `python_blocks_output_streams`. Also activates the workflow-scoped `debug_traces` variable in custom Python blocks; values appended during execution are returned under `python_blocks_debug_traces`. On Modal / OCI sandbox executions `debug_traces` is a no-op (entries appended remotely are not collected), but calls are safe and will not raise.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("debug")]
+        public bool? Debug { get; set; }
+
+        /// <summary>
         /// Optional identifier of workflow
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_id")]
@@ -77,6 +84,10 @@ namespace Roboflow
         /// Flag to request Workflow run profiling. Enables Workflow profiler only when server settings allow profiling traces to be exported to clients. Only applies for Workflows definitions saved on Roboflow platform.<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="debug">
+        /// When True, captures stdout/stderr emitted by custom Python blocks executed locally and returns them in the response under `python_blocks_output_streams`. Also activates the workflow-scoped `debug_traces` variable in custom Python blocks; values appended during execution are returned under `python_blocks_debug_traces`. On Modal / OCI sandbox executions `debug_traces` is a no-op (entries appended remotely are not collected), but calls are safe and will not raise.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="workflowId">
         /// Optional identifier of workflow
         /// </param>
@@ -93,6 +104,7 @@ namespace Roboflow
             string? apiKey,
             global::System.Collections.Generic.IList<string>? excludedFields,
             bool? enableProfiling,
+            bool? debug,
             string? workflowId,
             bool? isPreview)
         {
@@ -100,6 +112,7 @@ namespace Roboflow
             this.Inputs = inputs ?? throw new global::System.ArgumentNullException(nameof(inputs));
             this.ExcludedFields = excludedFields;
             this.EnableProfiling = enableProfiling;
+            this.Debug = debug;
             this.WorkflowId = workflowId;
             this.Specification = specification ?? throw new global::System.ArgumentNullException(nameof(specification));
             this.IsPreview = isPreview;

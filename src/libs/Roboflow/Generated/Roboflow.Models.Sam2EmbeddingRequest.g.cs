@@ -50,6 +50,12 @@ namespace Roboflow
         public string? SourceInfo { get; set; }
 
         /// <summary>
+        /// Internal stream-pipeline frame pairing id. Not part of the public API.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream_pipeline_context_id")]
+        public string? StreamPipelineContextId { get; set; }
+
+        /// <summary>
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
         /// </summary>
@@ -100,6 +106,9 @@ namespace Roboflow
         /// <param name="start"></param>
         /// <param name="source"></param>
         /// <param name="sourceInfo"></param>
+        /// <param name="streamPipelineContextId">
+        /// Internal stream-pipeline frame pairing id. Not part of the public API.
+        /// </param>
         /// <param name="disableModelMonitoring">
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
@@ -125,6 +134,7 @@ namespace Roboflow
             double? start,
             string? source,
             string? sourceInfo,
+            string? streamPipelineContextId,
             bool? disableModelMonitoring,
             string? sam2VersionId,
             string? modelId,
@@ -137,6 +147,7 @@ namespace Roboflow
             this.Start = start;
             this.Source = source;
             this.SourceInfo = sourceInfo;
+            this.StreamPipelineContextId = streamPipelineContextId;
             this.DisableModelMonitoring = disableModelMonitoring;
             this.Sam2VersionId = sam2VersionId;
             this.ModelId = modelId;

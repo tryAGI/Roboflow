@@ -1,0 +1,95 @@
+#nullable enable
+
+namespace Roboflow
+{
+    public partial interface IRoboflowClient
+    {
+        /// <summary>
+        /// PP-OCRv6 OCR response<br/>
+        /// Run PP-OCRv6 two-stage OCR to retrieve text in an image.
+        /// </summary>
+        /// <param name="countinference"></param>
+        /// <param name="serviceSecret"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Roboflow.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Roboflow.OCRInferenceResponse> PpOcrRetrieveTextOcrPpOcrPostAsync(
+
+            global::Roboflow.PPOCRInferenceRequest request,
+            bool? countinference = default,
+            string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// PP-OCRv6 OCR response<br/>
+        /// Run PP-OCRv6 two-stage OCR to retrieve text in an image.
+        /// </summary>
+        /// <param name="countinference"></param>
+        /// <param name="serviceSecret"></param>
+        /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::Roboflow.ApiException"></exception>
+        global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.OCRInferenceResponse>> PpOcrRetrieveTextOcrPpOcrPostAsResponseAsync(
+
+            global::Roboflow.PPOCRInferenceRequest request,
+            bool? countinference = default,
+            string? serviceSecret = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// PP-OCRv6 OCR response<br/>
+        /// Run PP-OCRv6 two-stage OCR to retrieve text in an image.
+        /// </summary>
+        /// <param name="countinference"></param>
+        /// <param name="serviceSecret"></param>
+        /// <param name="id"></param>
+        /// <param name="apiKey">
+        /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
+        /// </param>
+        /// <param name="usageBillable">
+        /// Default Value: true
+        /// </param>
+        /// <param name="start"></param>
+        /// <param name="source"></param>
+        /// <param name="sourceInfo"></param>
+        /// <param name="streamPipelineContextId">
+        /// Internal stream-pipeline frame pairing id. Not part of the public API.
+        /// </param>
+        /// <param name="disableModelMonitoring">
+        /// If true, disables model monitoring for this request<br/>
+        /// Default Value: false
+        /// </param>
+        /// <param name="image"></param>
+        /// <param name="textDetection">
+        /// Default Value: __unset__
+        /// </param>
+        /// <param name="textRecognition">
+        /// Default Value: __unset__
+        /// </param>
+        /// <param name="ppOcrVersionId"></param>
+        /// <param name="modelId"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::System.InvalidOperationException"></exception>
+        global::System.Threading.Tasks.Task<global::Roboflow.OCRInferenceResponse> PpOcrRetrieveTextOcrPpOcrPostAsync(
+            string id,
+            global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage> image,
+            bool? countinference = default,
+            string? serviceSecret = default,
+            string? apiKey = default,
+            bool? usageBillable = default,
+            double? start = default,
+            string? source = default,
+            string? sourceInfo = default,
+            string? streamPipelineContextId = default,
+            bool? disableModelMonitoring = default,
+            string? textDetection = default,
+            string? textRecognition = default,
+            string? ppOcrVersionId = default,
+            string? modelId = default,
+            global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+    }
+}

@@ -472,387 +472,391 @@ namespace Roboflow
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.PerceptionEncoderCompareRequest? Type111 { get; set; }
+        public global::Roboflow.PPOCRInferenceRequest? Type111 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.PerceptionEncoderCompareResponse? Type112 { get; set; }
+        public global::Roboflow.PerceptionEncoderCompareRequest? Type112 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.PerceptionEncoderEmbeddingResponse? Type113 { get; set; }
+        public global::Roboflow.PerceptionEncoderCompareResponse? Type113 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.PerceptionEncoderImageEmbeddingRequest? Type114 { get; set; }
+        public global::Roboflow.PerceptionEncoderEmbeddingResponse? Type114 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.PerceptionEncoderTextEmbeddingRequest? Type115 { get; set; }
+        public global::Roboflow.PerceptionEncoderImageEmbeddingRequest? Type115 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.PointInput? Type116 { get; set; }
+        public global::Roboflow.PerceptionEncoderTextEmbeddingRequest? Type116 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.PredefinedWorkflowDescribeInterfaceRequest? Type117 { get; set; }
+        public global::Roboflow.PointInput? Type117 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.PredefinedWorkflowInferenceRequest? Type118 { get; set; }
+        public global::Roboflow.PredefinedWorkflowDescribeInterfaceRequest? Type118 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.RTCIceServer? Type119 { get; set; }
+        public global::Roboflow.PredefinedWorkflowInferenceRequest? Type119 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type120 { get; set; }
+        public global::Roboflow.RTCIceServer? Type120 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam2EmbeddingRequest? Type121 { get; set; }
+        public global::Roboflow.AnyOf<string, global::System.Collections.Generic.IList<string>>? Type121 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam2EmbeddingResponse? Type122 { get; set; }
+        public global::Roboflow.Sam2EmbeddingRequest? Type122 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam2Prompt? Type123 { get; set; }
+        public global::Roboflow.Sam2EmbeddingResponse? Type123 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.PointInput>? Type124 { get; set; }
+        public global::Roboflow.Sam2Prompt? Type124 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam2PromptSet? Type125 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.PointInput>? Type125 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.Sam2Prompt>? Type126 { get; set; }
+        public global::Roboflow.Sam2PromptSet? Type126 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam2SegmentationPrediction? Type127 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.Sam2Prompt>? Type127 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>, object>? Type128 { get; set; }
+        public global::Roboflow.Sam2SegmentationPrediction? Type128 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? Type129 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>, object>? Type129 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Type130 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>? Type130 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<int>? Type131 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>? Type131 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam2SegmentationRequest? Type132 { get; set; }
+        public global::System.Collections.Generic.IList<int>? Type132 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam2SegmentationResponse? Type133 { get; set; }
+        public global::Roboflow.Sam2SegmentationRequest? Type133 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.Sam2SegmentationPrediction>? Type134 { get; set; }
+        public global::Roboflow.Sam2SegmentationResponse? Type134 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam3EmbeddingResponse? Type135 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.Sam2SegmentationPrediction>? Type135 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam3Prompt? Type136 { get; set; }
+        public global::Roboflow.Sam3EmbeddingResponse? Type136 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.AnyOf<global::Roboflow.Box, global::Roboflow.BoxXYXY>>? Type137 { get; set; }
+        public global::Roboflow.Sam3Prompt? Type137 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::Roboflow.Box, global::Roboflow.BoxXYXY>? Type138 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.AnyOf<global::Roboflow.Box, global::Roboflow.BoxXYXY>>? Type138 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.AnyOf<int?, bool?>>? Type139 { get; set; }
+        public global::Roboflow.AnyOf<global::Roboflow.Box, global::Roboflow.BoxXYXY>? Type139 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<int?, bool?>? Type140 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.AnyOf<int?, bool?>>? Type140 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam3PromptEcho? Type141 { get; set; }
+        public global::Roboflow.AnyOf<int?, bool?>? Type141 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam3PromptResult? Type142 { get; set; }
+        public global::Roboflow.Sam3PromptEcho? Type142 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.Sam3SegmentationPrediction>? Type143 { get; set; }
+        public global::Roboflow.Sam3PromptResult? Type143 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam3SegmentationPrediction? Type144 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.Sam3SegmentationPrediction>? Type144 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam3SegmentationRequest? Type145 { get; set; }
+        public global::Roboflow.Sam3SegmentationPrediction? Type145 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.Sam3Prompt>? Type146 { get; set; }
+        public global::Roboflow.Sam3SegmentationRequest? Type146 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.Sam3SegmentationResponse? Type147 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.Sam3Prompt>? Type147 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.Sam3PromptResult>? Type148 { get; set; }
+        public global::Roboflow.Sam3SegmentationResponse? Type148 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.SamEmbeddingRequest? Type149 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.Sam3PromptResult>? Type149 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.SamEmbeddingResponse? Type150 { get; set; }
+        public global::Roboflow.SamEmbeddingRequest? Type150 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object>? Type151 { get; set; }
+        public global::Roboflow.SamEmbeddingResponse? Type151 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>? Type152 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object>? Type152 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>? Type153 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>? Type153 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.SamSegmentationRequest? Type154 { get; set; }
+        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>? Type154 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object, object>? Type155 { get; set; }
+        public global::Roboflow.SamSegmentationRequest? Type155 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>, object, object>? Type156 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object, object>? Type156 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.SamSegmentationResponse? Type157 { get; set; }
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>, object, object>? Type157 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.SemanticSegmentationInferenceRequest? Type158 { get; set; }
+        public global::Roboflow.SamSegmentationResponse? Type158 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<double?, global::Roboflow.SemanticSegmentationInferenceRequestConfidence?>? Type159 { get; set; }
+        public global::Roboflow.SemanticSegmentationInferenceRequest? Type159 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.SemanticSegmentationInferenceRequestConfidence? Type160 { get; set; }
+        public global::Roboflow.AnyOf<double?, global::Roboflow.SemanticSegmentationInferenceRequestConfidence?>? Type160 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.SemanticSegmentationInferenceResponse? Type161 { get; set; }
+        public global::Roboflow.SemanticSegmentationInferenceRequestConfidence? Type161 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.SemanticSegmentationPrediction? Type162 { get; set; }
+        public global::Roboflow.SemanticSegmentationInferenceResponse? Type162 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.ServerVersionInfo? Type163 { get; set; }
+        public global::Roboflow.SemanticSegmentationPrediction? Type163 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.StubResponse? Type164 { get; set; }
+        public global::Roboflow.ServerVersionInfo? Type164 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.TrOCRInferenceRequest? Type165 { get; set; }
+        public global::Roboflow.StubResponse? Type165 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.UniversalQueryLanguageDescription? Type166 { get; set; }
+        public global::Roboflow.TrOCRInferenceRequest? Type166 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.ExternalOperationDescription>? Type167 { get; set; }
+        public global::Roboflow.UniversalQueryLanguageDescription? Type167 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.ExternalOperatorDescription>? Type168 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.ExternalOperationDescription>? Type168 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.AnyOf<string, int?>>? Type169 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.ExternalOperatorDescription>? Type169 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<string, int?>? Type170 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.AnyOf<string, int?>>? Type170 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WebRTCConfig? Type171 { get; set; }
+        public global::Roboflow.AnyOf<string, int?>? Type171 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.RTCIceServer>? Type172 { get; set; }
+        public global::Roboflow.WebRTCConfig? Type172 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WebRTCOffer? Type173 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.RTCIceServer>? Type173 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WebRTCSessionHeartbeatRequest? Type174 { get; set; }
+        public global::Roboflow.WebRTCOffer? Type174 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WebRTCTURNConfig? Type175 { get; set; }
+        public global::Roboflow.WebRTCSessionHeartbeatRequest? Type175 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WebRTCWorkerRequest? Type176 { get; set; }
+        public global::Roboflow.WebRTCTURNConfig? Type176 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WorkflowConfiguration? Type177 { get; set; }
+        public global::Roboflow.WebRTCWorkerRequest? Type177 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.DateTime? Type178 { get; set; }
+        public global::Roboflow.WorkflowConfiguration? Type178 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WorkflowInferenceResponse? Type179 { get; set; }
+        public global::System.DateTime? Type179 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>? Type180 { get; set; }
+        public global::Roboflow.WorkflowInferenceResponse? Type180 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WorkflowSpecificationDescribeInterfaceRequest? Type181 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<object>>? Type181 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WorkflowSpecificationInferenceRequest? Type182 { get; set; }
+        public global::Roboflow.WorkflowSpecificationDescribeInterfaceRequest? Type182 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WorkflowValidationStatus? Type183 { get; set; }
+        public global::Roboflow.WorkflowSpecificationInferenceRequest? Type183 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WorkflowsBlocksDescription? Type184 { get; set; }
+        public global::Roboflow.WorkflowValidationStatus? Type184 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.BlockDescription>? Type185 { get; set; }
+        public global::Roboflow.WorkflowsBlocksDescription? Type185 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Roboflow.ExternalWorkflowsBlockSelectorDefinition>>? Type186 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.BlockDescription>? Type186 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.ExternalWorkflowsBlockSelectorDefinition>? Type187 { get; set; }
+        public global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Roboflow.ExternalWorkflowsBlockSelectorDefinition>>? Type187 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.ExternalBlockPropertyPrimitiveDefinition>? Type188 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.ExternalWorkflowsBlockSelectorDefinition>? Type188 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.WorkflowsBlocksSchemaDescription? Type189 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.ExternalBlockPropertyPrimitiveDefinition>? Type189 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.YOLOWorldInferenceRequest? Type190 { get; set; }
+        public global::Roboflow.WorkflowsBlocksSchemaDescription? Type190 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2?>? Type191 { get; set; }
+        public global::Roboflow.YOLOWorldInferenceRequest? Type191 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2? Type192 { get; set; }
+        public global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2?>? Type192 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat2? Type193 { get; set; }
+        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2? Type193 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2?>? Type194 { get; set; }
+        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat2? Type194 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2? Type195 { get; set; }
+        public global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2?>? Type195 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? Type196 { get; set; }
+        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2? Type196 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::Roboflow.ObjectDetectionInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionInferenceResponse>, global::Roboflow.StubResponse>? Type197 { get; set; }
+        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? Type197 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionInferenceResponse>? Type198 { get; set; }
+        public global::Roboflow.AnyOf<global::Roboflow.ObjectDetectionInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionInferenceResponse>, global::Roboflow.StubResponse>? Type198 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.StubResponse>? Type199 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionInferenceResponse>? Type199 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>? Type200 { get; set; }
+        public global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.StubResponse>? Type200 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.StubResponse>? Type201 { get; set; }
+        public global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>? Type201 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.StubResponse>? Type202 { get; set; }
+        public global::Roboflow.AnyOf<global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.StubResponse>? Type202 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::Roboflow.LMMInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.LMMInferenceResponse>, global::Roboflow.StubResponse>? Type203 { get; set; }
+        public global::Roboflow.AnyOf<global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.StubResponse>? Type203 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.LMMInferenceResponse>? Type204 { get; set; }
+        public global::Roboflow.AnyOf<global::Roboflow.LMMInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.LMMInferenceResponse>, global::Roboflow.StubResponse>? Type204 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::Roboflow.AnyOf<global::Roboflow.OCRInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.OCRInferenceResponse>>? Type205 { get; set; }
+        public global::System.Collections.Generic.IList<global::Roboflow.LMMInferenceResponse>? Type205 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::Roboflow.OCRInferenceResponse>? Type206 { get; set; }
+        public global::Roboflow.AnyOf<global::Roboflow.OCRInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.OCRInferenceResponse>>? Type206 { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::System.Collections.Generic.IList<global::Roboflow.OCRInferenceResponse>? Type207 { get; set; }
 
         /// <summary>
         /// 

@@ -119,6 +119,8 @@ namespace Roboflow
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>),
 
+            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
+
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.InferenceRequestImage, string>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage, string, global::System.Collections.Generic.IList<string>, object>),
@@ -305,6 +307,7 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ObjectDetectionInferenceRequestConfidence), TypeInfoPropertyName = "ObjectDetectionInferenceRequestConfidence2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ObjectDetectionInferenceResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.Kind>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PPOCRInferenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PerceptionEncoderCompareRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PerceptionEncoderCompareResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PerceptionEncoderEmbeddingResponse))]

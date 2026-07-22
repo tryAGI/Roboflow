@@ -34,6 +34,30 @@ namespace Roboflow
         public long? GpuMemoryTotal { get; set; }
 
         /// <summary>
+        /// Live tensor memory allocated by PyTorch's CUDA allocator in bytes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("torch_cuda_allocated")]
+        public long? TorchCudaAllocated { get; set; }
+
+        /// <summary>
+        /// Total memory reserved by PyTorch's CUDA allocator in bytes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("torch_cuda_reserved")]
+        public long? TorchCudaReserved { get; set; }
+
+        /// <summary>
+        /// Reserved but currently unallocated PyTorch CUDA memory in bytes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("torch_cuda_allocator_cache")]
+        public long? TorchCudaAllocatorCache { get; set; }
+
+        /// <summary>
+        /// Device memory not reserved by PyTorch in bytes. This includes native runtimes, CUDA context overhead, and allocations from other processes.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("non_torch_gpu_memory")]
+        public long? NonTorchGpuMemory { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -54,6 +78,18 @@ namespace Roboflow
         /// <param name="gpuMemoryTotal">
         /// Total GPU memory available in bytes.
         /// </param>
+        /// <param name="torchCudaAllocated">
+        /// Live tensor memory allocated by PyTorch's CUDA allocator in bytes.
+        /// </param>
+        /// <param name="torchCudaReserved">
+        /// Total memory reserved by PyTorch's CUDA allocator in bytes.
+        /// </param>
+        /// <param name="torchCudaAllocatorCache">
+        /// Reserved but currently unallocated PyTorch CUDA memory in bytes.
+        /// </param>
+        /// <param name="nonTorchGpuMemory">
+        /// Device memory not reserved by PyTorch in bytes. This includes native runtimes, CUDA context overhead, and allocations from other processes.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -61,12 +97,20 @@ namespace Roboflow
             global::System.Collections.Generic.IList<global::Roboflow.ModelDescriptionEntity> models,
             long? totalVramBytes,
             long? gpuMemoryUsed,
-            long? gpuMemoryTotal)
+            long? gpuMemoryTotal,
+            long? torchCudaAllocated,
+            long? torchCudaReserved,
+            long? torchCudaAllocatorCache,
+            long? nonTorchGpuMemory)
         {
             this.Models = models ?? throw new global::System.ArgumentNullException(nameof(models));
             this.TotalVramBytes = totalVramBytes;
             this.GpuMemoryUsed = gpuMemoryUsed;
             this.GpuMemoryTotal = gpuMemoryTotal;
+            this.TorchCudaAllocated = torchCudaAllocated;
+            this.TorchCudaReserved = torchCudaReserved;
+            this.TorchCudaAllocatorCache = torchCudaAllocatorCache;
+            this.NonTorchGpuMemory = nonTorchGpuMemory;
         }
 
         /// <summary>

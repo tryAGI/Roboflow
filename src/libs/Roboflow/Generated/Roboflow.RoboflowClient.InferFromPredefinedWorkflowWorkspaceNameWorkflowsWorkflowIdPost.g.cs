@@ -505,6 +505,10 @@ namespace Roboflow
         /// <param name="requestWorkflowId">
         /// Optional identifier of workflow
         /// </param>
+        /// <param name="disableSinks">
+        /// Run the workflow with sink writes and outbound notifications/uploads disabled.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="useCache">
         /// Controls usage of cache for workflow definitions. Set this to False when you frequently modify definition saved in Roboflow app and want to fetch the newest version for the request.<br/>
         /// Default Value: true
@@ -524,6 +528,7 @@ namespace Roboflow
             bool? enableProfiling = default,
             bool? debug = default,
             string? requestWorkflowId = default,
+            bool? disableSinks = default,
             bool? useCache = default,
             string? workflowVersionId = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
@@ -537,6 +542,7 @@ namespace Roboflow
                 EnableProfiling = enableProfiling,
                 Debug = debug,
                 WorkflowId = requestWorkflowId,
+                DisableSinks = disableSinks,
                 UseCache = useCache,
                 WorkflowVersionId = workflowVersionId,
             };

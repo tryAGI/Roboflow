@@ -48,6 +48,13 @@ namespace Roboflow
         public string? WorkflowId { get; set; }
 
         /// <summary>
+        /// Run the workflow with sink writes and outbound notifications/uploads disabled.<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disable_sinks")]
+        public bool? DisableSinks { get; set; }
+
+        /// <summary>
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("specification")]
@@ -91,6 +98,10 @@ namespace Roboflow
         /// <param name="workflowId">
         /// Optional identifier of workflow
         /// </param>
+        /// <param name="disableSinks">
+        /// Run the workflow with sink writes and outbound notifications/uploads disabled.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="isPreview">
         /// Reserved, used internally by Roboflow to distinguish between preview and non-preview runs<br/>
         /// Default Value: false
@@ -106,6 +117,7 @@ namespace Roboflow
             bool? enableProfiling,
             bool? debug,
             string? workflowId,
+            bool? disableSinks,
             bool? isPreview)
         {
             this.ApiKey = apiKey;
@@ -114,6 +126,7 @@ namespace Roboflow
             this.EnableProfiling = enableProfiling;
             this.Debug = debug;
             this.WorkflowId = workflowId;
+            this.DisableSinks = disableSinks;
             this.Specification = specification ?? throw new global::System.ArgumentNullException(nameof(specification));
             this.IsPreview = isPreview;
         }

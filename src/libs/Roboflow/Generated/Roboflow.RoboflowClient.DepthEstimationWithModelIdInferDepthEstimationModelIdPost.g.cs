@@ -525,6 +525,10 @@ namespace Roboflow
         /// The version ID of the depth estimation model<br/>
         /// Default Value: small
         /// </param>
+        /// <param name="depthMapFormat">
+        /// Serialization format for `normalized_depth` in the response: `json` (default, wire-compatible with older clients) returns the nested float list; `png16` returns a base64 16-bit grayscale PNG (quantization step 1/65535, typically &gt;10x smaller payload - `inference_sdk` decodes it back to a numpy array when requested via `depth_map_format='png16'`); `png8` returns a base64 8-bit grayscale PNG (256 depth levels, roughly another order of magnitude smaller - fine for visualization/thresholding, lossy for geometric use).<br/>
+        /// Default Value: json
+        /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
@@ -544,6 +548,7 @@ namespace Roboflow
             string? requestModelId = default,
             string? modelType = default,
             string? depthVersionId = default,
+            global::Roboflow.DepthEstimationRequestDepthMapFormat? depthMapFormat = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -561,6 +566,7 @@ namespace Roboflow
                 ModelType = modelType,
                 Image = image,
                 DepthVersionId = depthVersionId,
+                DepthMapFormat = depthMapFormat,
             };
 
             return await DepthEstimationWithModelIdInferDepthEstimationModelIdPostAsync(

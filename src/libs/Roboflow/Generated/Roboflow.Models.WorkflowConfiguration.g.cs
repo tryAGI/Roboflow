@@ -52,6 +52,12 @@ namespace Roboflow
         public object? WorkflowsParameters { get; set; }
 
         /// <summary>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("disable_sinks")]
+        public bool? DisableSinks { get; set; }
+
+        /// <summary>
         /// Default Value: 4
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflows_thread_pool_workers")]
@@ -86,6 +92,9 @@ namespace Roboflow
         /// Default Value: image
         /// </param>
         /// <param name="workflowsParameters"></param>
+        /// <param name="disableSinks">
+        /// Default Value: false
+        /// </param>
         /// <param name="workflowsThreadPoolWorkers">
         /// Default Value: 4
         /// </param>
@@ -106,6 +115,7 @@ namespace Roboflow
             string? workflowVersionId,
             string? imageInputName,
             object? workflowsParameters,
+            bool? disableSinks,
             int? workflowsThreadPoolWorkers,
             bool? cancelThreadPoolTasksOnExit,
             string? videoMetadataInputName,
@@ -118,6 +128,7 @@ namespace Roboflow
             this.WorkflowVersionId = workflowVersionId;
             this.ImageInputName = imageInputName;
             this.WorkflowsParameters = workflowsParameters;
+            this.DisableSinks = disableSinks;
             this.WorkflowsThreadPoolWorkers = workflowsThreadPoolWorkers;
             this.CancelThreadPoolTasksOnExit = cancelThreadPoolTasksOnExit;
             this.VideoMetadataInputName = videoMetadataInputName;

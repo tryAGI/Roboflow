@@ -54,6 +54,10 @@ namespace Roboflow
         /// <param name="workflowId">
         /// Optional identifier of workflow
         /// </param>
+        /// <param name="disableSinks">
+        /// Run the workflow with sink writes and outbound notifications/uploads disabled.<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="specification"></param>
         /// <param name="isPreview">
         /// Reserved, used internally by Roboflow to distinguish between preview and non-preview runs<br/>
@@ -70,6 +74,7 @@ namespace Roboflow
             bool? enableProfiling = default,
             bool? debug = default,
             string? workflowId = default,
+            bool? disableSinks = default,
             bool? isPreview = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

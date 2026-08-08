@@ -27,20 +27,23 @@ public static class RoboflowToolExtensions
 
         return AIFunctionFactory.Create(
             async (
-                [Description("The model ID to use for object detection (e.g. 'yolov8n-640')")] string modelId,
+                [Description("The model ID to use for object detection in 'project/version' format")] string modelId,
                 [Description("The image URL to run object detection on")] string imageUrl,
                 CancellationToken cancellationToken) =>
             {
-                var image = new InferenceRequestImage(type: "url", value: imageUrl);
+                var (datasetId, versionId) = SplitModelId(modelId);
 
-                var response = await client.InferObjectDetectionInferObjectDetectionPostAsync(
-                    id: modelId,
-                    image: image,
+                var response = await client.LegacyInferFromRequestDatasetIdVersionIdPostAsync(
+                    datasetId: datasetId,
+                    versionId: versionId,
+                    image: imageUrl,
                     confidence: confidence,
                     maxDetections: maxDetections,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return FormatObjectDetectionResponse(response);
+                return response.IsValue3
+                    ? FormatSingleObjectDetectionResponse(response.Value3)
+                    : "No detection results returned.";
             },
             name: "DetectObjects",
             description: "Detect objects in an image using a Roboflow computer vision model. Returns bounding boxes with class labels and confidence scores.");
@@ -62,19 +65,22 @@ public static class RoboflowToolExtensions
 
         return AIFunctionFactory.Create(
             async (
-                [Description("The model ID to use for image classification")] string modelId,
+                [Description("The model ID to use for image classification in 'project/version' format")] string modelId,
                 [Description("The image URL to classify")] string imageUrl,
                 CancellationToken cancellationToken) =>
             {
-                var image = new InferenceRequestImage(type: "url", value: imageUrl);
+                var (datasetId, versionId) = SplitModelId(modelId);
 
-                var response = await client.InferClassificationInferClassificationPostAsync(
-                    id: modelId,
-                    image: image,
+                var response = await client.LegacyInferFromRequestDatasetIdVersionIdPostAsync(
+                    datasetId: datasetId,
+                    versionId: versionId,
+                    image: imageUrl,
                     confidence: confidence,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return FormatClassificationResponse(response);
+                return response.IsValue4
+                    ? FormatSingleClassificationResponse(response.Value4)
+                    : "No classification results returned.";
             },
             name: "ClassifyImage",
             description: "Classify an image using a Roboflow classification model. Returns predicted class labels with confidence scores.");
@@ -127,20 +133,23 @@ public static class RoboflowToolExtensions
 
         return AIFunctionFactory.Create(
             async (
-                [Description("The model ID to use for instance segmentation")] string modelId,
+                [Description("The model ID to use for instance segmentation in 'project/version' format")] string modelId,
                 [Description("The image URL to run instance segmentation on")] string imageUrl,
                 CancellationToken cancellationToken) =>
             {
-                var image = new InferenceRequestImage(type: "url", value: imageUrl);
+                var (datasetId, versionId) = SplitModelId(modelId);
 
-                var response = await client.InferInstanceSegmentationInferInstanceSegmentationPostAsync(
-                    id: modelId,
-                    image: image,
+                var response = await client.LegacyInferFromRequestDatasetIdVersionIdPostAsync(
+                    datasetId: datasetId,
+                    versionId: versionId,
+                    image: imageUrl,
                     confidence: confidence,
                     maxDetections: maxDetections,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return FormatInstanceSegmentationResponse(response);
+                return response.IsValue1
+                    ? FormatSingleInstanceSegmentationResponse(response.Value1)
+                    : "No segmentation results returned.";
             },
             name: "SegmentObjects",
             description: "Run instance segmentation on an image using a Roboflow model. Returns detected objects with pixel-level polygon masks, bounding boxes, and confidence scores.");
@@ -293,5 +302,18 @@ public static class RoboflowToolExtensions
         }
 
         return string.Join("\n", parts);
+    }
+
+    private static (string DatasetId, string VersionId) SplitModelId(string modelId)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(modelId);
+
+        var separatorIndex = modelId.LastIndexOf('/');
+        if (separatorIndex <= 0 || separatorIndex == modelId.Length - 1)
+        {
+            throw new ArgumentException("The model ID must use 'project/version' format.", nameof(modelId));
+        }
+
+        return (modelId[..separatorIndex], modelId[(separatorIndex + 1)..]);
     }
 }

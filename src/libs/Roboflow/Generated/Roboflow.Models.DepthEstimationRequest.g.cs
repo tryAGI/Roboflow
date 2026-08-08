@@ -8,7 +8,9 @@ namespace Roboflow
     /// Attributes:<br/>
     ///     image (Union[List[InferenceRequestImage], InferenceRequestImage]): Image(s) to be estimated.<br/>
     ///     model_id (str): The model ID to use for depth estimation.<br/>
-    ///     depth_version_id (Optional[str]): The version ID of the depth estimation model.
+    ///     depth_version_id (Optional[str]): The version ID of the depth estimation model.<br/>
+    ///     depth_map_format (Literal["json", "png16", "png8"]): Serialization format<br/>
+    ///         for the normalized depth map in the response.
     /// </summary>
     public sealed partial class DepthEstimationRequest
     {
@@ -50,6 +52,12 @@ namespace Roboflow
         public string? SourceInfo { get; set; }
 
         /// <summary>
+        /// Internal stream-pipeline frame pairing id. Not part of the public API.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("stream_pipeline_context_id")]
+        public string? StreamPipelineContextId { get; set; }
+
+        /// <summary>
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
         /// </summary>
@@ -84,6 +92,14 @@ namespace Roboflow
         public string? DepthVersionId { get; set; }
 
         /// <summary>
+        /// Serialization format for `normalized_depth` in the response: `json` (default, wire-compatible with older clients) returns the nested float list; `png16` returns a base64 16-bit grayscale PNG (quantization step 1/65535, typically &gt;10x smaller payload - `inference_sdk` decodes it back to a numpy array when requested via `depth_map_format='png16'`); `png8` returns a base64 8-bit grayscale PNG (256 depth levels, roughly another order of magnitude smaller - fine for visualization/thresholding, lossy for geometric use).<br/>
+        /// Default Value: json
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("depth_map_format")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.DepthEstimationRequestDepthMapFormatJsonConverter))]
+        public global::Roboflow.DepthEstimationRequestDepthMapFormat? DepthMapFormat { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -103,6 +119,9 @@ namespace Roboflow
         /// <param name="start"></param>
         /// <param name="source"></param>
         /// <param name="sourceInfo"></param>
+        /// <param name="streamPipelineContextId">
+        /// Internal stream-pipeline frame pairing id. Not part of the public API.
+        /// </param>
         /// <param name="disableModelMonitoring">
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
@@ -115,6 +134,10 @@ namespace Roboflow
         /// The version ID of the depth estimation model<br/>
         /// Default Value: small
         /// </param>
+        /// <param name="depthMapFormat">
+        /// Serialization format for `normalized_depth` in the response: `json` (default, wire-compatible with older clients) returns the nested float list; `png16` returns a base64 16-bit grayscale PNG (quantization step 1/65535, typically &gt;10x smaller payload - `inference_sdk` decodes it back to a numpy array when requested via `depth_map_format='png16'`); `png8` returns a base64 8-bit grayscale PNG (256 depth levels, roughly another order of magnitude smaller - fine for visualization/thresholding, lossy for geometric use).<br/>
+        /// Default Value: json
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -126,10 +149,12 @@ namespace Roboflow
             double? start,
             string? source,
             string? sourceInfo,
+            string? streamPipelineContextId,
             bool? disableModelMonitoring,
             string? modelId,
             string? modelType,
-            string? depthVersionId)
+            string? depthVersionId,
+            global::Roboflow.DepthEstimationRequestDepthMapFormat? depthMapFormat)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.ApiKey = apiKey;
@@ -137,11 +162,13 @@ namespace Roboflow
             this.Start = start;
             this.Source = source;
             this.SourceInfo = sourceInfo;
+            this.StreamPipelineContextId = streamPipelineContextId;
             this.DisableModelMonitoring = disableModelMonitoring;
             this.ModelId = modelId;
             this.ModelType = modelType;
             this.Image = image;
             this.DepthVersionId = depthVersionId;
+            this.DepthMapFormat = depthMapFormat;
         }
 
         /// <summary>

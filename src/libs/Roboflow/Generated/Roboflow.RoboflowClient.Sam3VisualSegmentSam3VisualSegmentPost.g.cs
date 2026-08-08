@@ -29,12 +29,16 @@ namespace Roboflow
             global::System.Net.Http.HttpClient httpClient,
             bool? countinference,
             ref string? serviceSecret,
+            ref string? source,
+            ref string? sourceInfo,
             global::Roboflow.Sam2SegmentationRequest request);
         partial void PrepareSam3VisualSegmentSam3VisualSegmentPostRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
             bool? countinference,
             string? serviceSecret,
+            string? source,
+            string? sourceInfo,
             global::Roboflow.Sam2SegmentationRequest request);
         partial void ProcessSam3VisualSegmentSam3VisualSegmentPostResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -51,6 +55,12 @@ namespace Roboflow
         /// </summary>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
+        /// <param name="source">
+        /// The source of the inference request
+        /// </param>
+        /// <param name="sourceInfo">
+        /// The detailed source information of the inference request
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -60,6 +70,8 @@ namespace Roboflow
             global::Roboflow.Sam2SegmentationRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            string? source = default,
+            string? sourceInfo = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -68,6 +80,8 @@ namespace Roboflow
                 request: request,
                 countinference: countinference,
                 serviceSecret: serviceSecret,
+                source: source,
+                sourceInfo: sourceInfo,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken
             ).ConfigureAwait(false);
@@ -80,6 +94,12 @@ namespace Roboflow
         /// </summary>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
+        /// <param name="source">
+        /// The source of the inference request
+        /// </param>
+        /// <param name="sourceInfo">
+        /// The detailed source information of the inference request
+        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -89,6 +109,8 @@ namespace Roboflow
             global::Roboflow.Sam2SegmentationRequest request,
             bool? countinference = default,
             string? serviceSecret = default,
+            string? source = default,
+            string? sourceInfo = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -100,6 +122,8 @@ namespace Roboflow
                 httpClient: HttpClient,
                 countinference: countinference,
                 serviceSecret: ref serviceSecret,
+                source: ref source,
+                sourceInfo: ref sourceInfo,
                 request: request);
 
 
@@ -139,6 +163,8 @@ namespace Roboflow
                             __pathBuilder
                                 .AddOptionalParameter("countinference", countinference?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("service_secret", serviceSecret)
+                                .AddOptionalParameter("source", source)
+                                .AddOptionalParameter("source_info", sourceInfo)
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Roboflow.AutoSDKRequestOptionsSupport.AppendQueryParameters(
@@ -171,6 +197,8 @@ namespace Roboflow
                     httpRequestMessage: __httpRequest,
                     countinference: countinference,
                     serviceSecret: serviceSecret,
+                    source: source,
+                    sourceInfo: sourceInfo,
                     request: request);
 
                 return __httpRequest;
@@ -489,6 +517,12 @@ namespace Roboflow
         /// </summary>
         /// <param name="countinference"></param>
         /// <param name="serviceSecret"></param>
+        /// <param name="source">
+        /// The source of the inference request
+        /// </param>
+        /// <param name="sourceInfo">
+        /// The detailed source information of the inference request
+        /// </param>
         /// <param name="id"></param>
         /// <param name="apiKey">
         /// Roboflow API Key that will be passed to the model during initialization for artifact retrieval
@@ -497,8 +531,11 @@ namespace Roboflow
         /// Default Value: true
         /// </param>
         /// <param name="start"></param>
-        /// <param name="source"></param>
-        /// <param name="sourceInfo"></param>
+        /// <param name="requestSource"></param>
+        /// <param name="requestSourceInfo"></param>
+        /// <param name="streamPipelineContextId">
+        /// Internal stream-pipeline frame pairing id. Not part of the public API.
+        /// </param>
         /// <param name="disableModelMonitoring">
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
@@ -542,11 +579,14 @@ namespace Roboflow
             global::Roboflow.InferenceRequestImage image,
             bool? countinference = default,
             string? serviceSecret = default,
+            string? source = default,
+            string? sourceInfo = default,
             string? apiKey = default,
             bool? usageBillable = default,
             double? start = default,
-            string? source = default,
-            string? sourceInfo = default,
+            string? requestSource = default,
+            string? requestSourceInfo = default,
+            string? streamPipelineContextId = default,
             bool? disableModelMonitoring = default,
             string? sam2VersionId = default,
             string? modelId = default,
@@ -565,8 +605,9 @@ namespace Roboflow
                 ApiKey = apiKey,
                 UsageBillable = usageBillable,
                 Start = start,
-                Source = source,
-                SourceInfo = sourceInfo,
+                Source = requestSource,
+                SourceInfo = requestSourceInfo,
+                StreamPipelineContextId = streamPipelineContextId,
                 DisableModelMonitoring = disableModelMonitoring,
                 Sam2VersionId = sam2VersionId,
                 ModelId = modelId,
@@ -582,6 +623,8 @@ namespace Roboflow
             return await Sam3VisualSegmentSam3VisualSegmentPostAsync(
                 countinference: countinference,
                 serviceSecret: serviceSecret,
+                source: source,
+                sourceInfo: sourceInfo,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);

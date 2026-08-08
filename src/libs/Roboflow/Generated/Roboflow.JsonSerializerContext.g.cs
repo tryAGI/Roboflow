@@ -13,37 +13,13 @@ namespace Roboflow
         DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
         Converters = new global::System.Type[]
         {
-            typeof(global::Roboflow.JsonConverters.ClassificationInferenceRequestConfidenceJsonConverter),
+            typeof(global::Roboflow.JsonConverters.DepthEstimationRequestDepthMapFormatJsonConverter),
 
-            typeof(global::Roboflow.JsonConverters.ClassificationInferenceRequestConfidenceNullableJsonConverter),
+            typeof(global::Roboflow.JsonConverters.DepthEstimationRequestDepthMapFormatNullableJsonConverter),
 
-            typeof(global::Roboflow.JsonConverters.InstanceSegmentationInferenceRequestConfidenceJsonConverter),
+            typeof(global::Roboflow.JsonConverters.DepthEstimationResponseDepthMapFormatJsonConverter),
 
-            typeof(global::Roboflow.JsonConverters.InstanceSegmentationInferenceRequestConfidenceNullableJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.InstanceSegmentationInferenceRequestResponseMaskFormatJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.InstanceSegmentationInferenceRequestResponseMaskFormatNullableJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.KeypointsDetectionInferenceRequestConfidenceJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.KeypointsDetectionInferenceRequestConfidenceNullableJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.ObjectDetectionInferenceRequestConfidenceJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.ObjectDetectionInferenceRequestConfidenceNullableJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.SelectorTypeJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.SelectorTypeNullableJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.SemanticSegmentationInferenceRequestConfidenceJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.SemanticSegmentationInferenceRequestConfidenceNullableJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.ValueTypeJsonConverter),
-
-            typeof(global::Roboflow.JsonConverters.ValueTypeNullableJsonConverter),
+            typeof(global::Roboflow.JsonConverters.DepthEstimationResponseDepthMapFormatNullableJsonConverter),
 
             typeof(global::Roboflow.JsonConverters.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2JsonConverter),
 
@@ -61,10 +37,6 @@ namespace Roboflow
 
             typeof(global::Roboflow.JsonConverters.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2NullableJsonConverter),
 
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.ClassificationInferenceRequestConfidence?>),
-
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.InferenceRequestImage, string>),
@@ -81,27 +53,17 @@ namespace Roboflow
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
 
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<object, global::System.Collections.Generic.IList<object>>),
+            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.InstanceSegmentationInferenceRequestConfidence?>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.InstanceSegmentationPrediction, global::Roboflow.InstanceSegmentationRLEPrediction>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.KeypointsDetectionInferenceRequestConfidence?>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>),
 
@@ -113,11 +75,11 @@ namespace Roboflow
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>),
 
+            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>),
+
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
 
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.ObjectDetectionInferenceRequestConfidence?>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>),
+            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.InferenceRequestImage, string>),
 
@@ -151,10 +113,6 @@ namespace Roboflow
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<int>>>, object>),
 
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.SemanticSegmentationInferenceRequestConfidence?>),
-
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>),
@@ -168,16 +126,6 @@ namespace Roboflow
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2?>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2?>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.ObjectDetectionInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionInferenceResponse>, global::Roboflow.StubResponse>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.StubResponse>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.StubResponse>),
-
-            typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.StubResponse>),
 
             typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::Roboflow.LMMInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.LMMInferenceResponse>, global::Roboflow.StubResponse>),
 
@@ -194,36 +142,25 @@ namespace Roboflow
             typeof(global::Roboflow.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.JsonSerializerContextTypes))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AddModelRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.BlockDescription))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.OutputDefinition>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.OutputDefinition))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<object>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, int>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Box))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.BoxXYXY))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ClassificationInferenceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>), TypeInfoPropertyName = "AnyOfIListInferenceRequestImageInferenceRequestImage2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.InferenceRequestImage))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<double?, global::Roboflow.ClassificationInferenceRequestConfidence?>), TypeInfoPropertyName = "AnyOfDoubleClassificationInferenceRequestConfidence2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ClassificationInferenceRequestConfidence), TypeInfoPropertyName = "ClassificationInferenceRequestConfidence2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ClassificationInferenceResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>), TypeInfoPropertyName = "AnyOfIListInferenceResponseImageInferenceResponseImage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.InferenceResponseImage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ClassificationPrediction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ClassificationPrediction))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ClearModelRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ClipCompareRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(bool))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.InferenceRequestImage, string>), TypeInfoPropertyName = "AnyOfInferenceRequestImageString2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.InferenceRequestImage))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage, string, global::System.Collections.Generic.IList<string>, object>), TypeInfoPropertyName = "AnyOfIListInferenceRequestImageInferenceRequestImageStringIListStringObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ClipCompareResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<double>, global::System.Collections.Generic.Dictionary<string, double>>), TypeInfoPropertyName = "AnyOfIListDoubleDictionaryStringDouble2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<double>))]
@@ -231,44 +168,22 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ClipEmbeddingResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ClipImageEmbeddingRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>), TypeInfoPropertyName = "AnyOfIListInferenceRequestImageInferenceRequestImage2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ClipTextEmbeddingRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<string>, string>), TypeInfoPropertyName = "AnyOfIListStringString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.CommandContext))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DepthEstimationRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DepthEstimationRequestDepthMapFormat), TypeInfoPropertyName = "DepthEstimationRequestDepthMapFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DepthEstimationResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DescribeBlocksRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.DynamicBlockDefinition>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DynamicBlockDefinition))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DescribeInterfaceResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<string>, global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<string>>>), TypeInfoPropertyName = "AnyOfIListStringDictionaryStringIListString2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<object, global::System.Collections.Generic.IList<object>>), TypeInfoPropertyName = "AnyOfObjectIListObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<string, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>), TypeInfoPropertyName = "AnyOfStringIListIListDouble2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DepthEstimationResponseDepthMapFormat), TypeInfoPropertyName = "DepthEstimationResponseDepthMapFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DoctrOCRInferenceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ManifestDescription))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PythonCode))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DynamicInputDefinition))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.SelectorType>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.SelectorType), TypeInfoPropertyName = "SelectorType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ValueType>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ValueType), TypeInfoPropertyName = "ValueType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.DynamicOutputDefinition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.EasyOCRInferenceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ExecutionEngineVersions))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ExternalBlockPropertyPrimitiveDefinition))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ExternalOperationDescription))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ExternalOperatorDescription))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<string>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ExternalWorkflowsBlockSelectorDefinition))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.GroundingDINOInferenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.HTTPValidationError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ValidationError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ValidationError))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.InitializeWebRTCResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.InstanceSegmentationInferenceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<double?, global::Roboflow.InstanceSegmentationInferenceRequestConfidence?>), TypeInfoPropertyName = "AnyOfDoubleInstanceSegmentationInferenceRequestConfidence2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.InstanceSegmentationInferenceRequestConfidence), TypeInfoPropertyName = "InstanceSegmentationInferenceRequestConfidence2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.InstanceSegmentationInferenceRequestResponseMaskFormat), TypeInfoPropertyName = "InstanceSegmentationInferenceRequestResponseMaskFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.InstanceSegmentationInferenceResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationPrediction, global::Roboflow.InstanceSegmentationRLEPrediction>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationPrediction, global::Roboflow.InstanceSegmentationRLEPrediction>), TypeInfoPropertyName = "AnyOfInstanceSegmentationPredictionInstanceSegmentationRLEPrediction2")]
@@ -277,19 +192,13 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.PointOutput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PointOutput))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Keypoint))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.KeypointsDetectionInferenceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<double?, global::Roboflow.KeypointsDetectionInferenceRequestConfidence?>), TypeInfoPropertyName = "AnyOfDoubleKeypointsDetectionInferenceRequestConfidence2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.KeypointsDetectionInferenceRequestConfidence), TypeInfoPropertyName = "KeypointsDetectionInferenceRequestConfidence2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.KeypointsDetectionInferenceResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.KeypointsPrediction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.KeypointsPrediction))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.Keypoint>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Kind))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.LMMInferenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.LMMInferenceResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<string, object>), TypeInfoPropertyName = "AnyOfStringObject2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Roboflow.DynamicInputDefinition>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::Roboflow.DynamicOutputDefinition>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ModelDescriptionEntity))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ModelsDescriptions))]
@@ -300,19 +209,17 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.OCRInferenceResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionPrediction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ObjectDetectionPrediction))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ObjectDetectionInferenceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<double?, global::Roboflow.ObjectDetectionInferenceRequestConfidence?>), TypeInfoPropertyName = "AnyOfDoubleObjectDetectionInferenceRequestConfidence2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ObjectDetectionInferenceRequestConfidence), TypeInfoPropertyName = "ObjectDetectionInferenceRequestConfidence2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ObjectDetectionInferenceResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.Kind>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.OwlV2InferenceRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.TrainingImage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.TrainingImage))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PPOCRInferenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PerceptionEncoderCompareRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PerceptionEncoderCompareResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PerceptionEncoderEmbeddingResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PerceptionEncoderImageEmbeddingRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PerceptionEncoderTextEmbeddingRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PointInput))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PredefinedWorkflowDescribeInterfaceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.PredefinedWorkflowInferenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.RTCIceServer))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<string, global::System.Collections.Generic.IList<string>>), TypeInfoPropertyName = "AnyOfStringIListString2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Sam2EmbeddingRequest))]
@@ -343,6 +250,7 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.Sam3Prompt>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Sam3SegmentationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.Sam3PromptResult>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.Sam33dObjectsInferenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.SamEmbeddingRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.SamEmbeddingResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object>), TypeInfoPropertyName = "AnyOfIListIListIListIListDoubleObject2")]
@@ -352,17 +260,14 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object, object>), TypeInfoPropertyName = "AnyOfIListIListIListIListDoubleObjectObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>, object, object>), TypeInfoPropertyName = "AnyOfIListIListIListDoubleObjectObject2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.SamSegmentationResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.SemanticSegmentationInferenceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<double?, global::Roboflow.SemanticSegmentationInferenceRequestConfidence?>), TypeInfoPropertyName = "AnyOfDoubleSemanticSegmentationInferenceRequestConfidence2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.SemanticSegmentationInferenceRequestConfidence), TypeInfoPropertyName = "SemanticSegmentationInferenceRequestConfidence2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.SemanticSegmentationInferenceResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.SemanticSegmentationPrediction))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.ServerVersionInfo))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.StubResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.TrOCRInferenceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.UniversalQueryLanguageDescription))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ExternalOperationDescription>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ExternalOperatorDescription>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.TrainBox))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.TrainBox>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<string, int?>), TypeInfoPropertyName = "AnyOfStringInt322")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WebRTCConfig))]
@@ -373,16 +278,6 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WebRTCWorkerRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowConfiguration))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.DateTime))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowInferenceResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowSpecificationDescribeInterfaceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowSpecificationInferenceRequest))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowValidationStatus))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowsBlocksDescription))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.BlockDescription>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IList<global::Roboflow.ExternalWorkflowsBlockSelectorDefinition>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ExternalWorkflowsBlockSelectorDefinition>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ExternalBlockPropertyPrimitiveDefinition>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.WorkflowsBlocksSchemaDescription))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.YOLOWorldInferenceRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2?>), TypeInfoPropertyName = "AnyOfDoubleLegacyInferFromRequestDatasetIdVersionIdPostConfidence22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostConfidence2), TypeInfoPropertyName = "LegacyInferFromRequestDatasetIdVersionIdPostConfidence22")]
@@ -390,38 +285,24 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2?>), TypeInfoPropertyName = "AnyOfDoubleLegacyInferFromRequestDatasetIdVersionIdGetConfidence22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2), TypeInfoPropertyName = "LegacyInferFromRequestDatasetIdVersionIdGetConfidence22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.ObjectDetectionInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionInferenceResponse>, global::Roboflow.StubResponse>), TypeInfoPropertyName = "AnyOfObjectDetectionInferenceResponseIListObjectDetectionInferenceResponseStubResponse2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.ObjectDetectionInferenceResponse>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.StubResponse>), TypeInfoPropertyName = "AnyOfInstanceSegmentationInferenceResponseStubResponse2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse>), TypeInfoPropertyName = "AnyOfSemanticSegmentationInferenceResponseStubResponse2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.StubResponse>), TypeInfoPropertyName = "AnyOfClassificationInferenceResponseMultiLabelClassificationInferenceResponseStubResponse2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.StubResponse>), TypeInfoPropertyName = "AnyOfKeypointsDetectionInferenceResponseStubResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.LMMInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.LMMInferenceResponse>, global::Roboflow.StubResponse>), TypeInfoPropertyName = "AnyOfLMMInferenceResponseIListLMMInferenceResponseStubResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.LMMInferenceResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.OCRInferenceResponse, global::System.Collections.Generic.IList<global::Roboflow.OCRInferenceResponse>>), TypeInfoPropertyName = "AnyOfOCRInferenceResponseIListOCRInferenceResponse2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::Roboflow.OCRInferenceResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>), TypeInfoPropertyName = "StubResponse_object_3c21c3c89a5e4853")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>?), TypeInfoPropertyName = "StubResponse_object_c867376ea263bfbe")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.OutputDefinition>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.InferenceResponseImage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ClassificationPrediction>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage, string, global::System.Collections.Generic.List<string>, object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<double>, global::System.Collections.Generic.Dictionary<string, double>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<double>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::Roboflow.InferenceRequestImage>, global::Roboflow.InferenceRequestImage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<string>, string>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.DynamicBlockDefinition>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<string>, global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<string>>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<object, global::System.Collections.Generic.List<object>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.SelectorType>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ValueType>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<string>>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<string, global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ValidationError>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationPrediction, global::Roboflow.InstanceSegmentationRLEPrediction>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.PointOutput>))]
@@ -429,7 +310,7 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.Keypoint>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ModelDescriptionEntity>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ObjectDetectionPrediction>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.Kind>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.TrainingImage>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<string, global::System.Collections.Generic.List<string>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.PointInput>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.Sam2Prompt>))]
@@ -448,16 +329,9 @@ namespace Roboflow
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>>>, object, object>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::System.Collections.Generic.List<global::System.Collections.Generic.List<global::System.Collections.Generic.List<double>>>, object, object>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ExternalOperationDescription>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ExternalOperatorDescription>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.TrainBox>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.AnyOf<string, int?>>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.RTCIceServer>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.BlockDescription>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.List<global::Roboflow.ExternalWorkflowsBlockSelectorDefinition>>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ExternalWorkflowsBlockSelectorDefinition>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ExternalBlockPropertyPrimitiveDefinition>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.ObjectDetectionInferenceResponse, global::System.Collections.Generic.List<global::Roboflow.ObjectDetectionInferenceResponse>, global::Roboflow.StubResponse>))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.ObjectDetectionInferenceResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.LMMInferenceResponse, global::System.Collections.Generic.List<global::Roboflow.LMMInferenceResponse>, global::Roboflow.StubResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::Roboflow.LMMInferenceResponse>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::Roboflow.AnyOf<global::Roboflow.OCRInferenceResponse, global::System.Collections.Generic.List<global::Roboflow.OCRInferenceResponse>>))]

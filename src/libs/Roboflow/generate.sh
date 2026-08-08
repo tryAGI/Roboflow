@@ -13,10 +13,10 @@ fetch_spec() {
     --connect-timeout 30 --max-time 300
 }
 
-# OpenAPI spec: https://inference.roboflow.com/openapi.json
+# OpenAPI spec: https://serverless.roboflow.com/openapi.json
 install_autosdk_cli
 rm -rf Generated
-fetch_spec --fail --silent --show-error --location https://inference.roboflow.com/openapi.json -o openapi.json
+fetch_spec --fail --silent --show-error --location https://serverless.roboflow.com/openapi.json -o openapi.json
 
 # Auth: --security-scheme injects apiKey in query parameter (spec has no securitySchemes).
 # --base-url injects server URL (spec has no servers section).
@@ -27,4 +27,4 @@ autosdk generate openapi.json \
   --output Generated \
   --exclude-deprecated-operations \
   --security-scheme ApiKey:Query:api_key \
-  --base-url https://inference.roboflow.com
+  --base-url https://serverless.roboflow.com

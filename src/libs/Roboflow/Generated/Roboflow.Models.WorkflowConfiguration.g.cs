@@ -64,6 +64,12 @@ namespace Roboflow
         public int? WorkflowsThreadPoolWorkers { get; set; }
 
         /// <summary>
+        /// Default Value: 4
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("execution_engine_thread_pool_workers")]
+        public int? ExecutionEngineThreadPoolWorkers { get; set; }
+
+        /// <summary>
         /// Default Value: true
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("cancel_thread_pool_tasks_on_exit")]
@@ -98,6 +104,9 @@ namespace Roboflow
         /// <param name="workflowsThreadPoolWorkers">
         /// Default Value: 4
         /// </param>
+        /// <param name="executionEngineThreadPoolWorkers">
+        /// Default Value: 4
+        /// </param>
         /// <param name="cancelThreadPoolTasksOnExit">
         /// Default Value: true
         /// </param>
@@ -117,6 +126,7 @@ namespace Roboflow
             object? workflowsParameters,
             bool? disableSinks,
             int? workflowsThreadPoolWorkers,
+            int? executionEngineThreadPoolWorkers,
             bool? cancelThreadPoolTasksOnExit,
             string? videoMetadataInputName,
             string type = "WorkflowConfiguration")
@@ -130,6 +140,7 @@ namespace Roboflow
             this.WorkflowsParameters = workflowsParameters;
             this.DisableSinks = disableSinks;
             this.WorkflowsThreadPoolWorkers = workflowsThreadPoolWorkers;
+            this.ExecutionEngineThreadPoolWorkers = executionEngineThreadPoolWorkers;
             this.CancelThreadPoolTasksOnExit = cancelThreadPoolTasksOnExit;
             this.VideoMetadataInputName = videoMetadataInputName;
         }

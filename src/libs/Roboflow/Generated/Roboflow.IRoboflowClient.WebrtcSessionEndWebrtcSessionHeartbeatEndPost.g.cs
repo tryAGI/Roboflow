@@ -44,7 +44,7 @@ namespace Roboflow
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<string> WebrtcSessionEndWebrtcSessionHeartbeatEndPostAsync(
             string sessionId,
-            string apiKey,
+            string? apiKey = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

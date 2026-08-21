@@ -19,8 +19,7 @@ namespace Roboflow
         /// 
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ApiKey { get; set; }
+        public string? ApiKey { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -38,10 +37,10 @@ namespace Roboflow
 #endif
         public WebRTCSessionHeartbeatRequest(
             string sessionId,
-            string apiKey)
+            string? apiKey)
         {
             this.SessionId = sessionId ?? throw new global::System.ArgumentNullException(nameof(sessionId));
-            this.ApiKey = apiKey ?? throw new global::System.ArgumentNullException(nameof(apiKey));
+            this.ApiKey = apiKey;
         }
 
         /// <summary>

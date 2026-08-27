@@ -11,7 +11,7 @@ namespace Roboflow
     public sealed partial class RoboflowClient : global::Roboflow.IRoboflowClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://serverless.roboflow.com/";
 
@@ -38,7 +38,7 @@ namespace Roboflow
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::Roboflow.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

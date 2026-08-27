@@ -4,12 +4,12 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WebRTCConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("iceServers")]
         [global::System.Text.Json.Serialization.JsonRequired]

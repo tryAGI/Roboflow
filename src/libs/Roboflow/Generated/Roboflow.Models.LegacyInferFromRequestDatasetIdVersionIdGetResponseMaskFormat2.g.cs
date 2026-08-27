@@ -4,16 +4,16 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Polygon,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Rle,
     }

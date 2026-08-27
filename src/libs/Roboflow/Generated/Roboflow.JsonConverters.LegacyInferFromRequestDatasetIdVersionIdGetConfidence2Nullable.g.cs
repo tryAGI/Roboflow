@@ -20,7 +20,7 @@ namespace Roboflow.JsonConverters
                     {
                         return global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2Extensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

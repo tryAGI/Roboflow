@@ -4,16 +4,16 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum LegacyInferFromRequestDatasetIdVersionIdPostConfidence2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Best,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Default,
     }

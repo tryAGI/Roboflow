@@ -4,7 +4,7 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class InitializeWebRTCResponse
     {
@@ -23,14 +23,14 @@ namespace Roboflow
         public required global::Roboflow.CommandContext Context { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("sdp")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Sdp { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         [global::System.Text.Json.Serialization.JsonRequired]

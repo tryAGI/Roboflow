@@ -4,33 +4,33 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class BoxXYXY
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("x0")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double X0 { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("y0")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Y0 { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("x1")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double X1 { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("y1")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -4,26 +4,26 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Sam3PromptResult
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_index")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int PromptIndex { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("echo")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Roboflow.Sam3PromptEcho Echo { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("predictions")]
         [global::System.Text.Json.Serialization.JsonRequired]

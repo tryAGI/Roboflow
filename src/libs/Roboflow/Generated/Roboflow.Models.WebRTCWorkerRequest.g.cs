@@ -4,18 +4,18 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WebRTCWorkerRequest
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("api_key")]
         public string? ApiKey { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_configuration")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -28,20 +28,20 @@ namespace Roboflow
         public bool? IsPreview { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webrtc_offer")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required global::Roboflow.WebRTCOffer WebrtcOffer { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webrtc_config")]
         public global::Roboflow.WebRTCConfig? WebrtcConfig { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webrtc_turn_config")]
         public global::Roboflow.WebRTCTURNConfig? WebrtcTurnConfig { get; set; }
@@ -53,31 +53,31 @@ namespace Roboflow
         public bool? WebrtcRealtimeProcessing { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("stream_output")]
         public global::System.Collections.Generic.IList<string>? StreamOutput { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("data_output")]
         public global::System.Collections.Generic.IList<string>? DataOutput { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("declared_fps")]
         public double? DeclaredFps { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("rtsp_url")]
         public string? RtspUrl { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mjpeg_url")]
         public string? MjpegUrl { get; set; }
@@ -89,7 +89,7 @@ namespace Roboflow
         public int? ProcessingTimeout { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("processing_session_started")]
         public global::System.DateTime? ProcessingSessionStarted { get; set; }
@@ -101,25 +101,25 @@ namespace Roboflow
         public string? RequestedPlan { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_gpu")]
         public string? RequestedGpu { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("requested_region")]
         public string? RequestedRegion { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_id")]
         public string? WorkspaceId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("session_id")]
         public string? SessionId { get; set; }

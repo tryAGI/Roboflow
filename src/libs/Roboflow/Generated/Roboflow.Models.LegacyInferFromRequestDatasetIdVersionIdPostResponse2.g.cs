@@ -4,7 +4,7 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class LegacyInferFromRequestDatasetIdVersionIdPostResponse2
     {

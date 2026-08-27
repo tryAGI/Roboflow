@@ -4,12 +4,12 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WebRTCTURNConfig
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("urls")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<string, global::System.Collections.Generic.IList<string>>))]
@@ -17,14 +17,14 @@ namespace Roboflow
         public required global::Roboflow.AnyOf<string, global::System.Collections.Generic.IList<string>> Urls { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("username")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Username { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("credential")]
         [global::System.Text.Json.Serialization.JsonRequired]

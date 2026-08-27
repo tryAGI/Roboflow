@@ -20,7 +20,7 @@ namespace Roboflow.JsonConverters
                     {
                         return global::Roboflow.DepthEstimationRequestDepthMapFormatExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

@@ -4,37 +4,37 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WorkflowConfiguration
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         /// <default>"WorkflowConfiguration"</default>
         [global::System.Text.Json.Serialization.JsonPropertyName("type")]
         public string Type { get; set; } = "WorkflowConfiguration";
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_specification")]
         public object? WorkflowSpecification { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workspace_name")]
         public string? WorkspaceName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_id")]
         public string? WorkflowId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflow_version_id")]
         public string? WorkflowVersionId { get; set; }
@@ -46,7 +46,7 @@ namespace Roboflow
         public string? ImageInputName { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("workflows_parameters")]
         public object? WorkflowsParameters { get; set; }

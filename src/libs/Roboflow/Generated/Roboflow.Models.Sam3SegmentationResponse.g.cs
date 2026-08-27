@@ -4,12 +4,12 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Sam3SegmentationResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt_results")]
         [global::System.Text.Json.Serialization.JsonRequired]

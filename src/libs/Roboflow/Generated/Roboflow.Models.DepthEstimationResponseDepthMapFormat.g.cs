@@ -10,15 +10,15 @@ namespace Roboflow
     public enum DepthEstimationResponseDepthMapFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Json,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png16,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png8,
     }

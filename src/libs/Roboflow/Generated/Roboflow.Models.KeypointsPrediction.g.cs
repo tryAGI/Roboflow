@@ -4,7 +4,7 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class KeypointsPrediction
     {
@@ -82,7 +82,7 @@ namespace Roboflow
         public string? ParentId { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("keypoints")]
         [global::System.Text.Json.Serialization.JsonRequired]

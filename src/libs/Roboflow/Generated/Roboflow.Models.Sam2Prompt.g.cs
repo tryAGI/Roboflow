@@ -4,18 +4,18 @@
 namespace Roboflow
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Sam2Prompt
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("box")]
         public global::Roboflow.Box? Box { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("points")]
         public global::System.Collections.Generic.IList<global::Roboflow.PointInput>? Points { get; set; }

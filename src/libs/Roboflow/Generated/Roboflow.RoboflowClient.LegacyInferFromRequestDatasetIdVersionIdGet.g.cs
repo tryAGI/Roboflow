@@ -48,7 +48,7 @@ namespace Roboflow
             ref string? activeLearningTargetDataset,
             ref string? source,
             ref string? sourceInfo,
-            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? responseMaskFormat);
+            ref global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? responseMaskFormat);
         partial void PrepareLegacyInferFromRequestDatasetIdVersionIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -387,7 +387,7 @@ namespace Roboflow
                 activeLearningTargetDataset: ref activeLearningTargetDataset,
                 source: ref source,
                 sourceInfo: ref sourceInfo,
-                responseMaskFormat: responseMaskFormat);
+                responseMaskFormat: ref responseMaskFormat);
 
 
             var __authorizations = global::Roboflow.EndPointSecurityResolver.ResolveAuthorizations(

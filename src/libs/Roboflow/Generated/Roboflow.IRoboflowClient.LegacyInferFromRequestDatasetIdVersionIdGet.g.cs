@@ -41,6 +41,9 @@ namespace Roboflow
         /// One of base64 or numpy. Note, numpy input is not supported for Roboflow Hosted Inference.<br/>
         /// Default Value: base64
         /// </param>
+        /// <param name="classFilter">
+        /// Action recognition only: comma separated classes. The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores it.
+        /// </param>
         /// <param name="labels">
         /// If true, labels will be include in any inference visualization.<br/>
         /// Default Value: false
@@ -111,6 +114,7 @@ namespace Roboflow
             string? format = default,
             string? image = default,
             string? imageType = default,
+            string? classFilter = default,
             bool? labels = default,
             string? maskDecodeMode = default,
             double? tradeoffFactor = default,
@@ -164,6 +168,9 @@ namespace Roboflow
         /// <param name="imageType">
         /// One of base64 or numpy. Note, numpy input is not supported for Roboflow Hosted Inference.<br/>
         /// Default Value: base64
+        /// </param>
+        /// <param name="classFilter">
+        /// Action recognition only: comma separated classes. The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores it.
         /// </param>
         /// <param name="labels">
         /// If true, labels will be include in any inference visualization.<br/>
@@ -235,6 +242,7 @@ namespace Roboflow
             string? format = default,
             string? image = default,
             string? imageType = default,
+            string? classFilter = default,
             bool? labels = default,
             string? maskDecodeMode = default,
             double? tradeoffFactor = default,

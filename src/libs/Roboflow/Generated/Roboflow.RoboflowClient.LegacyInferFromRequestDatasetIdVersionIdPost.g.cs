@@ -34,6 +34,7 @@ namespace Roboflow
             ref string? format,
             ref string? image,
             ref string? imageType,
+            ref string? classFilter,
             bool? labels,
             ref string? maskDecodeMode,
             double? tradeoffFactor,
@@ -59,6 +60,7 @@ namespace Roboflow
             string? format,
             string? image,
             string? imageType,
+            string? classFilter,
             bool? labels,
             string? maskDecodeMode,
             double? tradeoffFactor,
@@ -119,6 +121,9 @@ namespace Roboflow
         /// <param name="imageType">
         /// One of base64 or numpy. Note, numpy input is not supported for Roboflow Hosted Inference.<br/>
         /// Default Value: base64
+        /// </param>
+        /// <param name="classFilter">
+        /// Action recognition only: comma separated classes. The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores it.
         /// </param>
         /// <param name="labels">
         /// If true, labels will be include in any inference visualization.<br/>
@@ -190,6 +195,7 @@ namespace Roboflow
             string? format = default,
             string? image = default,
             string? imageType = default,
+            string? classFilter = default,
             bool? labels = default,
             string? maskDecodeMode = default,
             double? tradeoffFactor = default,
@@ -216,6 +222,7 @@ namespace Roboflow
                 format: format,
                 image: image,
                 imageType: imageType,
+                classFilter: classFilter,
                 labels: labels,
                 maskDecodeMode: maskDecodeMode,
                 tradeoffFactor: tradeoffFactor,
@@ -273,6 +280,9 @@ namespace Roboflow
         /// <param name="imageType">
         /// One of base64 or numpy. Note, numpy input is not supported for Roboflow Hosted Inference.<br/>
         /// Default Value: base64
+        /// </param>
+        /// <param name="classFilter">
+        /// Action recognition only: comma separated classes. The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores it.
         /// </param>
         /// <param name="labels">
         /// If true, labels will be include in any inference visualization.<br/>
@@ -344,6 +354,7 @@ namespace Roboflow
             string? format = default,
             string? image = default,
             string? imageType = default,
+            string? classFilter = default,
             bool? labels = default,
             string? maskDecodeMode = default,
             double? tradeoffFactor = default,
@@ -373,6 +384,7 @@ namespace Roboflow
                 format: ref format,
                 image: ref image,
                 imageType: ref imageType,
+                classFilter: ref classFilter,
                 labels: labels,
                 maskDecodeMode: ref maskDecodeMode,
                 tradeoffFactor: tradeoffFactor,
@@ -429,6 +441,7 @@ namespace Roboflow
                                 .AddOptionalParameter("format", format)
                                 .AddOptionalParameter("image", image)
                                 .AddOptionalParameter("image_type", imageType)
+                                .AddOptionalParameter("class_filter", classFilter)
                                 .AddOptionalParameter("labels", labels?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("mask_decode_mode", maskDecodeMode)
                                 .AddOptionalParameter("tradeoff_factor", tradeoffFactor?.ToString())
@@ -475,6 +488,7 @@ namespace Roboflow
                     format: format,
                     image: image,
                     imageType: imageType,
+                    classFilter: classFilter,
                     labels: labels,
                     maskDecodeMode: maskDecodeMode,
                     tradeoffFactor: tradeoffFactor,

@@ -609,7 +609,7 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat2? Type144 { get; set; }
+        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat? Type144 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -621,7 +621,7 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? Type147 { get; set; }
+        public global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? Type147 { get; set; }
         /// <summary>
         ///
         /// </summary>

@@ -49,7 +49,7 @@ namespace Roboflow
             ref string? activeLearningTargetDataset,
             ref string? source,
             ref string? sourceInfo,
-            ref global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? responseMaskFormat);
+            ref global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? responseMaskFormat);
         partial void PrepareLegacyInferFromRequestDatasetIdVersionIdGetRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
@@ -75,7 +75,7 @@ namespace Roboflow
             string? activeLearningTargetDataset,
             string? source,
             string? sourceInfo,
-            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? responseMaskFormat);
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? responseMaskFormat);
         partial void ProcessLegacyInferFromRequestDatasetIdVersionIdGetResponse(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage);
@@ -210,7 +210,7 @@ namespace Roboflow
             string? activeLearningTargetDataset = default,
             string? source = default,
             string? sourceInfo = default,
-            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? responseMaskFormat = default,
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? responseMaskFormat = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
@@ -369,7 +369,7 @@ namespace Roboflow
             string? activeLearningTargetDataset = default,
             string? source = default,
             string? sourceInfo = default,
-            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? responseMaskFormat = default,
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? responseMaskFormat = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {

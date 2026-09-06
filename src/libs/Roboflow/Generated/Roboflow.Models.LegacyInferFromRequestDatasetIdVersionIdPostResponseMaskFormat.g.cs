@@ -4,17 +4,48 @@
 namespace Roboflow
 {
     /// <summary>
-    /// The format of the prediction mask - polygon (default) or rle - applicable for instance segmentation models.<br/>
-    /// Default Value: polygon
+    ///
     /// </summary>
-    public sealed partial class LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat
+    public enum LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat
     {
-
         /// <summary>
-        /// Additional properties that are not explicitly defined in the schema
+        ///
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonExtensionData]
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalProperties { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+        Polygon,
+        /// <summary>
+        ///
+        /// </summary>
+        Rle,
+    }
 
+    /// <summary>
+    /// Enum extensions to do fast conversions without the reflection.
+    /// </summary>
+    public static class LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormatExtensions
+    {
+        /// <summary>
+        /// Converts an enum to a string.
+        /// </summary>
+        public static string ToValueString(this LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat value)
+        {
+            return value switch
+            {
+                LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat.Polygon => "polygon",
+                LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat.Rle => "rle",
+                _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
+            };
+        }
+        /// <summary>
+        /// Converts an string to a enum.
+        /// </summary>
+        public static LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat? ToEnum(string value)
+        {
+            return value switch
+            {
+                "polygon" => LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat.Polygon,
+                "rle" => LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat.Rle,
+                _ => null,
+            };
+        }
     }
 }

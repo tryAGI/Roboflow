@@ -129,7 +129,7 @@ namespace Roboflow
             string? activeLearningTargetDataset = default,
             string? source = default,
             string? sourceInfo = default,
-            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat2? responseMaskFormat = default,
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat? responseMaskFormat = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -257,7 +257,7 @@ namespace Roboflow
             string? activeLearningTargetDataset = default,
             string? source = default,
             string? sourceInfo = default,
-            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat2? responseMaskFormat = default,
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat? responseMaskFormat = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

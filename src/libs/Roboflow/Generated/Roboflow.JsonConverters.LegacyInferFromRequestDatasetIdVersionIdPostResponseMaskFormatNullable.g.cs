@@ -3,10 +3,10 @@
 namespace Roboflow.JsonConverters
 {
     /// <inheritdoc />
-    public sealed class LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2NullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2?>
+    public sealed class LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormatNullableJsonConverter : global::System.Text.Json.Serialization.JsonConverter<global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat?>
     {
         /// <inheritdoc />
-        public override global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? Read(
+        public override global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat? Read(
             ref global::System.Text.Json.Utf8JsonReader reader,
             global::System.Type typeToConvert,
             global::System.Text.Json.JsonSerializerOptions options)
@@ -18,7 +18,7 @@ namespace Roboflow.JsonConverters
                     var stringValue = reader.GetString();
                     if (stringValue != null)
                     {
-                        return global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2Extensions.ToEnum(stringValue);
+                        return global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormatExtensions.ToEnum(stringValue);
                     }
 
                     break;
@@ -26,11 +26,11 @@ namespace Roboflow.JsonConverters
                 case global::System.Text.Json.JsonTokenType.Number:
                 {
                     var numValue = reader.GetInt32();
-                    return (global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2)numValue;
+                    return (global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat)numValue;
                 }
                 case global::System.Text.Json.JsonTokenType.Null:
                 {
-                    return default(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2?);
+                    return default(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat?);
                 }
                 default:
                     throw new global::System.ArgumentOutOfRangeException(nameof(reader));
@@ -42,7 +42,7 @@ namespace Roboflow.JsonConverters
         /// <inheritdoc />
         public override void Write(
             global::System.Text.Json.Utf8JsonWriter writer,
-            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2? value,
+            global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormat? value,
             global::System.Text.Json.JsonSerializerOptions options)
         {
             writer = writer ?? throw new global::System.ArgumentNullException(nameof(writer));
@@ -53,7 +53,7 @@ namespace Roboflow.JsonConverters
             }
             else
             {
-                writer.WriteStringValue(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat2Extensions.ToValueString(value.Value));
+                writer.WriteStringValue(global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdPostResponseMaskFormatExtensions.ToValueString(value.Value));
             }
         }
     }

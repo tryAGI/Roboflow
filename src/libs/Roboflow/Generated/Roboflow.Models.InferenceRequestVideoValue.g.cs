@@ -4,7 +4,7 @@
 namespace Roboflow
 {
     /// <summary>
-    /// Video data corresponding to the video type
+    ///
     /// </summary>
     public sealed partial class InferenceRequestVideoValue
     {

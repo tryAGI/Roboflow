@@ -456,7 +456,7 @@ namespace Roboflow
                                 .AddOptionalParameter("active_learning_target_dataset", activeLearningTargetDataset)
                                 .AddOptionalParameter("source", source)
                                 .AddOptionalParameter("source_info", sourceInfo)
-                                .AddOptionalParameter("response_mask_format", responseMaskFormat?.ToString())
+                                .AddOptionalParameter("response_mask_format", responseMaskFormat?.ToValueString())
                                 ;
                             var __path = __pathBuilder.ToString();
                 __path = global::Roboflow.AutoSDKRequestOptionsSupport.AppendQueryParameters(

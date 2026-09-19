@@ -47,6 +47,7 @@ namespace Roboflow
             bool? disablePreprocStaticCrop,
             bool? disableActiveLearning,
             ref string? activeLearningTargetDataset,
+            bool? includeAnomalyMap,
             ref string? source,
             ref string? sourceInfo,
             ref global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? responseMaskFormat);
@@ -73,6 +74,7 @@ namespace Roboflow
             bool? disablePreprocStaticCrop,
             bool? disableActiveLearning,
             string? activeLearningTargetDataset,
+            bool? includeAnomalyMap,
             string? source,
             string? sourceInfo,
             global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? responseMaskFormat);
@@ -172,6 +174,10 @@ namespace Roboflow
         /// <param name="activeLearningTargetDataset">
         /// Parameter to be used when Active Learning data registration should happen against different dataset than the one pointed by model_id
         /// </param>
+        /// <param name="includeAnomalyMap">
+        /// Anomaly detection only: include the raw anomaly heatmap in original image coordinates<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="source">
         /// The source of the inference request<br/>
         /// Default Value: external
@@ -187,7 +193,7 @@ namespace Roboflow
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>> LegacyInferFromRequestDatasetIdVersionIdGetAsync(
+        public async global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.AnomalyDetectionResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>> LegacyInferFromRequestDatasetIdVersionIdGetAsync(
             string datasetId,
             string versionId,
             global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2?>? confidence = default,
@@ -208,6 +214,7 @@ namespace Roboflow
             bool? disablePreprocStaticCrop = default,
             bool? disableActiveLearning = default,
             string? activeLearningTargetDataset = default,
+            bool? includeAnomalyMap = default,
             string? source = default,
             string? sourceInfo = default,
             global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? responseMaskFormat = default,
@@ -235,6 +242,7 @@ namespace Roboflow
                 disablePreprocStaticCrop: disablePreprocStaticCrop,
                 disableActiveLearning: disableActiveLearning,
                 activeLearningTargetDataset: activeLearningTargetDataset,
+                includeAnomalyMap: includeAnomalyMap,
                 source: source,
                 sourceInfo: sourceInfo,
                 responseMaskFormat: responseMaskFormat,
@@ -331,6 +339,10 @@ namespace Roboflow
         /// <param name="activeLearningTargetDataset">
         /// Parameter to be used when Active Learning data registration should happen against different dataset than the one pointed by model_id
         /// </param>
+        /// <param name="includeAnomalyMap">
+        /// Anomaly detection only: include the raw anomaly heatmap in original image coordinates<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="source">
         /// The source of the inference request<br/>
         /// Default Value: external
@@ -346,7 +358,7 @@ namespace Roboflow
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
-        public async global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>> LegacyInferFromRequestDatasetIdVersionIdGetAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.AnomalyDetectionResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>> LegacyInferFromRequestDatasetIdVersionIdGetAsResponseAsync(
             string datasetId,
             string versionId,
             global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2?>? confidence = default,
@@ -367,6 +379,7 @@ namespace Roboflow
             bool? disablePreprocStaticCrop = default,
             bool? disableActiveLearning = default,
             string? activeLearningTargetDataset = default,
+            bool? includeAnomalyMap = default,
             string? source = default,
             string? sourceInfo = default,
             global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? responseMaskFormat = default,
@@ -397,6 +410,7 @@ namespace Roboflow
                 disablePreprocStaticCrop: disablePreprocStaticCrop,
                 disableActiveLearning: disableActiveLearning,
                 activeLearningTargetDataset: ref activeLearningTargetDataset,
+                includeAnomalyMap: includeAnomalyMap,
                 source: ref source,
                 sourceInfo: ref sourceInfo,
                 responseMaskFormat: ref responseMaskFormat);
@@ -454,6 +468,7 @@ namespace Roboflow
                                 .AddOptionalParameter("disable_preproc_static_crop", disablePreprocStaticCrop?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("disable_active_learning", disableActiveLearning?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("active_learning_target_dataset", activeLearningTargetDataset)
+                                .AddOptionalParameter("include_anomaly_map", includeAnomalyMap?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("source", source)
                                 .AddOptionalParameter("source_info", sourceInfo)
                                 .AddOptionalParameter("response_mask_format", responseMaskFormat?.ToValueString())
@@ -501,6 +516,7 @@ namespace Roboflow
                     disablePreprocStaticCrop: disablePreprocStaticCrop,
                     disableActiveLearning: disableActiveLearning,
                     activeLearningTargetDataset: activeLearningTargetDataset,
+                    includeAnomalyMap: includeAnomalyMap,
                     source: source,
                     sourceInfo: sourceInfo,
                     responseMaskFormat: responseMaskFormat);
@@ -741,9 +757,9 @@ namespace Roboflow
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.AnomalyDetectionResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>(
+                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.AnomalyDetectionResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Roboflow.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -773,9 +789,9 @@ namespace Roboflow
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.AnomalyDetectionResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>(
+                                    return new global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.AnomalyDetectionResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>(
                                         statusCode: __response.StatusCode,
                                         headers: global::Roboflow.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

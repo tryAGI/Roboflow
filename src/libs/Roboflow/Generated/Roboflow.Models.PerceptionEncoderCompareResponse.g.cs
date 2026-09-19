@@ -30,6 +30,12 @@ namespace Roboflow
         public double? Time { get; set; }
 
         /// <summary>
+        /// Model identity and available package details for this result.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resolved_model")]
+        public global::Roboflow.ResolvedModel? ResolvedModel { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("similarity")]
@@ -62,6 +68,9 @@ namespace Roboflow
         /// <param name="time">
         /// The time in seconds it took to produce the similarity scores including preprocessing
         /// </param>
+        /// <param name="resolvedModel">
+        /// Model identity and available package details for this result.
+        /// </param>
         /// <param name="parentId">
         /// Identifier of parent image region. Useful when stack of detection-models is in use to refer the RoI being the input to inference
         /// </param>
@@ -73,11 +82,13 @@ namespace Roboflow
             string? inferenceId,
             int? frameId,
             double? time,
+            global::Roboflow.ResolvedModel? resolvedModel,
             string? parentId)
         {
             this.InferenceId = inferenceId;
             this.FrameId = frameId;
             this.Time = time;
+            this.ResolvedModel = resolvedModel;
             this.Similarity = similarity;
             this.ParentId = parentId;
         }

@@ -30,6 +30,12 @@ namespace Roboflow
         public double? Time { get; set; }
 
         /// <summary>
+        /// Model identity and available package details for this result.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resolved_model")]
+        public global::Roboflow.ResolvedModel? ResolvedModel { get; set; }
+
+        /// <summary>
         /// A list of embeddings, each embedding is a list of floats
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
@@ -57,6 +63,9 @@ namespace Roboflow
         /// <param name="time">
         /// The time in seconds it took to produce the embeddings including preprocessing
         /// </param>
+        /// <param name="resolvedModel">
+        /// Model identity and available package details for this result.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -64,11 +73,13 @@ namespace Roboflow
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>> embeddings,
             string? inferenceId,
             int? frameId,
-            double? time)
+            double? time,
+            global::Roboflow.ResolvedModel? resolvedModel)
         {
             this.InferenceId = inferenceId;
             this.FrameId = frameId;
             this.Time = time;
+            this.ResolvedModel = resolvedModel;
             this.Embeddings = embeddings ?? throw new global::System.ArgumentNullException(nameof(embeddings));
         }
 

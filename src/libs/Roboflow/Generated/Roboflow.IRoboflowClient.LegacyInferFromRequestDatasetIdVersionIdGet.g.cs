@@ -91,6 +91,10 @@ namespace Roboflow
         /// <param name="activeLearningTargetDataset">
         /// Parameter to be used when Active Learning data registration should happen against different dataset than the one pointed by model_id
         /// </param>
+        /// <param name="includeAnomalyMap">
+        /// Anomaly detection only: include the raw anomaly heatmap in original image coordinates<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="source">
         /// The source of the inference request<br/>
         /// Default Value: external
@@ -106,7 +110,7 @@ namespace Roboflow
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>> LegacyInferFromRequestDatasetIdVersionIdGetAsync(
+        global::System.Threading.Tasks.Task<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.AnomalyDetectionResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>> LegacyInferFromRequestDatasetIdVersionIdGetAsync(
             string datasetId,
             string versionId,
             global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2?>? confidence = default,
@@ -127,6 +131,7 @@ namespace Roboflow
             bool? disablePreprocStaticCrop = default,
             bool? disableActiveLearning = default,
             string? activeLearningTargetDataset = default,
+            bool? includeAnomalyMap = default,
             string? source = default,
             string? sourceInfo = default,
             global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? responseMaskFormat = default,
@@ -219,6 +224,10 @@ namespace Roboflow
         /// <param name="activeLearningTargetDataset">
         /// Parameter to be used when Active Learning data registration should happen against different dataset than the one pointed by model_id
         /// </param>
+        /// <param name="includeAnomalyMap">
+        /// Anomaly detection only: include the raw anomaly heatmap in original image coordinates<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="source">
         /// The source of the inference request<br/>
         /// Default Value: external
@@ -234,7 +243,7 @@ namespace Roboflow
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::Roboflow.ApiException"></exception>
-        global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>> LegacyInferFromRequestDatasetIdVersionIdGetAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::Roboflow.AutoSDKHttpResponse<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationInferenceResponse, global::Roboflow.KeypointsDetectionInferenceResponse, global::Roboflow.ObjectDetectionInferenceResponse, global::Roboflow.AnomalyDetectionResponse, global::Roboflow.ClassificationInferenceResponse, global::Roboflow.MultiLabelClassificationInferenceResponse, global::Roboflow.SemanticSegmentationInferenceResponse, global::Roboflow.StubResponse, object>>> LegacyInferFromRequestDatasetIdVersionIdGetAsResponseAsync(
             string datasetId,
             string versionId,
             global::Roboflow.AnyOf<double?, global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetConfidence2?>? confidence = default,
@@ -255,6 +264,7 @@ namespace Roboflow
             bool? disablePreprocStaticCrop = default,
             bool? disableActiveLearning = default,
             string? activeLearningTargetDataset = default,
+            bool? includeAnomalyMap = default,
             string? source = default,
             string? sourceInfo = default,
             global::Roboflow.LegacyInferFromRequestDatasetIdVersionIdGetResponseMaskFormat? responseMaskFormat = default,

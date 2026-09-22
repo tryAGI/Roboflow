@@ -78,8 +78,8 @@ public static class RoboflowToolExtensions
                     confidence: confidence,
                     cancellationToken: cancellationToken).ConfigureAwait(false);
 
-                return response.IsValue4
-                    ? FormatSingleClassificationResponse(response.Value4)
+                return response.IsValue5
+                    ? FormatSingleClassificationResponse(response.Value5)
                     : "No classification results returned.";
             },
             name: "ClassifyImage",

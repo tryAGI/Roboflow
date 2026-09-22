@@ -6,7 +6,7 @@ namespace Roboflow
     /// <summary>
     ///
     /// </summary>
-    public readonly partial struct AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> : global::System.IEquatable<AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>>
+    public readonly partial struct AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> : global::System.IEquatable<AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>>
     {
         /// <summary>
         ///
@@ -303,15 +303,52 @@ namespace Roboflow
         public T8 PickValue8() => IsValue8
             ? Value8!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Value8' but the value was {ToString()}.");
-        /// <summary>
-        ///
-        /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(T1 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>((T1?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator T1?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> @this) => @this.Value1;
+#if NET6_0_OR_GREATER
+        public T9? Value9 { get; init; }
+#else
+        public T9? Value9 { get; }
+#endif
+
+        /// <summary>
+        ///
+        /// </summary>
+#if NET6_0_OR_GREATER
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value9))]
+#endif
+        public bool IsValue9 => Value9 != null;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public bool TryPickValue9(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out T9? value)
+        {
+            value = Value9;
+            return IsValue9;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public T9 PickValue9() => IsValue9
+            ? Value9!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Value9' but the value was {ToString()}.");
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T1 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T1?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator T1?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> @this) => @this.Value1;
 
         /// <summary>
         ///
@@ -324,17 +361,17 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue1(T1? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> FromValue1(T1? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(T2 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>((T2?)value);
+        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T2 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T2?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator T2?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> @this) => @this.Value2;
+        public static implicit operator T2?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> @this) => @this.Value2;
 
         /// <summary>
         ///
@@ -347,17 +384,17 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue2(T2? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> FromValue2(T2? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(T3 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>((T3?)value);
+        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T3 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T3?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator T3?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> @this) => @this.Value3;
+        public static implicit operator T3?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> @this) => @this.Value3;
 
         /// <summary>
         ///
@@ -370,17 +407,17 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue3(T3? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> FromValue3(T3? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(T4 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>((T4?)value);
+        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T4 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T4?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator T4?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> @this) => @this.Value4;
+        public static implicit operator T4?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> @this) => @this.Value4;
 
         /// <summary>
         ///
@@ -393,17 +430,17 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue4(T4? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> FromValue4(T4? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(T5 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>((T5?)value);
+        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T5 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T5?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator T5?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> @this) => @this.Value5;
+        public static implicit operator T5?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> @this) => @this.Value5;
 
         /// <summary>
         ///
@@ -416,17 +453,17 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue5(T5? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> FromValue5(T5? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(T6 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>((T6?)value);
+        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T6 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T6?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator T6?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> @this) => @this.Value6;
+        public static implicit operator T6?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> @this) => @this.Value6;
 
         /// <summary>
         ///
@@ -439,17 +476,17 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue6(T6? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> FromValue6(T6? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(T7 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>((T7?)value);
+        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T7 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T7?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator T7?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> @this) => @this.Value7;
+        public static implicit operator T7?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> @this) => @this.Value7;
 
         /// <summary>
         ///
@@ -462,17 +499,17 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue7(T7? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> FromValue7(T7? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(T8 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>((T8?)value);
+        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T8 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T8?)value);
 
         /// <summary>
         ///
         /// </summary>
-        public static implicit operator T8?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> @this) => @this.Value8;
+        public static implicit operator T8?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> @this) => @this.Value8;
 
         /// <summary>
         ///
@@ -485,7 +522,30 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> FromValue8(T8? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>(value);
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> FromValue8(T8? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(T9 value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>((T9?)value);
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static implicit operator T9?(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> @this) => @this.Value9;
+
+        /// <summary>
+        ///
+        /// </summary>
+        public AnyOf(T9? value)
+        {
+            Value9 = value;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> FromValue9(T9? value) => new AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>(value);
 
         /// <summary>
         ///
@@ -498,7 +558,8 @@ namespace Roboflow
             T5? value5,
             T6? value6,
             T7? value7,
-            T8? value8
+            T8? value8,
+            T9? value9
             )
         {
             Value1 = value1;
@@ -509,12 +570,14 @@ namespace Roboflow
             Value6 = value6;
             Value7 = value7;
             Value8 = value8;
+            Value9 = value9;
         }
 
         /// <summary>
         ///
         /// </summary>
         public object? Object =>
+            Value9 as object ??
             Value8 as object ??
             Value7 as object ??
             Value6 as object ??
@@ -536,7 +599,8 @@ namespace Roboflow
             Value5?.ToString() ??
             Value6?.ToString() ??
             Value7?.ToString() ??
-            Value8?.ToString()
+            Value8?.ToString() ??
+            Value9?.ToString()
             ;
 
         /// <summary>
@@ -544,7 +608,7 @@ namespace Roboflow
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8;
+            return IsValue1 || IsValue2 || IsValue3 || IsValue4 || IsValue5 || IsValue6 || IsValue7 || IsValue8 || IsValue9;
         }
 
         /// <summary>
@@ -559,6 +623,7 @@ namespace Roboflow
             global::System.Func<T6, TResult>? value6 = null,
             global::System.Func<T7, TResult>? value7 = null,
             global::System.Func<T8, TResult>? value8 = null,
+            global::System.Func<T9, TResult>? value9 = null,
             bool validate = true)
         {
             if (validate)
@@ -598,6 +663,10 @@ namespace Roboflow
             {
                 return value8(Value8!);
             }
+            else if (IsValue9 && value9 != null)
+            {
+                return value9(Value9!);
+            }
 
             return default(TResult);
         }
@@ -621,6 +690,8 @@ namespace Roboflow
             global::System.Action<T7>? value7 = null,
 
             global::System.Action<T8>? value8 = null,
+
+            global::System.Action<T9>? value9 = null,
             bool validate = true)
         {
             if (validate)
@@ -659,6 +730,10 @@ namespace Roboflow
             else if (IsValue8)
             {
                 value8?.Invoke(Value8!);
+            }
+            else if (IsValue9)
+            {
+                value9?.Invoke(Value9!);
             }
         }
 
@@ -674,6 +749,7 @@ namespace Roboflow
             global::System.Action<T6>? value6 = null,
             global::System.Action<T7>? value7 = null,
             global::System.Action<T8>? value8 = null,
+            global::System.Action<T9>? value9 = null,
             bool validate = true)
         {
             if (validate)
@@ -712,6 +788,10 @@ namespace Roboflow
             else if (IsValue8)
             {
                 value8?.Invoke(Value8!);
+            }
+            else if (IsValue9)
+            {
+                value9?.Invoke(Value9!);
             }
         }
 
@@ -738,6 +818,8 @@ namespace Roboflow
                 typeof(T7),
                 Value8,
                 typeof(T8),
+                Value9,
+                typeof(T9),
             };
             const int offset = unchecked((int)2166136261);
             const int prime = 16777619;
@@ -751,7 +833,7 @@ namespace Roboflow
         /// <summary>
         ///
         /// </summary>
-        public bool Equals(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> other)
+        public bool Equals(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<T1?>.Default.Equals(Value1, other.Value1) &&
@@ -761,22 +843,23 @@ namespace Roboflow
                 global::System.Collections.Generic.EqualityComparer<T5?>.Default.Equals(Value5, other.Value5) &&
                 global::System.Collections.Generic.EqualityComparer<T6?>.Default.Equals(Value6, other.Value6) &&
                 global::System.Collections.Generic.EqualityComparer<T7?>.Default.Equals(Value7, other.Value7) &&
-                global::System.Collections.Generic.EqualityComparer<T8?>.Default.Equals(Value8, other.Value8)
+                global::System.Collections.Generic.EqualityComparer<T8?>.Default.Equals(Value8, other.Value8) &&
+                global::System.Collections.Generic.EqualityComparer<T9?>.Default.Equals(Value9, other.Value9)
                 ;
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static bool operator ==(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> obj1, AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> obj2)
+        public static bool operator ==(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> obj1, AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> obj2)
         {
-            return global::System.Collections.Generic.EqualityComparer<AnyOf<T1, T2, T3, T4, T5, T6, T7, T8>>.Default.Equals(obj1, obj2);
+            return global::System.Collections.Generic.EqualityComparer<AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9>>.Default.Equals(obj1, obj2);
         }
 
         /// <summary>
         ///
         /// </summary>
-        public static bool operator !=(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> obj1, AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> obj2)
+        public static bool operator !=(AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> obj1, AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> obj2)
         {
             return !(obj1 == obj2);
         }
@@ -786,7 +869,7 @@ namespace Roboflow
         /// </summary>
         public override bool Equals(object? obj)
         {
-            return obj is AnyOf<T1, T2, T3, T4, T5, T6, T7, T8> o && Equals(o);
+            return obj is AnyOf<T1, T2, T3, T4, T5, T6, T7, T8, T9> o && Equals(o);
         }
     }
 }

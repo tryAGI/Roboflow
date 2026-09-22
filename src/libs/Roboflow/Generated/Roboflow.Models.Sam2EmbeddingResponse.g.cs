@@ -12,11 +12,16 @@ namespace Roboflow
     public sealed partial class Sam2EmbeddingResponse
     {
         /// <summary>
-        /// Image id embeddings are cached to
+        /// Unique identifier of inference
         /// </summary>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image_id")]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required string ImageId { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("inference_id")]
+        public string? InferenceId { get; set; }
+
+        /// <summary>
+        /// The frame id of the image used in inference if the input was a video
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_id")]
+        public int? FrameId { get; set; }
 
         /// <summary>
         /// The time in seconds it took to produce the embeddings including preprocessing
@@ -24,6 +29,19 @@ namespace Roboflow
         [global::System.Text.Json.Serialization.JsonPropertyName("time")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required double Time { get; set; }
+
+        /// <summary>
+        /// Model identity and available package details for this result.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resolved_model")]
+        public global::Roboflow.ResolvedModel? ResolvedModel { get; set; }
+
+        /// <summary>
+        /// Image id embeddings are cached to
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("image_id")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required string ImageId { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -34,21 +52,36 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="Sam2EmbeddingResponse" /> class.
         /// </summary>
+        /// <param name="time">
+        /// The time in seconds it took to produce the embeddings including preprocessing
+        /// </param>
         /// <param name="imageId">
         /// Image id embeddings are cached to
         /// </param>
-        /// <param name="time">
-        /// The time in seconds it took to produce the embeddings including preprocessing
+        /// <param name="inferenceId">
+        /// Unique identifier of inference
+        /// </param>
+        /// <param name="frameId">
+        /// The frame id of the image used in inference if the input was a video
+        /// </param>
+        /// <param name="resolvedModel">
+        /// Model identity and available package details for this result.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public Sam2EmbeddingResponse(
+            double time,
             string imageId,
-            double time)
+            string? inferenceId,
+            int? frameId,
+            global::Roboflow.ResolvedModel? resolvedModel)
         {
-            this.ImageId = imageId ?? throw new global::System.ArgumentNullException(nameof(imageId));
+            this.InferenceId = inferenceId;
+            this.FrameId = frameId;
             this.Time = time;
+            this.ResolvedModel = resolvedModel;
+            this.ImageId = imageId ?? throw new global::System.ArgumentNullException(nameof(imageId));
         }
 
         /// <summary>

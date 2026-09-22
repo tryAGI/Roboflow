@@ -11,6 +11,30 @@ namespace Roboflow
     public sealed partial class ActionRecognitionInferenceResponse
     {
         /// <summary>
+        /// Unique identifier of inference
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inference_id")]
+        public string? InferenceId { get; set; }
+
+        /// <summary>
+        /// The frame id of the image used in inference if the input was a video
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_id")]
+        public int? FrameId { get; set; }
+
+        /// <summary>
+        /// The time in seconds it took to produce the predictions including image preprocessing
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("time")]
+        public double? Time { get; set; }
+
+        /// <summary>
+        /// Model identity and available package details for this result.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resolved_model")]
+        public global::Roboflow.ResolvedModel? ResolvedModel { get; set; }
+
+        /// <summary>
         /// Classified frame ranges, which can overlap
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("timeline")]
@@ -59,6 +83,18 @@ namespace Roboflow
         /// <param name="windowsClassified">
         /// Model calls the clip was cut into
         /// </param>
+        /// <param name="inferenceId">
+        /// Unique identifier of inference
+        /// </param>
+        /// <param name="frameId">
+        /// The frame id of the image used in inference if the input was a video
+        /// </param>
+        /// <param name="time">
+        /// The time in seconds it took to produce the predictions including image preprocessing
+        /// </param>
+        /// <param name="resolvedModel">
+        /// Model identity and available package details for this result.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -66,8 +102,16 @@ namespace Roboflow
             global::System.Collections.Generic.IList<global::Roboflow.ActionRecognitionPrediction> timeline,
             double sourceFps,
             int frameCount,
-            int windowsClassified)
+            int windowsClassified,
+            string? inferenceId,
+            int? frameId,
+            double? time,
+            global::Roboflow.ResolvedModel? resolvedModel)
         {
+            this.InferenceId = inferenceId;
+            this.FrameId = frameId;
+            this.Time = time;
+            this.ResolvedModel = resolvedModel;
             this.Timeline = timeline ?? throw new global::System.ArgumentNullException(nameof(timeline));
             this.SourceFps = sourceFps;
             this.FrameCount = frameCount;

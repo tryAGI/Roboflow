@@ -37,6 +37,12 @@ namespace Roboflow
         public double? Time { get; set; }
 
         /// <summary>
+        /// Model identity and available package details for this result.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resolved_model")]
+        public global::Roboflow.ResolvedModel? ResolvedModel { get; set; }
+
+        /// <summary>
         ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
@@ -93,6 +99,9 @@ namespace Roboflow
         /// <param name="time">
         /// The time in seconds it took to produce the predictions including image preprocessing
         /// </param>
+        /// <param name="resolvedModel">
+        /// Model identity and available package details for this result.
+        /// </param>
         /// <param name="top">
         /// The top predicted class label
         /// </param>
@@ -113,6 +122,7 @@ namespace Roboflow
             string? inferenceId,
             int? frameId,
             double? time,
+            global::Roboflow.ResolvedModel? resolvedModel,
             string? top,
             double? confidence,
             string? parentId)
@@ -121,6 +131,7 @@ namespace Roboflow
             this.InferenceId = inferenceId;
             this.FrameId = frameId;
             this.Time = time;
+            this.ResolvedModel = resolvedModel;
             this.Image = image;
             this.Predictions = predictions ?? throw new global::System.ArgumentNullException(nameof(predictions));
             this.Top = top;

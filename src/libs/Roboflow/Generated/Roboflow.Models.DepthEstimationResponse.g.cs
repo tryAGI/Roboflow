@@ -21,6 +21,30 @@ namespace Roboflow
     public sealed partial class DepthEstimationResponse
     {
         /// <summary>
+        /// Unique identifier of inference
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("inference_id")]
+        public string? InferenceId { get; set; }
+
+        /// <summary>
+        /// The frame id of the image used in inference if the input was a video
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("frame_id")]
+        public int? FrameId { get; set; }
+
+        /// <summary>
+        /// The time in seconds it took to produce the predictions including image preprocessing
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("time")]
+        public double? Time { get; set; }
+
+        /// <summary>
+        /// Model identity and available package details for this result.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("resolved_model")]
+        public global::Roboflow.ResolvedModel? ResolvedModel { get; set; }
+
+        /// <summary>
         /// Per-image normalized ordinal depth as a 2D array of floats between 0 and 1, where 1 is nearest and 0 is farthest. Values are not physical distances or directly comparable across images or model families without calibration. The normalized depth map: a 2D array of floats between 0 and 1 (`json` format, default) or a base64 grayscale PNG string (`png16`/`png8`), per the request's `depth_map_format`
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("normalized_depth")]
@@ -54,6 +78,18 @@ namespace Roboflow
         /// <param name="normalizedDepth">
         /// Per-image normalized ordinal depth as a 2D array of floats between 0 and 1, where 1 is nearest and 0 is farthest. Values are not physical distances or directly comparable across images or model families without calibration. The normalized depth map: a 2D array of floats between 0 and 1 (`json` format, default) or a base64 grayscale PNG string (`png16`/`png8`), per the request's `depth_map_format`
         /// </param>
+        /// <param name="inferenceId">
+        /// Unique identifier of inference
+        /// </param>
+        /// <param name="frameId">
+        /// The frame id of the image used in inference if the input was a video
+        /// </param>
+        /// <param name="time">
+        /// The time in seconds it took to produce the predictions including image preprocessing
+        /// </param>
+        /// <param name="resolvedModel">
+        /// Model identity and available package details for this result.
+        /// </param>
         /// <param name="depthMapFormat">
         /// The serialization format used for `normalized_depth`<br/>
         /// Default Value: json
@@ -66,9 +102,17 @@ namespace Roboflow
 #endif
         public DepthEstimationResponse(
             global::Roboflow.AnyOf<string, global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>> normalizedDepth,
+            string? inferenceId,
+            int? frameId,
+            double? time,
+            global::Roboflow.ResolvedModel? resolvedModel,
             global::Roboflow.DepthEstimationResponseDepthMapFormat? depthMapFormat,
             string? image)
         {
+            this.InferenceId = inferenceId;
+            this.FrameId = frameId;
+            this.Time = time;
+            this.ResolvedModel = resolvedModel;
             this.NormalizedDepth = normalizedDepth;
             this.DepthMapFormat = depthMapFormat;
             this.Image = image;

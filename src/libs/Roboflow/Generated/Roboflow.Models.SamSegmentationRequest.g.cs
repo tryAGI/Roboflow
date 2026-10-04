@@ -88,8 +88,8 @@ namespace Roboflow
         /// The embeddings to be decoded. The dimensions of the embeddings are 1 x 256 x 64 x 64. If embeddings is not provided, image must be provided.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("embeddings")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object, object>))]
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object, object>? Embeddings { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object>))]
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object>? Embeddings { get; set; }
 
         /// <summary>
         /// The format of the embeddings. Must be one of json or binary. If binary, embeddings are expected to be a binary numpy array.<br/>
@@ -128,8 +128,8 @@ namespace Roboflow
         /// The set of output masks. If request format is json, masks is a list of polygons, where each polygon is a list of points, where each point is a tuple containing the x,y pixel coordinates of the point. If request format is binary, masks is a list of binary numpy arrays. The dimensions of each mask are 256 x 256. This is the same as the output, low resolution mask from the previous inference.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mask_input")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>, object, object>))]
-        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>, object, object>? MaskInput { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>, object>))]
+        public global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>, object>? MaskInput { get; set; }
 
         /// <summary>
         /// The format of the mask input. Must be one of json or binary. If binary, mask input is expected to be a binary numpy array.<br/>
@@ -253,13 +253,13 @@ namespace Roboflow
             bool? disableModelMonitoring,
             string? samVersionId,
             string? modelId,
-            global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object, object>? embeddings,
+            global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>>, object>? embeddings,
             string? embeddingsFormat,
             string? format,
             global::Roboflow.InferenceRequestImage? image,
             string? imageId,
             bool? hasMaskInput,
-            global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>, object, object>? maskInput,
+            global::Roboflow.AnyOf<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>>, object>? maskInput,
             string? maskInputFormat,
             global::System.Collections.Generic.IList<int>? origImSize,
             global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? pointCoords,

@@ -33,6 +33,12 @@ namespace Roboflow
         public required string Class { get; set; }
 
         /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
+        public double? Confidence { get; set; }
+
+        /// <summary>
         /// The class position in the model's own class list. A model without a class list reports -1.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("class_id")]
@@ -60,6 +66,7 @@ namespace Roboflow
         /// <param name="classId">
         /// The class position in the model's own class list. A model without a class list reports -1.
         /// </param>
+        /// <param name="confidence"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -67,11 +74,13 @@ namespace Roboflow
             int startFrameIdx,
             int endFrameIdx,
             string @class,
-            int classId)
+            int classId,
+            double? confidence)
         {
             this.StartFrameIdx = startFrameIdx;
             this.EndFrameIdx = endFrameIdx;
             this.Class = @class ?? throw new global::System.ArgumentNullException(nameof(@class));
+            this.Confidence = confidence;
             this.ClassId = classId;
         }
 

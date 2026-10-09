@@ -6,20 +6,20 @@ namespace Roboflow
     /// <summary>
     /// Inference response image information.<br/>
     /// Attributes:<br/>
-    ///     width (int): The original width of the image used in inference.<br/>
-    ///     height (int): The original height of the image used in inference.
+    ///     width (int): The width of the represented image coordinate frame.<br/>
+    ///     height (int): The height of the represented image coordinate frame.
     /// </summary>
     public sealed partial class InferenceResponseImage
     {
         /// <summary>
-        /// The original width of the image used in inference
+        /// The width of the represented image coordinate frame
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("width")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required int Width { get; set; }
 
         /// <summary>
-        /// The original height of the image used in inference
+        /// The height of the represented image coordinate frame
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("height")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -35,10 +35,10 @@ namespace Roboflow
         /// Initializes a new instance of the <see cref="InferenceResponseImage" /> class.
         /// </summary>
         /// <param name="width">
-        /// The original width of the image used in inference
+        /// The width of the represented image coordinate frame
         /// </param>
         /// <param name="height">
-        /// The original height of the image used in inference
+        /// The height of the represented image coordinate frame
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]

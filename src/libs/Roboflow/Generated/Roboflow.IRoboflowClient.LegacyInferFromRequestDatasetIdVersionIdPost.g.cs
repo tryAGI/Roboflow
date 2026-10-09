@@ -44,6 +44,10 @@ namespace Roboflow
         /// <param name="classFilter">
         /// Action recognition only: comma separated classes. The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores it.
         /// </param>
+        /// <param name="includeCandidates">
+        /// Action recognition: return raw scored candidates<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="labels">
         /// If true, labels will be include in any inference visualization.<br/>
         /// Default Value: false
@@ -51,6 +55,10 @@ namespace Roboflow
         /// <param name="maskDecodeMode">
         /// One of 'accurate' or 'fast'. If 'accurate' the mask will be decoded using the original image size. If 'fast' the mask will be decoded using the original mask size. 'accurate' is slower but more accurate.<br/>
         /// Default Value: accurate
+        /// </param>
+        /// <param name="allowReducedMaskResolution">
+        /// Opt into mask_decode_mode and tradeoff_factor on inference_models. Otherwise masks stay at image resolution. Legacy backend decoding is unchanged.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="tradeoffFactor">
         /// The amount to tradeoff between 0='fast' and 1='accurate'<br/>
@@ -92,7 +100,7 @@ namespace Roboflow
         /// Parameter to be used when Active Learning data registration should happen against different dataset than the one pointed by model_id
         /// </param>
         /// <param name="includeAnomalyMap">
-        /// Anomaly detection only: include the raw anomaly heatmap in original image coordinates<br/>
+        /// Anomaly detection only: include the raw anomaly heatmap at the network input resolution<br/>
         /// Default Value: false
         /// </param>
         /// <param name="source">
@@ -119,8 +127,10 @@ namespace Roboflow
             string? image = default,
             string? imageType = default,
             string? classFilter = default,
+            bool? includeCandidates = default,
             bool? labels = default,
             string? maskDecodeMode = default,
+            bool? allowReducedMaskResolution = default,
             double? tradeoffFactor = default,
             int? maxDetections = default,
             double? overlap = default,
@@ -177,6 +187,10 @@ namespace Roboflow
         /// <param name="classFilter">
         /// Action recognition only: comma separated classes. The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores it.
         /// </param>
+        /// <param name="includeCandidates">
+        /// Action recognition: return raw scored candidates<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="labels">
         /// If true, labels will be include in any inference visualization.<br/>
         /// Default Value: false
@@ -184,6 +198,10 @@ namespace Roboflow
         /// <param name="maskDecodeMode">
         /// One of 'accurate' or 'fast'. If 'accurate' the mask will be decoded using the original image size. If 'fast' the mask will be decoded using the original mask size. 'accurate' is slower but more accurate.<br/>
         /// Default Value: accurate
+        /// </param>
+        /// <param name="allowReducedMaskResolution">
+        /// Opt into mask_decode_mode and tradeoff_factor on inference_models. Otherwise masks stay at image resolution. Legacy backend decoding is unchanged.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="tradeoffFactor">
         /// The amount to tradeoff between 0='fast' and 1='accurate'<br/>
@@ -225,7 +243,7 @@ namespace Roboflow
         /// Parameter to be used when Active Learning data registration should happen against different dataset than the one pointed by model_id
         /// </param>
         /// <param name="includeAnomalyMap">
-        /// Anomaly detection only: include the raw anomaly heatmap in original image coordinates<br/>
+        /// Anomaly detection only: include the raw anomaly heatmap at the network input resolution<br/>
         /// Default Value: false
         /// </param>
         /// <param name="source">
@@ -252,8 +270,10 @@ namespace Roboflow
             string? image = default,
             string? imageType = default,
             string? classFilter = default,
+            bool? includeCandidates = default,
             bool? labels = default,
             string? maskDecodeMode = default,
+            bool? allowReducedMaskResolution = default,
             double? tradeoffFactor = default,
             int? maxDetections = default,
             double? overlap = default,

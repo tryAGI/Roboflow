@@ -73,6 +73,13 @@ namespace Roboflow
         ///     type (str): The type of video data provided, one of 'url' or 'base64'.<br/>
         ///     value (Optional[Any]): Video data corresponding to the video type.
         /// </param>
+        /// <param name="confidence">
+        /// Candidate threshold before merging. "best" uses model-eval thresholds, "default" or absent uses the model built-in, or pass a float.
+        /// </param>
+        /// <param name="includeCandidates">
+        /// Return unmerged scored candidates for threshold evaluation<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="classFilter">
         /// The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores this.
         /// </param>
@@ -92,6 +99,8 @@ namespace Roboflow
             string? sourceInfo = default,
             string? streamPipelineContextId = default,
             bool? disableModelMonitoring = default,
+            global::Roboflow.AnyOf<double?, global::Roboflow.ActionRecognitionInferenceRequestConfidence?>? confidence = default,
+            bool? includeCandidates = default,
             global::System.Collections.Generic.IList<string>? classFilter = default,
             global::Roboflow.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

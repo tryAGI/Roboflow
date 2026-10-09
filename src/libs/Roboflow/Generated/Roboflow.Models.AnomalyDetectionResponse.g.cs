@@ -94,10 +94,10 @@ namespace Roboflow
         public required bool IsAnomalous { get; set; }
 
         /// <summary>
-        /// Raw local anomaly evidence in original image coordinates
+        /// Raw local anomaly evidence at the network input resolution
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("anomaly_map")]
-        public global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? AnomalyMap { get; set; }
+        public global::Roboflow.AnomalyMapPayload? AnomalyMap { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -143,7 +143,7 @@ namespace Roboflow
         /// Identifier of parent image region. Useful when stack of detection-models is in use to refer the RoI being the input to inference
         /// </param>
         /// <param name="anomalyMap">
-        /// Raw local anomaly evidence in original image coordinates
+        /// Raw local anomaly evidence at the network input resolution
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -162,7 +162,7 @@ namespace Roboflow
             string? top,
             double? confidence,
             string? parentId,
-            global::System.Collections.Generic.IList<global::System.Collections.Generic.IList<double>>? anomalyMap)
+            global::Roboflow.AnomalyMapPayload? anomalyMap)
         {
             this.Visualization = visualization;
             this.InferenceId = inferenceId;

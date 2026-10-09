@@ -44,7 +44,7 @@ namespace Roboflow
         public global::Roboflow.ResolvedModel? ResolvedModel { get; set; }
 
         /// <summary>
-        ///
+        /// Dimensions of the coordinate frame shared by bounding boxes, polygon points and RLE masks. With opt-in this is the selected mask grid; otherwise it is the original image. Multi-image responses may provide a list.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("image")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<global::System.Collections.Generic.IList<global::Roboflow.InferenceResponseImage>, global::Roboflow.InferenceResponseImage>))]
@@ -59,6 +59,18 @@ namespace Roboflow
         public required global::System.Collections.Generic.IList<global::Roboflow.AnyOf<global::Roboflow.InstanceSegmentationPrediction, global::Roboflow.InstanceSegmentationRLEPrediction>> Predictions { get; set; }
 
         /// <summary>
+        /// Original image dimensions retained for opted-in responses, including when the selected grid has the same dimensions.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("original_image")]
+        public global::Roboflow.InferenceResponseImage? OriginalImage { get; set; }
+
+        /// <summary>
+        /// Present for opted-in responses in either format. All prediction geometry uses this grid. Multiply x coordinates and widths by scale_x, and y coordinates and heights by scale_y, to map to original_image.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("mask_metadata")]
+        public global::Roboflow.MaskCoordinateMetadata? MaskMetadata { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -67,7 +79,9 @@ namespace Roboflow
         /// <summary>
         /// Initializes a new instance of the <see cref="InstanceSegmentationInferenceResponse" /> class.
         /// </summary>
-        /// <param name="image"></param>
+        /// <param name="image">
+        /// Dimensions of the coordinate frame shared by bounding boxes, polygon points and RLE masks. With opt-in this is the selected mask grid; otherwise it is the original image. Multi-image responses may provide a list.
+        /// </param>
         /// <param name="predictions"></param>
         /// <param name="visualization">
         /// Base64 encoded string containing prediction visualization image data
@@ -84,6 +98,12 @@ namespace Roboflow
         /// <param name="resolvedModel">
         /// Model identity and available package details for this result.
         /// </param>
+        /// <param name="originalImage">
+        /// Original image dimensions retained for opted-in responses, including when the selected grid has the same dimensions.
+        /// </param>
+        /// <param name="maskMetadata">
+        /// Present for opted-in responses in either format. All prediction geometry uses this grid. Multiply x coordinates and widths by scale_x, and y coordinates and heights by scale_y, to map to original_image.
+        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -94,7 +114,9 @@ namespace Roboflow
             string? inferenceId,
             int? frameId,
             double? time,
-            global::Roboflow.ResolvedModel? resolvedModel)
+            global::Roboflow.ResolvedModel? resolvedModel,
+            global::Roboflow.InferenceResponseImage? originalImage,
+            global::Roboflow.MaskCoordinateMetadata? maskMetadata)
         {
             this.Visualization = visualization;
             this.InferenceId = inferenceId;
@@ -103,6 +125,8 @@ namespace Roboflow
             this.ResolvedModel = resolvedModel;
             this.Image = image;
             this.Predictions = predictions ?? throw new global::System.ArgumentNullException(nameof(predictions));
+            this.OriginalImage = originalImage;
+            this.MaskMetadata = maskMetadata;
         }
 
         /// <summary>

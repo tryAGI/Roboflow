@@ -85,6 +85,20 @@ namespace Roboflow
         public required global::Roboflow.InferenceRequestVideo Video { get; set; }
 
         /// <summary>
+        /// Candidate threshold before merging. "best" uses model-eval thresholds, "default" or absent uses the model built-in, or pass a float.
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.AnyOfJsonConverter<double?, global::Roboflow.ActionRecognitionInferenceRequestConfidence?>))]
+        public global::Roboflow.AnyOf<double?, global::Roboflow.ActionRecognitionInferenceRequestConfidence?>? Confidence { get; set; }
+
+        /// <summary>
+        /// Return unmerged scored candidates for threshold evaluation<br/>
+        /// Default Value: false
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("include_candidates")]
+        public bool? IncludeCandidates { get; set; }
+
+        /// <summary>
         /// The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores this.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("class_filter")]
@@ -128,6 +142,13 @@ namespace Roboflow
         /// If true, disables model monitoring for this request<br/>
         /// Default Value: false
         /// </param>
+        /// <param name="confidence">
+        /// Candidate threshold before merging. "best" uses model-eval thresholds, "default" or absent uses the model built-in, or pass a float.
+        /// </param>
+        /// <param name="includeCandidates">
+        /// Return unmerged scored candidates for threshold evaluation<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="classFilter">
         /// The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores this.
         /// </param>
@@ -145,6 +166,8 @@ namespace Roboflow
             string? sourceInfo,
             string? streamPipelineContextId,
             bool? disableModelMonitoring,
+            global::Roboflow.AnyOf<double?, global::Roboflow.ActionRecognitionInferenceRequestConfidence?>? confidence,
+            bool? includeCandidates,
             global::System.Collections.Generic.IList<string>? classFilter)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
@@ -157,6 +180,8 @@ namespace Roboflow
             this.DisableModelMonitoring = disableModelMonitoring;
             this.ModelId = modelId ?? throw new global::System.ArgumentNullException(nameof(modelId));
             this.Video = video ?? throw new global::System.ArgumentNullException(nameof(video));
+            this.Confidence = confidence;
+            this.IncludeCandidates = includeCandidates;
             this.ClassFilter = classFilter;
         }
 

@@ -35,8 +35,10 @@ namespace Roboflow
             ref string? image,
             ref string? imageType,
             ref string? classFilter,
+            ref bool? includeCandidates,
             bool? labels,
             ref string? maskDecodeMode,
+            ref bool? allowReducedMaskResolution,
             double? tradeoffFactor,
             ref int? maxDetections,
             ref double? overlap,
@@ -62,8 +64,10 @@ namespace Roboflow
             string? image,
             string? imageType,
             string? classFilter,
+            bool? includeCandidates,
             bool? labels,
             string? maskDecodeMode,
+            bool? allowReducedMaskResolution,
             double? tradeoffFactor,
             int? maxDetections,
             double? overlap,
@@ -127,6 +131,10 @@ namespace Roboflow
         /// <param name="classFilter">
         /// Action recognition only: comma separated classes. The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores it.
         /// </param>
+        /// <param name="includeCandidates">
+        /// Action recognition: return raw scored candidates<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="labels">
         /// If true, labels will be include in any inference visualization.<br/>
         /// Default Value: false
@@ -134,6 +142,10 @@ namespace Roboflow
         /// <param name="maskDecodeMode">
         /// One of 'accurate' or 'fast'. If 'accurate' the mask will be decoded using the original image size. If 'fast' the mask will be decoded using the original mask size. 'accurate' is slower but more accurate.<br/>
         /// Default Value: accurate
+        /// </param>
+        /// <param name="allowReducedMaskResolution">
+        /// Opt into mask_decode_mode and tradeoff_factor on inference_models. Otherwise masks stay at image resolution. Legacy backend decoding is unchanged.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="tradeoffFactor">
         /// The amount to tradeoff between 0='fast' and 1='accurate'<br/>
@@ -175,7 +187,7 @@ namespace Roboflow
         /// Parameter to be used when Active Learning data registration should happen against different dataset than the one pointed by model_id
         /// </param>
         /// <param name="includeAnomalyMap">
-        /// Anomaly detection only: include the raw anomaly heatmap in original image coordinates<br/>
+        /// Anomaly detection only: include the raw anomaly heatmap at the network input resolution<br/>
         /// Default Value: false
         /// </param>
         /// <param name="source">
@@ -202,8 +214,10 @@ namespace Roboflow
             string? image = default,
             string? imageType = default,
             string? classFilter = default,
+            bool? includeCandidates = default,
             bool? labels = default,
             string? maskDecodeMode = default,
+            bool? allowReducedMaskResolution = default,
             double? tradeoffFactor = default,
             int? maxDetections = default,
             double? overlap = default,
@@ -230,8 +244,10 @@ namespace Roboflow
                 image: image,
                 imageType: imageType,
                 classFilter: classFilter,
+                includeCandidates: includeCandidates,
                 labels: labels,
                 maskDecodeMode: maskDecodeMode,
+                allowReducedMaskResolution: allowReducedMaskResolution,
                 tradeoffFactor: tradeoffFactor,
                 maxDetections: maxDetections,
                 overlap: overlap,
@@ -292,6 +308,10 @@ namespace Roboflow
         /// <param name="classFilter">
         /// Action recognition only: comma separated classes. The subset of a fine-tuned model's classes to report. A zero-shot model answers in its own words and ignores it.
         /// </param>
+        /// <param name="includeCandidates">
+        /// Action recognition: return raw scored candidates<br/>
+        /// Default Value: false
+        /// </param>
         /// <param name="labels">
         /// If true, labels will be include in any inference visualization.<br/>
         /// Default Value: false
@@ -299,6 +319,10 @@ namespace Roboflow
         /// <param name="maskDecodeMode">
         /// One of 'accurate' or 'fast'. If 'accurate' the mask will be decoded using the original image size. If 'fast' the mask will be decoded using the original mask size. 'accurate' is slower but more accurate.<br/>
         /// Default Value: accurate
+        /// </param>
+        /// <param name="allowReducedMaskResolution">
+        /// Opt into mask_decode_mode and tradeoff_factor on inference_models. Otherwise masks stay at image resolution. Legacy backend decoding is unchanged.<br/>
+        /// Default Value: false
         /// </param>
         /// <param name="tradeoffFactor">
         /// The amount to tradeoff between 0='fast' and 1='accurate'<br/>
@@ -340,7 +364,7 @@ namespace Roboflow
         /// Parameter to be used when Active Learning data registration should happen against different dataset than the one pointed by model_id
         /// </param>
         /// <param name="includeAnomalyMap">
-        /// Anomaly detection only: include the raw anomaly heatmap in original image coordinates<br/>
+        /// Anomaly detection only: include the raw anomaly heatmap at the network input resolution<br/>
         /// Default Value: false
         /// </param>
         /// <param name="source">
@@ -367,8 +391,10 @@ namespace Roboflow
             string? image = default,
             string? imageType = default,
             string? classFilter = default,
+            bool? includeCandidates = default,
             bool? labels = default,
             string? maskDecodeMode = default,
+            bool? allowReducedMaskResolution = default,
             double? tradeoffFactor = default,
             int? maxDetections = default,
             double? overlap = default,
@@ -398,8 +424,10 @@ namespace Roboflow
                 image: ref image,
                 imageType: ref imageType,
                 classFilter: ref classFilter,
+                includeCandidates: ref includeCandidates,
                 labels: labels,
                 maskDecodeMode: ref maskDecodeMode,
+                allowReducedMaskResolution: ref allowReducedMaskResolution,
                 tradeoffFactor: tradeoffFactor,
                 maxDetections: ref maxDetections,
                 overlap: ref overlap,
@@ -456,8 +484,10 @@ namespace Roboflow
                                 .AddOptionalParameter("image", image)
                                 .AddOptionalParameter("image_type", imageType)
                                 .AddOptionalParameter("class_filter", classFilter)
+                                .AddOptionalParameter("include_candidates", includeCandidates?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("labels", labels?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("mask_decode_mode", maskDecodeMode)
+                                .AddOptionalParameter("allow_reduced_mask_resolution", allowReducedMaskResolution?.ToString().ToLowerInvariant())
                                 .AddOptionalParameter("tradeoff_factor", tradeoffFactor?.ToString())
                                 .AddOptionalParameter("max_detections", maxDetections?.ToString())
                                 .AddOptionalParameter("overlap", overlap?.ToString())
@@ -504,8 +534,10 @@ namespace Roboflow
                     image: image,
                     imageType: imageType,
                     classFilter: classFilter,
+                    includeCandidates: includeCandidates,
                     labels: labels,
                     maskDecodeMode: maskDecodeMode,
+                    allowReducedMaskResolution: allowReducedMaskResolution,
                     tradeoffFactor: tradeoffFactor,
                     maxDetections: maxDetections,
                     overlap: overlap,

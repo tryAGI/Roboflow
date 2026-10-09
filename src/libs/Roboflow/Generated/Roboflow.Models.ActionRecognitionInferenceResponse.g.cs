@@ -63,6 +63,31 @@ namespace Roboflow
         public required int WindowsClassified { get; set; }
 
         /// <summary>
+        /// Default Value: instances
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("span_semantics")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::Roboflow.JsonConverters.ActionRecognitionInferenceResponseSpanSemanticsJsonConverter))]
+        public global::Roboflow.ActionRecognitionInferenceResponseSpanSemantics? SpanSemantics { get; set; }
+
+        /// <summary>
+        /// Uniform confidence threshold; null for per-class thresholds or unscored models
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("confidence_threshold")]
+        public double? ConfidenceThreshold { get; set; }
+
+        /// <summary>
+        /// Effective class-specific thresholds when model-eval recommendations apply
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("per_class_confidence_thresholds")]
+        public global::System.Collections.Generic.Dictionary<string, double>? PerClassConfidenceThresholds { get; set; }
+
+        /// <summary>
+        ///
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("candidates")]
+        public global::System.Collections.Generic.IList<global::Roboflow.ActionRecognitionPrediction>? Candidates { get; set; }
+
+        /// <summary>
         /// Additional properties that are not explicitly defined in the schema
         /// </summary>
         [global::System.Text.Json.Serialization.JsonExtensionData]
@@ -95,6 +120,16 @@ namespace Roboflow
         /// <param name="resolvedModel">
         /// Model identity and available package details for this result.
         /// </param>
+        /// <param name="spanSemantics">
+        /// Default Value: instances
+        /// </param>
+        /// <param name="confidenceThreshold">
+        /// Uniform confidence threshold; null for per-class thresholds or unscored models
+        /// </param>
+        /// <param name="perClassConfidenceThresholds">
+        /// Effective class-specific thresholds when model-eval recommendations apply
+        /// </param>
+        /// <param name="candidates"></param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -106,7 +141,11 @@ namespace Roboflow
             string? inferenceId,
             int? frameId,
             double? time,
-            global::Roboflow.ResolvedModel? resolvedModel)
+            global::Roboflow.ResolvedModel? resolvedModel,
+            global::Roboflow.ActionRecognitionInferenceResponseSpanSemantics? spanSemantics,
+            double? confidenceThreshold,
+            global::System.Collections.Generic.Dictionary<string, double>? perClassConfidenceThresholds,
+            global::System.Collections.Generic.IList<global::Roboflow.ActionRecognitionPrediction>? candidates)
         {
             this.InferenceId = inferenceId;
             this.FrameId = frameId;
@@ -116,6 +155,10 @@ namespace Roboflow
             this.SourceFps = sourceFps;
             this.FrameCount = frameCount;
             this.WindowsClassified = windowsClassified;
+            this.SpanSemantics = spanSemantics;
+            this.ConfidenceThreshold = confidenceThreshold;
+            this.PerClassConfidenceThresholds = perClassConfidenceThresholds;
+            this.Candidates = candidates;
         }
 
         /// <summary>

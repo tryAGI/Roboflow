@@ -87,7 +87,14 @@ namespace Roboflow
         public required double AnomalyThreshold { get; set; }
 
         /// <summary>
-        ///
+        /// Calibration scale: the anomalous confidence is sigmoid((anomaly_score - anomaly_threshold) / anomaly_scale)
+        /// </summary>
+        [global::System.Text.Json.Serialization.JsonPropertyName("anomaly_scale")]
+        [global::System.Text.Json.Serialization.JsonRequired]
+        public required double AnomalyScale { get; set; }
+
+        /// <summary>
+        /// Whether the anomalous confidence reached the request confidence
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("is_anomalous")]
         [global::System.Text.Json.Serialization.JsonRequired]
@@ -116,7 +123,12 @@ namespace Roboflow
         /// <param name="anomalyThreshold">
         /// Decision threshold fitted on validation images
         /// </param>
-        /// <param name="isAnomalous"></param>
+        /// <param name="anomalyScale">
+        /// Calibration scale: the anomalous confidence is sigmoid((anomaly_score - anomaly_threshold) / anomaly_scale)
+        /// </param>
+        /// <param name="isAnomalous">
+        /// Whether the anomalous confidence reached the request confidence
+        /// </param>
         /// <param name="visualization">
         /// Base64 encoded string containing prediction visualization image data
         /// </param>
@@ -153,6 +165,7 @@ namespace Roboflow
             global::System.Collections.Generic.IList<global::Roboflow.ClassificationPrediction> predictions,
             double anomalyScore,
             double anomalyThreshold,
+            double anomalyScale,
             bool isAnomalous,
             string? visualization,
             string? inferenceId,
@@ -176,6 +189,7 @@ namespace Roboflow
             this.ParentId = parentId;
             this.AnomalyScore = anomalyScore;
             this.AnomalyThreshold = anomalyThreshold;
+            this.AnomalyScale = anomalyScale;
             this.IsAnomalous = isAnomalous;
             this.AnomalyMap = anomalyMap;
         }
